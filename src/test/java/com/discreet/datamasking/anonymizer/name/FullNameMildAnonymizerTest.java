@@ -1,13 +1,11 @@
-package com.discreet.datamasking.anonymizer;
+package com.discreet.datamasking.anonymizer.name;
 
-import com.discreet.datamasking.anonymizer.name.FullNameMildAnonymizer;
-import com.discreet.datamasking.anonymizer.name.FullNameRandomAnonymizer;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class FullNameRandomAnonymizerTest {
-    FullNameRandomAnonymizer anonymizer = new FullNameRandomAnonymizer();
+public class FullNameMildAnonymizerTest {
+    FullNameMildAnonymizer anonymizer = new FullNameMildAnonymizer();
 
     @Test
     public void testNameOnly() {
@@ -16,7 +14,7 @@ public class FullNameRandomAnonymizerTest {
 
         assertNotEquals (output, input);
         assertEquals(input.length(), output.length());
-        assertTrue(output.matches("[A-Z][a-z]*"));
+        assertTrue(output.matches("J[a-z]*"));
     }
 
     @Test
@@ -26,8 +24,7 @@ public class FullNameRandomAnonymizerTest {
 
         assertNotEquals (output, input);
         assertEquals(input.length(), output.length());
-        assertTrue(output.matches("[A-Z][a-z]* [A-Z][a-z]*"));
-        assertFalse(output.matches("J[a-z]* S[a-z]*"));
+        assertTrue(output.matches("J[a-z]* S[a-z]*"));
     }
 
     @Test
@@ -37,8 +34,7 @@ public class FullNameRandomAnonymizerTest {
 
         assertNotEquals (output, input);
         assertEquals(input.length(), output.length());
-        assertTrue(output.matches("[A-Z][a-z]* [A-Z][a-z]* [A-Z][a-z]*"));
-        assertFalse(output.matches("J[a-z]* P[a-z]* S[a-z]*"));
+        assertTrue(output.matches("J[a-z]* P[a-z]* S[a-z]*"));
     }
 
     @Test
@@ -48,8 +44,7 @@ public class FullNameRandomAnonymizerTest {
 
         assertNotEquals (output, input);
         assertEquals(input.length(), output.length());
-        assertTrue(output.matches("[A-Z][a-z]* [A-Z][a-z]* [A-Z][a-z]*"));
-        assertFalse(output.matches("J[a-z]* P[a-z]* S[a-z]*"));
+        assertTrue(output.matches("J[a-z]* P[a-z]* S[a-z]*"));
     }
 
     @Test
@@ -59,6 +54,6 @@ public class FullNameRandomAnonymizerTest {
 
         assertNotEquals (output, input);
         assertEquals(input.length(), output.length());
-        assertTrue(output.matches("[A-Za-z]* [A-Z][a-z]*"));
+        assertTrue(output.matches("[A-Za-z]* S[a-z]*"));
     }
 }
