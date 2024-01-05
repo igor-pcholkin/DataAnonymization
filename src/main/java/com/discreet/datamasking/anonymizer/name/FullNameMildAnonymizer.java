@@ -1,4 +1,4 @@
-package com.discreet.datamasking.anonymizer;
+package com.discreet.datamasking.anonymizer.name;
 
 import com.discreet.datamasking.core.Anonymizer;
 
@@ -6,9 +6,11 @@ import java.util.Random;
 
 /**
  * Anonymizer working with names/full names.
- * Substitutes each letter with a random latin letter except starting (capital) letters
- * Respects case and number of original letters in each name.
- * Also delimiting spaces are kept in place.
+ * Substitutes each letter with a random latin letter except starting ones
+ * Letters converted to appropriate case: starting ones to upper case, following ones to lower case.
+ * Respects number of original letters in each name.
+ *
+ * Example: "John Paul Smith" -> "Jzir Pyre Snpex"
  */
 public class FullNameMildAnonymizer implements Anonymizer {
     static final int LATIN_CHAR_RANGE = 26;
@@ -28,21 +30,22 @@ public class FullNameMildAnonymizer implements Anonymizer {
 
     private Character translateChar(String input, int i, Random random) {
         int origCodePoint = input.codePointAt(i);
-        return isTranslationNeeded(origCodePoint, input, i) ? doTranslateChar(origCodePoint, random) :
+        return isTranslationNeeded(origCodePoint, input, i) ? doTranslateChar(origCodePoint, random, input, i) :
                 Character.valueOf((char) origCodePoint);
     }
 
-    private boolean isTranslationNeeded(int origCodePoint, String input, int i) {
-        return !(Character.isSpaceChar(origCodePoint) || isValidFirstLetterInWord(origCodePoint, input, i));
+    protected boolean isTranslationNeeded(int origCodePoint, String input, int i) {
+        return !Character.isSpaceChar(origCodePoint);
     }
 
-    private boolean isValidFirstLetterInWord(int origCodePoint, String input, int i) {
+    protected boolean isValidFirstLetterInWord(int origCodePoint, String input, int i) {
         return (i == 0 || Character.isSpaceChar(input.codePointAt(i - 1))) &&
                 Character.isAlphabetic(origCodePoint);
     }
 
-    private Character doTranslateChar(int origChar, Random random) {
-        int baseChar = Character.isLowerCase(origChar) ? LATIN_BASE_CHAR_LOWER : LATIN_BASE_CHAR_UPPER;
-        return Character.valueOf((char) (baseChar + ( (origChar + Math.abs(random.nextInt())) % LATIN_CHAR_RANGE )));
+    protected Character doTranslateChar(int origCodePoint, Random random, String input, int i) {
+        int maskedCodePoint = isValidFirstLetterInWord(origCodePoint, input, i) ? Character.toTitleCase(origCodePoint) :
+                LATIN_BASE_CHAR_LOWER + ( (origCodePoint + Math.abs(random.nextInt())) % LATIN_CHAR_RANGE );
+        return Character.valueOf((char) maskedCodePoint);
     }
 }

@@ -1,12 +1,13 @@
 package com.discreet.datamasking.anonymizer;
 
 import com.discreet.datamasking.anonymizer.name.FullNameMildAnonymizer;
+import com.discreet.datamasking.anonymizer.name.FullNameRandomAnonymizer;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class FullNameMildAnonymizerTest {
-    FullNameMildAnonymizer anonymizer = new FullNameMildAnonymizer();
+public class FullNameRandomAnonymizerTest {
+    FullNameRandomAnonymizer anonymizer = new FullNameRandomAnonymizer();
 
     @Test
     public void testNameOnly() {
@@ -15,7 +16,7 @@ public class FullNameMildAnonymizerTest {
 
         assertNotEquals (output, input);
         assertEquals(input.length(), output.length());
-        assertTrue(output.matches("J[a-z]*"));
+        assertTrue(output.matches("[A-Z][a-z]*"));
     }
 
     @Test
@@ -25,7 +26,8 @@ public class FullNameMildAnonymizerTest {
 
         assertNotEquals (output, input);
         assertEquals(input.length(), output.length());
-        assertTrue(output.matches("J[a-z]* S[a-z]*"));
+        assertTrue(output.matches("[A-Z][a-z]* [A-Z][a-z]*"));
+        assertFalse(output.matches("J[a-z]* S[a-z]*"));
     }
 
     @Test
@@ -35,7 +37,8 @@ public class FullNameMildAnonymizerTest {
 
         assertNotEquals (output, input);
         assertEquals(input.length(), output.length());
-        assertTrue(output.matches("J[a-z]* P[a-z]* S[a-z]*"));
+        assertTrue(output.matches("[A-Z][a-z]* [A-Z][a-z]* [A-Z][a-z]*"));
+        assertFalse(output.matches("J[a-z]* P[a-z]* S[a-z]*"));
     }
 
     @Test
@@ -45,7 +48,8 @@ public class FullNameMildAnonymizerTest {
 
         assertNotEquals (output, input);
         assertEquals(input.length(), output.length());
-        assertTrue(output.matches("J[a-z]* P[a-z]* S[a-z]*"));
+        assertTrue(output.matches("[A-Z][a-z]* [A-Z][a-z]* [A-Z][a-z]*"));
+        assertFalse(output.matches("J[a-z]* P[a-z]* S[a-z]*"));
     }
 
     @Test
@@ -55,6 +59,6 @@ public class FullNameMildAnonymizerTest {
 
         assertNotEquals (output, input);
         assertEquals(input.length(), output.length());
-        assertTrue(output.matches("[A-Za-z]* S[a-z]*"));
+        assertTrue(output.matches("[A-Za-z]* [A-Z][a-z]*"));
     }
 }
