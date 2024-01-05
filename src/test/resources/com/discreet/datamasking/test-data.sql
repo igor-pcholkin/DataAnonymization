@@ -1,0 +1,2 @@
+INSERT INTO USERS VALUES(1, 'John Smith');
+INSERT INTO USERS VALUES(2, 'Bradlee Cooper');
