@@ -4,8 +4,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class FullNameAnonymizerTest {
-    FullNameAnonymizer anonymizer = new FullNameAnonymizer();
+public class FullNameMildAnonymizerTest {
+    FullNameMildAnonymizer anonymizer = new FullNameMildAnonymizer();
 
     @Test
     public void testNameOnly() {

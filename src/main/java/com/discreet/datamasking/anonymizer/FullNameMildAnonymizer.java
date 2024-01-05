@@ -6,11 +6,11 @@ import java.util.Random;
 
 /**
  * Anonymizer working with names/full names.
- * Substitutes each letter with a random latin lower-case letter.
+ * Substitutes each letter with a random latin letter except starting (capital) letters
  * Respects case and number of original letters in each name.
  * Also delimiting spaces are kept in place.
  */
-public class FullNameAnonymizer implements Anonymizer {
+public class FullNameMildAnonymizer implements Anonymizer {
     static final int LATIN_CHAR_RANGE = 26;
     static final int LATIN_BASE_CHAR_LOWER = 'a';
     static final int LATIN_BASE_CHAR_UPPER = 'A';
