@@ -2,7 +2,10 @@ package com.discreet.datamasking.anonymizer.name;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class FullNameRandomAnonymizerTest {
     FullNameRandomAnonymizer anonymizer = new FullNameRandomAnonymizer();

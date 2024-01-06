@@ -1,6 +1,6 @@
 package com.discreet.datamasking.anonymizer.name;
 
-import com.discreet.datamasking.anonymizer.AbstractAnonymizer;
+import com.discreet.datamasking.anonymizer.CharSequenceAnonymizer;
 
 import java.util.Random;
 
@@ -16,7 +16,7 @@ import static java.lang.Character.isAlphabetic;
  *
  * Example: "John Paul Smith" -> "Jzir Pyre Snpex"
  */
-public class FullNameMildAnonymizer extends AbstractAnonymizer {
+public class FullNameMildAnonymizer extends CharSequenceAnonymizer {
 
 
     @Override

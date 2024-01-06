@@ -6,7 +6,10 @@ import static java.lang.Character.isDigit;
 import static java.lang.Character.isLowerCase;
 import static java.lang.Character.isUpperCase;
 
-public abstract class AbstractAnonymizer implements Anonymizer {
+/**
+ * Anonymizer which replaces data character by character
+ */
+public abstract class CharSequenceAnonymizer implements Anonymizer {
     protected static final int BASE_DIGIT = '0';
     protected static final int DIGIT_RANGE = 10;
     protected static final int LATIN_CHAR_RANGE = 26;
