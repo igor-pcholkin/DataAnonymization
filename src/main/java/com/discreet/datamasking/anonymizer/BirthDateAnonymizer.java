@@ -29,14 +29,19 @@ public class BirthDateAnonymizer implements Anonymizer {
 
     @Override
     public String anonymize(String input) {
-        return createLocalDate().toString();
+        LocalDate originalDate = LocalDate.parse(input);
+        Random random = new Random();
+        random.setSeed(input.hashCode());
+        return translateLocalDate(originalDate, random).toString();
     }
 
-    private LocalDate createLocalDate() {
+    private LocalDate translateLocalDate(LocalDate originalDate, Random random) {
         LocalDateTime minDateTime = getLocalDateTime(minDate);
         LocalDateTime maxDateTime = getLocalDateTime(maxDate);
-        long daysBetween = Duration.between(minDateTime, maxDateTime).toDays();
-        long randomDay = new Random().nextLong(daysBetween);
+        LocalDateTime originalDateTime = getLocalDateTime(originalDate);
+        long daysBetweenMinMax = Duration.between(minDateTime, maxDateTime).toDays();
+        long daysBetweenMinOriginal = Duration.between(minDateTime, originalDateTime).toDays();
+        long randomDay =  (daysBetweenMinOriginal + Math.abs(random.nextLong())) % daysBetweenMinMax;
         return minDate.plusDays(randomDay);
     }
 

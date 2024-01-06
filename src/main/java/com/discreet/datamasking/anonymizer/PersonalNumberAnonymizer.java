@@ -22,7 +22,7 @@ public class PersonalNumberAnonymizer extends CharSequenceAnonymizer {
 
     @Override
     protected Character doTranslateChar(int origCodePoint, Random random, String input, int i) {
-        int translatedCodePoint = createChar(origCodePoint, random);
+        int translatedCodePoint = translateChar(origCodePoint, random);
         return (char) translatedCodePoint;
     }
 }

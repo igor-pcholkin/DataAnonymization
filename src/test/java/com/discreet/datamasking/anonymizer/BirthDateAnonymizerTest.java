@@ -6,9 +6,8 @@ import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
-import static org.junit.jupiter.api.Assertions.fail;
 
-class BirthDateAnonymizerTest {
+class BirthDateAnonymizerTest extends BaseTest {
     @Test
     public void testWithDefaultRange() {
         BirthDateAnonymizer anonymizer = new BirthDateAnonymizer();
@@ -25,16 +24,19 @@ class BirthDateAnonymizerTest {
     }
 
     private void testNIterations(BirthDateAnonymizer anonymizer, String regex) {
-        String input = LocalDate.now().toString();
-
         for (int i = 0; i < 10000; i++) {
-            String output = anonymizer.anonymize(input);
+            String input1 = LocalDate.now().toString();
+            String output11 = anonymizer.anonymize(input1);
+            testMatch(output11, input1, regex);
 
-            assertNotEquals(output, input);
-            assertEquals(input.length(), output.length());
-            if (!output.matches(regex)) {
-                fail("Assertion failed: " + output);
-            }
+            String output12 = anonymizer.anonymize(input1);
+            assertEquals(output11, output12);
+
+            String input2 = LocalDate.now().plusDays(560).toString();
+            String output2 = anonymizer.anonymize(input2);
+            testMatch(output2, input2, regex);
+
+            assertNotEquals(output2, output12);
         }
     }
 }

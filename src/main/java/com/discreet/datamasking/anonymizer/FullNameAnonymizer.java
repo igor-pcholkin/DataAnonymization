@@ -1,6 +1,4 @@
-package com.discreet.datamasking.anonymizer.name;
-
-import com.discreet.datamasking.anonymizer.CharSequenceAnonymizer;
+package com.discreet.datamasking.anonymizer;
 
 import java.util.Random;
 
@@ -16,8 +14,7 @@ import static java.lang.Character.isAlphabetic;
  *
  * Example: "John Paul Smith" -> "Jzir Pyre Snpex"
  */
-public class FullNameMildAnonymizer extends CharSequenceAnonymizer {
-
+public class FullNameAnonymizer extends CharSequenceAnonymizer {
 
     @Override
     protected boolean isTranslationNeeded(int origCodePoint, String input, int i) {
@@ -27,7 +24,7 @@ public class FullNameMildAnonymizer extends CharSequenceAnonymizer {
     @Override
     protected Character doTranslateChar(int origCodePoint, Random random, String input, int i) {
         int translatedCodePoint = isValidFirstLetterInWord(origCodePoint, input, i) ? toTitleCase(origCodePoint) :
-                createLowerCaseChar(random);
+                createLowerCaseChar(origCodePoint, random);
         return (char) translatedCodePoint;
     }
 

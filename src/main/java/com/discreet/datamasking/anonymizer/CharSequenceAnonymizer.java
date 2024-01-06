@@ -19,6 +19,7 @@ public abstract class CharSequenceAnonymizer implements Anonymizer {
     @Override
     public String anonymize(String input) {
         Random random = new Random();
+        random.setSeed(input.hashCode());
         StringBuilder outputStringBuilder = new StringBuilder();
         for (int i = 0; i < input.length(); i++) {
             Character translatedChar = translateChar(input, i, random);
@@ -33,29 +34,29 @@ public abstract class CharSequenceAnonymizer implements Anonymizer {
                 (char) origCodePoint;
     }
 
-    protected int createDigit(Random random) {
-        return createChar(BASE_DIGIT, DIGIT_RANGE, random);
+    protected int createDigit(int origCodePoint, Random random) {
+        return translateChar(origCodePoint, BASE_DIGIT, DIGIT_RANGE, random);
     }
 
-    protected int createLowerCaseChar(Random random) {
-        return createChar(LATIN_BASE_CHAR_LOWER, LATIN_CHAR_RANGE, random);
+    protected int createLowerCaseChar(int origCodePoint, Random random) {
+        return translateChar(origCodePoint, LATIN_BASE_CHAR_LOWER, LATIN_CHAR_RANGE, random);
     }
 
-    protected int createUpperCaseChar(Random random) {
-        return createChar(LATIN_BASE_CHAR_UPPER, LATIN_CHAR_RANGE, random);
+    protected int createUpperCaseChar(int origCodePoint, Random random) {
+        return translateChar(origCodePoint, LATIN_BASE_CHAR_UPPER, LATIN_CHAR_RANGE, random);
     }
 
-    protected int createChar(int charBase, int charRange, Random random) {
-        return charBase + ( Math.abs(random.nextInt()) % charRange );
+    protected int translateChar(int origCodePoint, int charBase, int charRange, Random random) {
+        return charBase + ( (origCodePoint + Math.abs(random.nextInt())) % charRange );
     }
 
-    protected int createChar(int origCodePoint, Random random) {
+    protected int translateChar(int origCodePoint, Random random) {
         if (isLowerCase(origCodePoint))
-            return createLowerCaseChar(random);
+            return createLowerCaseChar(origCodePoint, random);
         else if (isUpperCase(origCodePoint))
-            return createUpperCaseChar(random);
+            return createUpperCaseChar(origCodePoint, random);
         if (isDigit(origCodePoint))
-            return createDigit(random);
+            return createDigit(origCodePoint, random);
         else throw new RuntimeException("Cannot create character from unknown character type!");
     }
 
