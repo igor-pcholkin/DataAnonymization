@@ -8,7 +8,7 @@ class PersonalNumberAnonymizerTest {
     PersonalNumberAnonymizer anonymizer = new PersonalNumberAnonymizer();
 
     @Test
-    public void testAnonimize() {
+    public void testAnonimizeOnlyDigits() {
         String input = "020976-11322";
         String output = anonymizer.anonymize(input);
 
@@ -16,4 +16,15 @@ class PersonalNumberAnonymizerTest {
         assertEquals(input.length(), output.length());
         assertTrue(output.matches("[0-9]{6}-[0-9]{5}"));
     }
+
+    @Test
+    public void testAnonimizeAlsoLetters() {
+        String input = "020976-113A";
+        String output = anonymizer.anonymize(input);
+
+        assertNotEquals (output, input);
+        assertEquals(input.length(), output.length());
+        assertTrue(output.matches("[0-9]{6}-[0-9]{3}[A-Z]"));
+    }
+
 }

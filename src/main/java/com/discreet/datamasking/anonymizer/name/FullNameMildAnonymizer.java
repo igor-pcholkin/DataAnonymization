@@ -4,6 +4,10 @@ import com.discreet.datamasking.anonymizer.AbstractAnonymizer;
 
 import java.util.Random;
 
+import static java.lang.Character.toTitleCase;
+import static java.lang.Character.isSpaceChar;
+import static java.lang.Character.isAlphabetic;
+
 /**
  * Anonymizer working with names/full names.
  * Substitutes each letter with a random latin letter except starting ones
@@ -13,25 +17,23 @@ import java.util.Random;
  * Example: "John Paul Smith" -> "Jzir Pyre Snpex"
  */
 public class FullNameMildAnonymizer extends AbstractAnonymizer {
-    static final int LATIN_CHAR_RANGE = 26;
-    static final int LATIN_BASE_CHAR_LOWER = 'a';
-    static final int LATIN_BASE_CHAR_UPPER = 'A';
+
 
     @Override
     protected boolean isTranslationNeeded(int origCodePoint, String input, int i) {
-        return !Character.isSpaceChar(origCodePoint);
+        return !isSpaceChar(origCodePoint);
     }
 
     @Override
     protected Character doTranslateChar(int origCodePoint, Random random, String input, int i) {
-        int maskedCodePoint = isValidFirstLetterInWord(origCodePoint, input, i) ? Character.toTitleCase(origCodePoint) :
-                LATIN_BASE_CHAR_LOWER + ( (origCodePoint + Math.abs(random.nextInt())) % LATIN_CHAR_RANGE );
-        return Character.valueOf((char) maskedCodePoint);
+        int translatedCodePoint = isValidFirstLetterInWord(origCodePoint, input, i) ? toTitleCase(origCodePoint) :
+                createLowerCaseChar(random);
+        return (char) translatedCodePoint;
     }
 
     protected boolean isValidFirstLetterInWord(int origCodePoint, String input, int i) {
-        return (i == 0 || Character.isSpaceChar(input.codePointAt(i - 1))) &&
-                Character.isAlphabetic(origCodePoint);
+        return (i == 0 || isSpaceChar(input.codePointAt(i - 1)))
+                && isAlphabetic(origCodePoint);
     }
 
 }

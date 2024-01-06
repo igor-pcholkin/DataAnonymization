@@ -13,10 +13,9 @@ import java.util.Random;
 public class FullNameRandomAnonymizer extends FullNameMildAnonymizer {
     @Override
     protected Character doTranslateChar(int origCodePoint, Random random, String input, int i) {
-        int latinBaseChar = isValidFirstLetterInWord(origCodePoint, input, i) ? LATIN_BASE_CHAR_UPPER :
-                LATIN_BASE_CHAR_LOWER;
-        int maskedCodePoint = latinBaseChar + ( (origCodePoint + Math.abs(random.nextInt())) % LATIN_CHAR_RANGE );
-        return Character.valueOf((char) maskedCodePoint);
+        int translatedCodePoint = isValidFirstLetterInWord(origCodePoint, input, i) ? createUpperCaseChar(random) :
+                createLowerCaseChar(random);
+        return (char) translatedCodePoint;
     }
 
 }
