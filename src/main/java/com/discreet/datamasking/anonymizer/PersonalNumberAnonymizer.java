@@ -18,9 +18,4 @@ public class PersonalNumberAnonymizer extends CharSequenceAnonymizer {
         return isDigit(origCodePoint) || isAlphabetic(origCodePoint);
     }
 
-    @Override
-    protected Character doTranslateChar(int origCodePoint, String input, int i) {
-        int translatedCodePoint = translateChar(origCodePoint);
-        return (char) translatedCodePoint;
-    }
 }

@@ -26,7 +26,6 @@ public class CreditCardAsteriskAnonymizer extends CharSequenceAnonymizer {
 
     @Override
     protected Character doTranslateChar(int origCodePoint, String input, int i) {
-        int translatedCodePoint = '*';
-        return (char) translatedCodePoint;
+        return '*';
     }
 }

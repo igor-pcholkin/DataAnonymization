@@ -57,6 +57,10 @@ public abstract class CharSequenceAnonymizer extends BaseAnonymizer {
         else throw new RuntimeException("Cannot create character from unknown character type!");
     }
 
+    protected Character doTranslateChar(int origCodePoint, String input, int i) {
+        int translatedCodePoint = translateChar(origCodePoint);
+        return (char) translatedCodePoint;
+    }
+
     protected abstract boolean isTranslationNeeded(int origCodePoint, String input, int i);
-    protected abstract Character doTranslateChar(int origCodePoint, String input, int i);
 }

@@ -13,9 +13,4 @@ public class CreditCardAnonymizer extends CharSequenceAnonymizer {
         return i > 0;
     }
 
-    @Override
-    protected Character doTranslateChar(int origCodePoint, String input, int i) {
-        int translatedCodePoint = translateDigit(origCodePoint);
-        return (char) translatedCodePoint;
-    }
 }
