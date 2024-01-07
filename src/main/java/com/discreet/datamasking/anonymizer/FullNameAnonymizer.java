@@ -22,7 +22,7 @@ public class FullNameAnonymizer extends CharSequenceAnonymizer {
     @Override
     protected Character doTranslateChar(int origCodePoint, String input, int i) {
         int translatedCodePoint = isValidFirstLetterInWord(origCodePoint, input, i) ? toTitleCase(origCodePoint) :
-                createLowerCaseChar(origCodePoint);
+                translateLowerCaseChar(origCodePoint);
         return (char) translatedCodePoint;
     }
 

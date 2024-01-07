@@ -31,15 +31,15 @@ public abstract class CharSequenceAnonymizer extends BaseAnonymizer {
                 (char) origCodePoint;
     }
 
-    protected int createDigit(int origCodePoint) {
+    protected int translateDigit(int origCodePoint) {
         return translateChar(origCodePoint, BASE_DIGIT, DIGIT_RANGE);
     }
 
-    protected int createLowerCaseChar(int origCodePoint) {
+    protected int translateLowerCaseChar(int origCodePoint) {
         return translateChar(origCodePoint, LATIN_BASE_CHAR_LOWER, LATIN_CHAR_RANGE);
     }
 
-    protected int createUpperCaseChar(int origCodePoint) {
+    protected int translateUpperCaseChar(int origCodePoint) {
         return translateChar(origCodePoint, LATIN_BASE_CHAR_UPPER, LATIN_CHAR_RANGE);
     }
 
@@ -49,11 +49,11 @@ public abstract class CharSequenceAnonymizer extends BaseAnonymizer {
 
     protected int translateChar(int origCodePoint) {
         if (isLowerCase(origCodePoint))
-            return createLowerCaseChar(origCodePoint);
+            return translateLowerCaseChar(origCodePoint);
         else if (isUpperCase(origCodePoint))
-            return createUpperCaseChar(origCodePoint);
+            return translateUpperCaseChar(origCodePoint);
         if (isDigit(origCodePoint))
-            return createDigit(origCodePoint);
+            return translateDigit(origCodePoint);
         else throw new RuntimeException("Cannot create character from unknown character type!");
     }
 
