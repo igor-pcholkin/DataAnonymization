@@ -1,6 +1,5 @@
 package com.discreet.datamasking.anonymizer;
 
-import java.util.Random;
 import static java.lang.Character.isDigit;
 
 /**

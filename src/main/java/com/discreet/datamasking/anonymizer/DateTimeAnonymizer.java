@@ -3,7 +3,6 @@ package com.discreet.datamasking.anonymizer;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Random;
 
 /**
  * Anonymizer who generates dates (with times)
