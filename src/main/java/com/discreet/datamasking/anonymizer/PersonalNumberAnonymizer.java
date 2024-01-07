@@ -21,8 +21,8 @@ public class PersonalNumberAnonymizer extends CharSequenceAnonymizer {
     }
 
     @Override
-    protected Character doTranslateChar(int origCodePoint, Random random, String input, int i) {
-        int translatedCodePoint = translateChar(origCodePoint, random);
+    protected Character doTranslateChar(int origCodePoint, String input, int i) {
+        int translatedCodePoint = translateChar(origCodePoint);
         return (char) translatedCodePoint;
     }
 }

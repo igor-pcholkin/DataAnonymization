@@ -1,7 +1,5 @@
 package com.discreet.datamasking.anonymizer;
 
-import java.util.Random;
-
 import static java.lang.Character.toTitleCase;
 import static java.lang.Character.isSpaceChar;
 import static java.lang.Character.isAlphabetic;
@@ -22,9 +20,9 @@ public class FullNameAnonymizer extends CharSequenceAnonymizer {
     }
 
     @Override
-    protected Character doTranslateChar(int origCodePoint, Random random, String input, int i) {
+    protected Character doTranslateChar(int origCodePoint, String input, int i) {
         int translatedCodePoint = isValidFirstLetterInWord(origCodePoint, input, i) ? toTitleCase(origCodePoint) :
-                createLowerCaseChar(origCodePoint, random);
+                createLowerCaseChar(origCodePoint);
         return (char) translatedCodePoint;
     }
 

@@ -3,14 +3,13 @@ package com.discreet.datamasking.anonymizer;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Random;
 
 /**
  * Anonymizer who generates birth dates. Actually can be used for dates in general.
  *
  * Example: "2024-01-06" -> "1937-10-22"
  */
-public class BirthDateAnonymizer implements Anonymizer {
+public class BirthDateAnonymizer extends BaseAnonymizer {
     private LocalDate minDate;
     private LocalDate maxDate;
 
@@ -30,18 +29,17 @@ public class BirthDateAnonymizer implements Anonymizer {
     @Override
     public String anonymize(String input) {
         LocalDate originalDate = LocalDate.parse(input);
-        Random random = new Random();
-        random.setSeed(input.hashCode());
-        return translateLocalDate(originalDate, random).toString();
+        initRandom(input.hashCode());
+        return translateLocalDate(originalDate).toString();
     }
 
-    private LocalDate translateLocalDate(LocalDate originalDate, Random random) {
+    private LocalDate translateLocalDate(LocalDate originalDate) {
         LocalDateTime minDateTime = getLocalDateTime(minDate);
         LocalDateTime maxDateTime = getLocalDateTime(maxDate);
         LocalDateTime originalDateTime = getLocalDateTime(originalDate);
         long daysBetweenMinMax = Duration.between(minDateTime, maxDateTime).toDays();
         long daysBetweenMinOriginal = Duration.between(minDateTime, originalDateTime).toDays();
-        long randomDay =  (daysBetweenMinOriginal + Math.abs(random.nextLong())) % daysBetweenMinMax;
+        long randomDay =  (daysBetweenMinOriginal + Math.abs(getRandom().nextLong())) % daysBetweenMinMax;
         return minDate.plusDays(randomDay);
     }
 

@@ -10,7 +10,7 @@ import java.util.Random;
  *
  * Example: "2024-01-06T11:55:28" -> "1950-08-14T05:02:13"
  */
-public class DateTimeAnonymizer implements Anonymizer {
+public class DateTimeAnonymizer extends BaseAnonymizer {
     private LocalDateTime minDateTime;
     private LocalDateTime maxDateTime;
 
@@ -30,17 +30,16 @@ public class DateTimeAnonymizer implements Anonymizer {
     @Override
     public String anonymize(String input) {
         LocalDateTime originalDateTime = LocalDateTime.parse(input);
-        Random random = new Random();
-        random.setSeed(input.hashCode());
-        LocalDateTime translatedDateTime = translateLocalDateTime(originalDateTime, random);
+        initRandom(input.hashCode());
+        LocalDateTime translatedDateTime = translateLocalDateTime(originalDateTime);
         DateTimeFormatter format = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
         return format.format(translatedDateTime);
     }
 
-    private LocalDateTime translateLocalDateTime(LocalDateTime originalDateTime, Random random) {
+    private LocalDateTime translateLocalDateTime(LocalDateTime originalDateTime) {
         long secondsBetweenMinMax = Duration.between(minDateTime, maxDateTime).toSeconds();
         long secondsBetweenMinOriginal = Duration.between(minDateTime, originalDateTime).toSeconds();
-        long randomSecond = (secondsBetweenMinOriginal + Math.abs(random.nextInt())) % secondsBetweenMinMax;
+        long randomSecond = (secondsBetweenMinOriginal + Math.abs(getRandom().nextInt())) % secondsBetweenMinMax;
         return this.minDateTime.plusSeconds(randomSecond);
     }
 }
