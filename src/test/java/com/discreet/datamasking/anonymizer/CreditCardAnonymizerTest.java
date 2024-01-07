@@ -13,7 +13,7 @@ class CreditCardAnonymizerTest extends BaseTest {
         String input = "5209761132208795";
         String output11 = anonymizer.anonymize(input);
 
-        testMatch (output11, input, "[0-9]{16}");
+        testMatch (output11, input, "5[0-9]{15}");
 
         String output12 = anonymizer.anonymize(input);
 
@@ -22,7 +22,7 @@ class CreditCardAnonymizerTest extends BaseTest {
         String input2 = "4909761132208793";
         String output2 = anonymizer.anonymize(input2);
 
-        testMatch (output2, input2, "[0-9]{16}");
+        testMatch (output2, input2, "4[0-9]{15}");
         assertNotEquals(output11, output2);
     }
 }
