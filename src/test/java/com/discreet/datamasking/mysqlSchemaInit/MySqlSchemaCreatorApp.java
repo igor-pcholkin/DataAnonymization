@@ -12,7 +12,7 @@ import javax.sql.DataSource;
 
 @SpringBootApplication
 @Import({ MySqlConfiguration.class})
-public class MySqlSchemaCreatorApp implements CommandLineRunner  {
+public class MySqlSchemaCreatorApp implements CommandLineRunner {
     @Autowired
     private DataSource dataSource;
 

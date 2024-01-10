@@ -54,7 +54,8 @@ public abstract class CharSequenceAnonymizer extends BaseAnonymizer {
             return translateUpperCaseChar(origCodePoint);
         if (isDigit(origCodePoint))
             return translateDigit(origCodePoint);
-        else throw new RuntimeException("Cannot create character from unknown character type!");
+        else
+            return origCodePoint;
     }
 
     protected Character doTranslateChar(int origCodePoint, String input, int i) {

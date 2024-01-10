@@ -1,4 +1,4 @@
-package com.discreet.datamasking.commandline;
+package com.discreet.datamasking;
 
 import picocli.CommandLine;
 
