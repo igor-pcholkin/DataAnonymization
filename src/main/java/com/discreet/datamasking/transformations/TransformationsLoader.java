@@ -3,43 +3,46 @@ package com.discreet.datamasking.transformations;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class TransformationsLoader {
-    public Transformations loadDefinitions() {
+    public List<Transformation> loadDefinitions() {
         Yaml yaml = new Yaml();
         InputStream inputStream = this.getClass()
                 .getClassLoader()
                 .getResourceAsStream("transformations.yaml");
         Map<String, Object> yamlTree = yaml.load(inputStream);
-        Transformations transformations = parseTransformations(yamlTree);
-
-        return transformations;
+        return linearilizeTransformations(yamlTree);
     }
 
-    private Transformations parseTransformations(Map<String, Object> yamlTree) {
-        Transformations transformations = new Transformations();
-        for (String schemaName: yamlTree.keySet()) {
-            Schema schema = new Schema(schemaName);
-            addTables(schema, (Map<String, Object>) yamlTree.get(schemaName));
-
-            transformations.addSchema(schema);
+    private List<Transformation> linearilizeTransformations(Map<String, Object> yamlTree) {
+        List<Transformation> transformations = new ArrayList<>();
+        for (String schema: yamlTree.keySet()) {
+            List<Transformation> transformationsForSchema = createTransformationsForSchema(schema,
+                    (Map<String, Object>) yamlTree.get(schema));
+            transformations.addAll(transformationsForSchema);
         }
         return transformations;
     }
 
-    private void addTables(Schema schema, Map<String, Object> tableMap) {
-        for (String tableName: tableMap.keySet()) {
-            Table table = new Table(tableName);
-            schema.addTable(table);
-            addColumns(table, (Map<String, Object>) tableMap.get(tableName));
+    private List<Transformation> createTransformationsForSchema(String schema, Map<String, Object> tableMap) {
+        List<Transformation> transformations = new ArrayList<>();
+        for (String table: tableMap.keySet()) {
+            List<Transformation> transformationsForTable = createTransofmationsForTable(schema, table,
+                    (Map<String, Object>) tableMap.get(table));
+            transformations.addAll(transformationsForTable);
         }
+        return transformations;
     }
 
-    private void addColumns(Table table, Map<String, Object> columnMap) {
-        for (String colunmName: columnMap.keySet()) {
-            Column column = new Column(colunmName, (String) columnMap.get(colunmName));
-            table.addColumn(column);
+    private List<Transformation> createTransofmationsForTable(String schema, String table, Map<String, Object> columnMap) {
+        List<Transformation> transformations = new ArrayList<>();
+        for (String column: columnMap.keySet()) {
+            Transformation transformation = new Transformation(schema, table, column, (String) columnMap.get(column));
+            transformations.add(transformation);
         }
+        return transformations;
     }
 }
