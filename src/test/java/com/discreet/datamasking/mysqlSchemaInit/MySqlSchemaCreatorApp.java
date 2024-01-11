@@ -23,9 +23,9 @@ public class MySqlSchemaCreatorApp implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         ResourceDatabasePopulator dbPopulator = new ResourceDatabasePopulator();
-        dbPopulator.addScript(new ClassPathResource("/com/discreet/datamasking/create_db.sql"));
-        dbPopulator.addScript(new ClassPathResource("/com/discreet/datamasking/schema.sql"));
-        dbPopulator.addScript(new ClassPathResource("/com/discreet/datamasking/test-data.sql"));
+        dbPopulator.addScript(new ClassPathResource("/com/discreet/datamasking/itest/create_db.sql"));
+        dbPopulator.addScript(new ClassPathResource("/com/discreet/datamasking/itest/schema.sql"));
+        dbPopulator.addScript(new ClassPathResource("/com/discreet/datamasking/itest/test-data.sql"));
         dbPopulator.execute(dataSource);
     }
 }
