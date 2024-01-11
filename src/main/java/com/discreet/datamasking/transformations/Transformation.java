@@ -1,22 +1,24 @@
 package com.discreet.datamasking.transformations;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class Transformation {
     private String schema;
     private String table;
-    private String column;
-    private String anonymizerName;
+    private Map<String, String> columns;
 
-    public Transformation() {
-
-    }
-
-    public Transformation(String schema, String table, String column, String anonymizerName) {
+    public Transformation(String schema, String table) {
         this.schema = schema;
         this.table = table;
-        this.column = column;
-        this.anonymizerName = anonymizerName;
+        columns = new HashMap<>();
+    }
+
+    public Transformation(String schema, String table, Map<String, String> columns) {
+        this.schema = schema;
+        this.table = table;
+        this.columns = columns;
     }
 
     public String getSchema() {
@@ -27,12 +29,12 @@ public class Transformation {
         return table;
     }
 
-    public String getColumn() {
-        return column;
+    public Map<String, String> getColumns() {
+        return columns;
     }
 
-    public String getAnonymizerName() {
-        return anonymizerName;
+    public void add(String column, String anonymizer) {
+        columns.put(column, anonymizer);
     }
 
     @Override
@@ -40,11 +42,11 @@ public class Transformation {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Transformation that = (Transformation) o;
-        return Objects.equals(schema, that.schema) && Objects.equals(table, that.table) && Objects.equals(column, that.column) && Objects.equals(anonymizerName, that.anonymizerName);
+        return Objects.equals(schema, that.schema) && Objects.equals(table, that.table) && Objects.equals(columns, that.columns);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(schema, table, column, anonymizerName);
+        return Objects.hash(schema, table, columns);
     }
 }

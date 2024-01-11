@@ -3,6 +3,7 @@ package com.discreet.datamasking.transformations;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,15 +15,17 @@ class TransformationLoaderTest {
         List<Transformation> transformations = loader.loadDefinitions();
 
         assertEquals(List.of(
-                new Transformation("test", "users", "name", "name"),
-                new Transformation("test", "users","email", "email"),
-                new Transformation("test", "users","address", "address"),
-                new Transformation("test", "users","birthdate", "birthdate"),
-                new Transformation("test", "users","socialNumber", "pid"),
-                new Transformation("test", "users","ccard", "ccard"),
+                new Transformation("test", "users",
+                        Map.of("name", "name",
+                            "email", "email",
+                            "address", "address",
+                            "birthdate", "birthdate",
+                                "socialNumber", "pid",
+                        "ccard", "ccard")),
 
-                new Transformation("test", "companies","name", "name"),
-                new Transformation("test", "companies","address", "address")
+                new Transformation("test", "companies",
+                        Map.of("name", "name",
+                        "address", "address"))
         ), transformations);
     }
 

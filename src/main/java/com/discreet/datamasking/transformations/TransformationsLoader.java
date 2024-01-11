@@ -30,19 +30,18 @@ public class TransformationsLoader {
     private List<Transformation> createTransformationsForSchema(String schema, Map<String, Object> tableMap) {
         List<Transformation> transformations = new ArrayList<>();
         for (String table: tableMap.keySet()) {
-            List<Transformation> transformationsForTable = createTransofmationsForTable(schema, table,
+            Transformation transformation = createTransformationForTable(schema, table,
                     (Map<String, Object>) tableMap.get(table));
-            transformations.addAll(transformationsForTable);
+            transformations.add(transformation);
         }
         return transformations;
     }
 
-    private List<Transformation> createTransofmationsForTable(String schema, String table, Map<String, Object> columnMap) {
-        List<Transformation> transformations = new ArrayList<>();
+    private Transformation createTransformationForTable(String schema, String table, Map<String, Object> columnMap) {
+        Transformation transformation = new Transformation(schema, table);
         for (String column: columnMap.keySet()) {
-            Transformation transformation = new Transformation(schema, table, column, (String) columnMap.get(column));
-            transformations.add(transformation);
+            transformation.add(column, (String) columnMap.get(column));
         }
-        return transformations;
+        return transformation;
     }
 }
