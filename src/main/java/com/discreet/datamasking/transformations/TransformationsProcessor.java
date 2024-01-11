@@ -5,6 +5,7 @@ import com.discreet.datamasking.anonymizer.Anonymizer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,6 +20,7 @@ public class TransformationsProcessor {
     @Autowired
     AnonymizerTable anonymizerTable;
 
+    @Transactional
     public void process(List<Transformation> transformations) {
         for (Transformation transformation: transformations) {
             processTransformation(transformation);
