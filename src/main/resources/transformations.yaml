@@ -1,11 +1,11 @@
 test:
-  users:
+  USERS:
     name: name
     email: email
     address: address
     birthdate: birthdate
     socialNumber: pid
     ccard: ccard
-  companies:
+  COMPANIES:
     name: name
     address: address
