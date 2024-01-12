@@ -3,11 +3,12 @@ package com.discreet.datamasking;
 import picocli.CommandLine;
 
 public class CommandLineArgs {
-    @CommandLine.Option(names = { "-h", "--help" }, usageHelp = true, description = "display a help message")
-    private boolean helpRequested = false;
+    @CommandLine.Option(names = { "-s", "--schema" },
+            description = "ddl schema to use for auto-detection of DB table columns which can be anonymized")
+    private String schema;
 
-    public boolean isHelpRequested() {
-        return helpRequested;
+    public String getSchema() {
+        return schema;
     }
 
 }

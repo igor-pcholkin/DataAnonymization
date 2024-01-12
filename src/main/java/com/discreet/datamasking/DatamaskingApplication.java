@@ -1,5 +1,7 @@
 package com.discreet.datamasking;
 
+import com.discreet.datamasking.autodetect.DBTable;
+import com.discreet.datamasking.autodetect.SchemaSqlReader;
 import com.discreet.datamasking.transformations.Transformation;
 import com.discreet.datamasking.transformations.TransformationsLoader;
 import com.discreet.datamasking.transformations.TransformationsProcessor;
@@ -17,6 +19,9 @@ public class DatamaskingApplication implements CommandLineRunner {
 	@Autowired
 	private TransformationsProcessor processor;
 
+	@Autowired
+	private SchemaSqlReader schemaSqlReader;
+
 	public static void main(String[] args) {
 		SpringApplication.run(DatamaskingApplication.class, args);
 	}
@@ -25,10 +30,13 @@ public class DatamaskingApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		CommandLineArgs commandLineArgs = new CommandLineArgs();
 		new CommandLine(commandLineArgs).parseArgs(args);
-		if (commandLineArgs.isHelpRequested()) {
-			System.out.println("Help was requested.");
+		String schemaName = commandLineArgs.getSchema();
+		if (commandLineArgs.getSchema() != null) {
+			List<DBTable> tables = schemaSqlReader.readDDL(schemaName);
+			System.out.println(tables);
+		} else {
+			List<Transformation> transformations = new TransformationsLoader().loadDefinitions();
+			processor.process(transformations);
 		}
-		List<Transformation> transformations = new TransformationsLoader().loadDefinitions();
-		processor.process(transformations);
 	}
 }
