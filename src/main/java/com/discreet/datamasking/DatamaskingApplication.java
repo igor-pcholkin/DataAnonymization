@@ -28,18 +28,24 @@ public class DatamaskingApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		CommandLineArgs commandLineArgs = new CommandLineArgs();
-		new CommandLine(commandLineArgs).parseArgs(args);
-		String schemaName = commandLineArgs.getSchema();
-		if (commandLineArgs.getSchema() != null) {
-			if (commandLineArgs.getDefaultSchemaName() != null) {
-				schemaSqlReader.setDefaultSchema(commandLineArgs.getDefaultSchemaName());
+		try {
+			CommandLineArgs commandLineArgs = new CommandLineArgs();
+			new CommandLine(commandLineArgs).parseArgs(args);
+			String schemaName = commandLineArgs.getSchema();
+			if (commandLineArgs.getSchema() != null) {
+				if (commandLineArgs.getDefaultSchemaName() != null) {
+					schemaSqlReader.setDefaultSchema(commandLineArgs.getDefaultSchemaName());
+				}
+				List<DBTable> tables = schemaSqlReader.readDDL(schemaName);
+				System.out.println(tables);
+			} else {
+				List<Transformation> transformations = new TransformationsLoader().loadDefinitions();
+				processor.process(transformations);
 			}
-			List<DBTable> tables = schemaSqlReader.readDDL(schemaName);
-			System.out.println(tables);
-		} else {
-			List<Transformation> transformations = new TransformationsLoader().loadDefinitions();
-			processor.process(transformations);
+		}
+		catch (RuntimeException ex) {
+			System.out.println("ERROR: " + ex.getMessage());
+			// TODO log exception properly
 		}
 	}
 }

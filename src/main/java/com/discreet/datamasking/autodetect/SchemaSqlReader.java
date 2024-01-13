@@ -32,8 +32,7 @@ public class SchemaSqlReader {
                 sql = new String(schemaStream.readAllBytes());
             } else {
                 // TODO add proper logging
-                System.out.println("Cannot load schema!");
-                return null;
+                throw new RuntimeException("Cannot load schema!");
             }
         }
         List<SQLStatement> statements = SQLUtils.parseStatements(sql, JdbcConstants.MYSQL);
