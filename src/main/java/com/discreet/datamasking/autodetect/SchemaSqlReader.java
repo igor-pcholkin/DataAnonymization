@@ -8,6 +8,7 @@ import com.alibaba.druid.sql.dialect.mysql.ast.statement.MySqlCreateTableStateme
 import com.alibaba.druid.util.JdbcConstants;
 import org.springframework.stereotype.Component;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -25,9 +26,7 @@ public class SchemaSqlReader {
     public List<DBTable> readDDL(String schemaFile) throws IOException {
         List<DBTable> tables = new ArrayList<>();
         String sql;
-        try (InputStream schemaStream = this.getClass()
-                .getClassLoader()
-                .getResourceAsStream(schemaFile)) {
+        try (InputStream schemaStream = new FileInputStream(schemaFile)) {
             if (schemaStream != null) {
                 sql = new String(schemaStream.readAllBytes());
             } else {

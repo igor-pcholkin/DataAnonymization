@@ -1,4 +1,0 @@
-CREATE TABLE USERS(id INTEGER, name VARCHAR(256), email VARCHAR(256), address VARCHAR(256), birthdate DATE,
-    socialNumber CHAR(12), ccard CHAR(16));
-
-CREATE TABLE COMPANIES(id INTEGER, name VARCHAR(256), address VARCHAR(256));
