@@ -6,7 +6,7 @@ public class DBTable {
     private String schema;
 
     private String table;
-    private List<String> columns;
+    private List<Column> columns;
 
     public String getSchema() {
         return schema;
@@ -16,11 +16,11 @@ public class DBTable {
         return table;
     }
 
-    public List<String> getColumns() {
+    public List<Column> getColumns() {
         return columns;
     }
 
-    public DBTable(String schema, String table, List<String> columns) {
+    public DBTable(String schema, String table, List<Column> columns) {
         this.schema = schema;
         this.table = table;
         this.columns = columns;

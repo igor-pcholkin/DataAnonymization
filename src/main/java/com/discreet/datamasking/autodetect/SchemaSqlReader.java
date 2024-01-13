@@ -39,9 +39,9 @@ public class SchemaSqlReader {
         for (SQLStatement statement : statements) {
             if (statement instanceof MySqlCreateTableStatement createTableStatement) {
                 SQLExprTableSource tableSource = createTableStatement.getTableSource();
-                List<String> columns = createTableStatement.getTableElementList().stream()
+                List<Column> columns = createTableStatement.getTableElementList().stream()
                         .filter(c -> c instanceof SQLColumnDefinition)
-                        .map(c -> ((SQLColumnDefinition) c).getName().getSimpleName()).collect(Collectors.toList());
+                        .map(c -> mapColumn((SQLColumnDefinition) c)).collect(Collectors.toList());
                 String schemaName = tableSource.getSchema();
                 if (schemaName == null) {
                     if (defaultSchema != null) {
@@ -57,5 +57,9 @@ public class SchemaSqlReader {
             }
         }
         return tables;
+    }
+
+    private Column mapColumn(SQLColumnDefinition columnDefinition) {
+        return new Column(columnDefinition.getName().getSimpleName(), columnDefinition.getDataType().getName());
     }
 }
