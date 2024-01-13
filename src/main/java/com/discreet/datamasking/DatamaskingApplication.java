@@ -32,6 +32,9 @@ public class DatamaskingApplication implements CommandLineRunner {
 		new CommandLine(commandLineArgs).parseArgs(args);
 		String schemaName = commandLineArgs.getSchema();
 		if (commandLineArgs.getSchema() != null) {
+			if (commandLineArgs.getDefaultSchemaName() != null) {
+				schemaSqlReader.setDefaultSchema(commandLineArgs.getDefaultSchemaName());
+			}
 			List<DBTable> tables = schemaSqlReader.readDDL(schemaName);
 			System.out.println(tables);
 		} else {

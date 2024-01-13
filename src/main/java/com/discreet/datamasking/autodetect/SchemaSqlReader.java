@@ -16,9 +16,15 @@ import java.util.stream.Collectors;
 
 @Component
 public class SchemaSqlReader {
+
+    private String defaultSchema;
+    public void setDefaultSchema(String defaultSchema) {
+        this.defaultSchema = defaultSchema;
+    }
+
     public List<DBTable> readDDL(String schemaFile) throws IOException {
         List<DBTable> tables = new ArrayList<>();
-        String sql = null;
+        String sql;
         try (InputStream schemaStream = this.getClass()
                 .getClassLoader()
                 .getResourceAsStream(schemaFile)) {
@@ -37,7 +43,17 @@ public class SchemaSqlReader {
                 List<String> columns = createTableStatement.getTableElementList().stream()
                         .filter(c -> c instanceof SQLColumnDefinition)
                         .map(c -> ((SQLColumnDefinition) c).getName().getSimpleName()).collect(Collectors.toList());
-                DBTable table = new DBTable(tableSource.getSchema(), tableSource.getName().getSimpleName(), columns);
+                String schemaName = tableSource.getSchema();
+                if (schemaName == null) {
+                    if (defaultSchema != null) {
+                        schemaName = defaultSchema;
+                    } else {
+                        throw new RuntimeException(String.format("No schema name is found for table %s, please use " +
+                                "-dsn (--defaultSchemaName) command line argument to set a default one.",
+                                tableSource.getName().getSimpleName()));
+                    }
+                }
+                DBTable table = new DBTable(schemaName, tableSource.getName().getSimpleName(), columns);
                 tables.add(table);
             }
         }
