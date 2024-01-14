@@ -12,7 +12,8 @@ class TransformationLoaderTest {
 
     @Test
     public void testReadTransformations() {
-        List<Transformation> transformations = loader.loadDefinitions();
+        List<Transformation> transformations = loader.loadDefinitions(
+                "src/test/resources/transformations.yaml");
 
         assertEquals(List.of(
                 new Transformation("test", "users",

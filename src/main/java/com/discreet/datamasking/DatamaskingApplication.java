@@ -33,15 +33,15 @@ public class DatamaskingApplication implements CommandLineRunner {
 		try {
 			CommandLineArgs commandLineArgs = new CommandLineArgs();
 			new CommandLine(commandLineArgs).parseArgs(args);
-			String schemaName = commandLineArgs.getSchema();
-			if (commandLineArgs.getSchema() != null) {
+			String schemaName = commandLineArgs.getSchemaFileName();
+			if (commandLineArgs.getSchemaFileName() != null) {
 				if (commandLineArgs.getDefaultSchemaName() != null) {
 					schemaSqlReader.setDefaultSchema(commandLineArgs.getDefaultSchemaName());
 				}
 				List<DBTable> tables = schemaSqlReader.readDDL(schemaName);
 				System.out.println(tables);
 			} else {
-				List<Transformation> transformations = new TransformationsLoader().loadDefinitions();
+				List<Transformation> transformations = new TransformationsLoader().loadDefinitions(commandLineArgs.getTransformationsFileName());
 				processor.process(transformations);
 			}
 		}

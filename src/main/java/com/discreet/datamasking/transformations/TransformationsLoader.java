@@ -2,18 +2,26 @@ package com.discreet.datamasking.transformations;
 
 import org.yaml.snakeyaml.Yaml;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class TransformationsLoader {
-    public List<Transformation> loadDefinitions() {
+    public List<Transformation> loadDefinitions(String transformationsFile) {
         Yaml yaml = new Yaml();
-        InputStream inputStream = this.getClass()
-                .getClassLoader()
-                .getResourceAsStream("transformations.yaml");
-        Map<String, Object> yamlTree = yaml.load(inputStream);
+        Map<String, Object> yamlTree;
+        if (transformationsFile == null) {
+            transformationsFile = "transformations.yaml";
+        }
+        try (InputStream inputStream = new FileInputStream(transformationsFile)) {
+            yamlTree = yaml.load(inputStream);
+        } catch (IOException ex) {
+            throw new RuntimeException("Cannot load transformations file: " + transformationsFile +
+                    ", please use the -tfn (--transformationsFileName) option to set the path.");
+        }
         return linearilizeTransformations(yamlTree);
     }
 

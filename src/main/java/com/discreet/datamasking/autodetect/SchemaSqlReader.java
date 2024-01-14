@@ -23,16 +23,17 @@ public class SchemaSqlReader {
         this.defaultSchema = defaultSchema;
     }
 
-    public List<DBTable> readDDL(String schemaFile) throws IOException {
+    public List<DBTable> readDDL(String schemaFile) {
         List<DBTable> tables = new ArrayList<>();
         String sql;
         try (InputStream schemaStream = new FileInputStream(schemaFile)) {
             if (schemaStream != null) {
                 sql = new String(schemaStream.readAllBytes());
             } else {
-                // TODO add proper logging
-                throw new RuntimeException("Cannot load schema!");
+                throw new IOException("Cannot load schema!");
             }
+        } catch (IOException ex) {
+            throw new RuntimeException("Schema can't be loaded, please use the -sfn (--schemaFileName) option to set the path");
         }
         List<SQLStatement> statements = SQLUtils.parseStatements(sql, JdbcConstants.MYSQL);
         for (SQLStatement statement : statements) {
