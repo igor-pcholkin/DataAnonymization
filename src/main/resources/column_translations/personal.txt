@@ -1,0 +1,200 @@
+English: personal
+Spanish: personal
+French: personnel
+German: persönlich
+Chinese (Simplified): 个人的 (gèrén de)
+Russian: личный (lichnyy)
+Hindi: व्यक्तिगत (vyaktigat)
+Arabic: شخصي (shakhsi)
+Japanese: 個人的な (kōjin-teki na)
+Portuguese: pessoal
+Bengali: ব্যক্তিগত (byaktigot)
+Punjabi: ਵਿਅਕਤੀਗਤ (viaktīgat)
+Korean: 개인적인 (gaeinjeogin)
+Turkish: kişisel
+Vietnamese: cá nhân
+Italian: personale
+Dutch: persoonlijk
+Telugu: వ్యక్తిగత (Vyaktigata)
+Marathi: वैयक्तिक (vaiyaktik)
+Tamil: தனிப்பட்ட (Taṉippaṭṭa)
+Urdu: ذاتی (zati)
+Malayalam: വ്യക്തിഗത (vyaktigat)
+Gujarati: વ્યક્તિગત (Vyaktigat)
+Polish: osobisty
+Ukrainian: особистий (osobystyy)
+Kannada: ವೈಯಕ್ತಿಕ (Vaiyaktika)
+Thai: ส่วนตัว (s̀wạs̄ dụ)
+Tagalog: personal
+Romanian: personal
+Malay: peribadi
+Sinhala: පෞද්ගලික (Pudgalika)
+Burmese: ကိုယ်ရေးအရည်အသွေး (kui: re: a1nya1 a1swa: p)
+Azerbaijani: şəxsi
+Nepali: व्यक्तिगत (Vyaktigat)
+Hausa: ɗaya
+Farsi (Persian): شخصی (shakhsi)
+Maori: whaiaro
+Yoruba: pẹ̀ẹ̀sọ̀nàl
+Uzbek: shaxsiy
+Kurdish: şexsî
+Pashto: شخصي (shakhsi)
+Mongolian: хувийн (khuvii)
+Kazakh: жеке (jeke)
+Somali: gaar ah
+Maltese: personali
+Zulu: yomuntu
+Javanese: pribadi
+Igbo: pẹ̀ẹ̀sọ̀nàl
+Albanian: personal
+Malagasy: peronalinina
+Hmong: yim zoo
+Sesotho: oa ngoana oa motho
+Corsican: personale
+Kyrgyz: шексиз (sheksiz)
+Basque: pertsonal
+Hawaiian: kānāwai
+Pashto: شخصي (shakhsi)
+Amharic: የግል (yägäl)
+Luxembourgish: Perséinlech
+Tajik: шахсӣ (shahsi)
+Armenian: անձնական (andžnakan)
+Georgian: პირადი (ṗiradi)
+Nepali: व्यक्तिगत (Vyaktigat)
+Haitian Creole: pèsonèl
+Tajik: шахсӣ (shahsi)
+Mongolian: хувийн (khuvii)
+Lithuanian: asmeninis
+Luxembourgish: Perséinlech
+Maltese: personali
+Kannada: ವೈಯಕ್ತಿಕ (Vaiyaktika)
+Yoruba: pẹ̀ẹ̀sọ̀nàl
+Azerbaijani: şəxsi
+Corsican: personale
+Maltese: personali
+Malagasy: peronalinina
+Samoan: tagata
+Sundanese: sareng pribadi
+Swahili: binafsi
+Tahitian: tūtū
+Tongan: tangata
+Uzbek: shaxsiy
+Uyghur: شەخسىي (shéhxiy)
+Vietnamese: cá nhân
+Welsh: personol
+Xhosa: omntu
+Yiddish: personlekher
+Yoruba: pẹ̀ẹ̀sọ̀nàl
+Zulu: yomuntu
+Hmong: yim zoo
+Tajik: шахсӣ (shahsi)
+Uzbek: shaxsiy
+Malay: peribadi
+Afrikaans: persoonlike
+Shona: womunhu
+Tatar: şəxsi
+Uighur: شەخسىي (shéhxiy)
+Welsh: personol
+Galician: persoal
+Kazakh: жеке (jeke)
+Kyrgyz: шексиз (sheksiz)
+Lao: ສ່ວນຕົວ (sūan tua)
+Latvian: personīgs
+Luxembourgish: perséinlech
+Malagasy: peronalinina
+Malayalam: വ്യക്തിഗതമായ (vyaktigatamāya)
+Maori: whaiaro
+Mongolian: хувийн (khuvii)
+Nepali: व्यक्तिगत (Vyaktigat)
+Odia: ବ୍ୟକ୍ତିଗତ (Byaktigata)
+Pashto: شخصي (shakhsi)
+Punjabi: ਨੌਜਵਾਨ (naujwān)
+Quechua: yanapaq
+Scottish Gaelic: pearsanta
+Sesotho: oa ngoana oa motho
+Shona: wemunhu
+Sindhi: شخصي (shakhsi)
+Sinhala: පෞද්ගලික (Pudgalika)
+Slovak: osobný
+Slovenian: osebno
+Somali: gaar ah
+Sundanese: sareng pribadi
+Swahili: binafsi
+Tajik: шахсӣ (shahsi)
+Tatar: şəxsi
+Telugu: వ్యక్తిగత (Vyaktigata)
+Thai: ส่วนตัว (s̀wạs̄ dụ)
+Tibetan: བསམ་པོ (bsam-po)
+Turkmen: şahsy
+Uighur: شەخسىي (shéhxiy)
+Ukrainian: особистий (osobystyy)
+Urdu: ذاتی (zati)
+Uzbek: shaxsiy
+Vietnamese: cá nhân
+Welsh: personol
+Xhosa: omntu
+Yiddish: personlekher
+Yoruba: pẹ̀ẹ̀sọ̀nàl
+Zulu: yomuntu
+Javanese: pribadi
+Igbo: nọmbà pẹ̀ẹ̀sọ̀nàl
+Albanian: personal
+Malagasy: peronalinina
+Hmong: yim zoo
+Sesotho: oa ngoana oa motho
+Corsican: personale
+Kyrgyz: шексиз (sheksiz)
+Basque: pertsonal
+Hawaiian: kānāwai
+Pashto: شخصي (shakhsi)
+Amharic: የግል (yägäl)
+Luxembourgish: Perséinlech
+Tajik: шахсӣ (shahsi)
+Armenian: անձնական (andžnakan)
+Georgian: პირადი (ṗiradi)
+Nepali: व्यक्तिगत (Vyaktigat)
+Haitian Creole: pèsonèl
+Tajik: шахсӣ (shahsi)
+Mongolian: хувийн (khuvii)
+Lithuanian: asmeninis
+Luxembourgish: Perséinlech
+Maltese: personali
+Kannada: ವೈಯಕ್ತಿಕ (Vaiyaktika)
+Yoruba: pẹ̀ẹ̀sọ̀nàl
+Azerbaijani: şəxsi
+Corsican: personale
+Maltese: personali
+Malagasy: peronalinina
+Samoan: tagata
+Sundanese: sareng pribadi
+Swahili: binafsi
+Tahitian: tūtū
+Tongan: tangata
+Uzbek: shaxsiy
+Uyghur: شەخسىي (shéhxiy)
+Vietnamese: cá nhân
+Welsh: personol
+Xhosa: omntu
+Yiddish: personlekher
+Yoruba: pẹ̀ẹ̀sọ̀nàl
+Zulu: yomuntu
+Hmong: yim zoo
+Tajik: шахсӣ (shahsi)
+Uzbek: shaxsiy
+Malay: peribadi
+Afrikaans: persoonlike
+Shona: womunhu
+Tatar: şəxsi
+Uighur: شەخسىي (shéhxiy)
+Welsh: personol
+Galician: persoal
+Kazakh: жеке (jeke)
+Kyrgyz: шексиз (sheksiz)
+Lao: ສ່ວນຕົວ (sūan tua)
+Latvian: personīgs
+Luxembourgish: perséinlech
+Malagasy: peronalinina
+Malayalam: വ്യക്തിഗതമായ (vyaktigatamāya)
+Maori: whaiaro
+Mongolian: хувийн (khuvii)
+Nepali: व्यक्तिगत (Vyaktigat)
