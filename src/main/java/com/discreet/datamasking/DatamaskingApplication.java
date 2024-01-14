@@ -5,6 +5,8 @@ import com.discreet.datamasking.autodetect.SchemaSqlReader;
 import com.discreet.datamasking.transformations.Transformation;
 import com.discreet.datamasking.transformations.TransformationsLoader;
 import com.discreet.datamasking.transformations.TransformationsProcessor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,6 +17,8 @@ import java.util.List;
 
 @SpringBootApplication
 public class DatamaskingApplication implements CommandLineRunner {
+
+	Logger logger = LoggerFactory.getLogger(DatamaskingApplication.class);
 
 	@Autowired
 	private TransformationsProcessor processor;
@@ -44,8 +48,7 @@ public class DatamaskingApplication implements CommandLineRunner {
 			}
 		}
 		catch (RuntimeException ex) {
-			System.out.println("ERROR: " + ex.getMessage());
-			// TODO log exception properly
+			logger.error(ex.getMessage());
 		}
 	}
 }
