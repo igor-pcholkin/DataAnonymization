@@ -1,0 +1,189 @@
+English: address
+Spanish: dirección
+French: adresse
+German: Adresse
+Chinese (Simplified): 地址 (dìzhǐ)
+Russian: адрес (adres)
+Hindi: पता (patā)
+Arabic: عنوان (ʿunwān)
+Japanese: 住所 (jūsho)
+Portuguese: endereço
+Bengali: ঠিকানা (Ṭhikānā)
+Punjabi: ਐਡਰੈੱਸ (Aiḍaraiṣa)
+Korean: 주소 (juso)
+Turkish: adres
+Vietnamese: địa chỉ
+Italian: indirizzo
+Dutch: adres
+Telugu: చిరునామా (Cirunāmā)
+Marathi: पत्ता (Pattā)
+Tamil: முகவரி (Mukavari)
+Urdu: پتہ (pata)
+Malayalam: വിലാസം (vilāsaṁ)
+Gujarati: સરનામું (Sarānāmuṁ)
+Polish: adres
+Ukrainian: адреса (adresa)
+Kannada: ವಿಳಾಸ (Viḷāsa)
+Thai: ที่อยู่ (thī̀ yū̀)
+Tagalog: address
+Romanian: adresă
+Malay: alamat
+Sinhala: ලිපිනය (Lipinaya)
+Burmese: လိပ်စာ (lipsa)
+Azerbaijani: ünvan
+Nepali: ठेगाना (Ṭhēgānā)
+Hausa: adireshin
+Farsi (Persian): آدرس (ādres)
+Maori: wāhitau
+Yoruba: adiresi
+Uzbek: manzil
+Kurdish: navnîşan
+Pashto: اډرېس (Address)
+Mongolian: хаяг (khayag)
+Kazakh: мекен-жай (meken-jay)
+Somali: cinwaan
+Maltese: indirizz
+Zulu: isithangami
+Javanese: alamat
+Igbo: adreesị
+Albanian: adresë
+Malagasy: anaran-tsehatra
+Hmong: khawm
+Sesotho: aterese
+Corsican: indirizzu
+Kyrgyz: дарек (darek)
+Basque: helbidea
+Hawaiian: wahi hoʻololi
+Pashto: اډرېس (Address)
+Amharic: አድማስ (’adamās)
+Luxembourgish: Adress
+Tajik: суроға (suroğa)
+Armenian: հասցե (hasce)
+Georgian: მისამართი (misamarti)
+Nepali: ठेगाना (Ṭhēgānā)
+Haitian Creole: adres
+Tajik: суроға (suroğa)
+Mongolian: хаяг (khayag)
+Lithuanian: adresas
+Luxembourgish: Adress
+Maltese: indirizz
+Kannada: ವಿಳಾಸ (Viḷāsa)
+Yoruba: adiresi
+Azerbaijani: ünvan
+Bosnian: adresa
+Pashto: اډرېس (Address)
+Mongolian: хаяг (khayag)
+Fijian: na veiqaravi
+Malagasy: anaran-tsehatra
+Maori: wāhitau
+Urdu: پتہ (pata)
+Azerbaijani: ünvan
+Corsican: indirizzu
+Maltese: indirizz
+Malagasy: anaran-tsehatra
+Samoan: tuatusi
+Sundanese: alamat
+Swahili: anwani
+Tahitian: tuʻātura
+Tongan: siosio
+Uzbek: manzil
+Uyghur: ئۇچۇر (Uchur)
+Vietnamese: địa chỉ
+Welsh: cyfeiriad
+Xhosa: uthutho
+Yiddish: אַדרעס (adres)
+Yoruba: adiresi
+Zulu: isithangami
+Hmong: khawm
+Tajik: суроға (suroğa)
+Uzbek: manzil
+Malay: alamat
+Afrikaans: adres
+Shona: chikanganiso
+Tatar: адрес (adres)
+Uighur: ئادرېس (Adres)
+Welsh: cyfeiriad
+Galician: enderezo
+Kazakh: мекенжай (mekenjay)
+Kyrgyz: дарек (darek)
+Lao: ທີ່ຢູ່ (thī yū)
+Latvian: adrese
+Luxembourgish: Adress
+Malagasy: anaran-tsehatra
+Malayalam: വിളാസം (vilāsaṁ)
+Maori: wāhitau
+Mongolian: газарзүй (gazarzüi)
+Nepali: ठेगाना (Ṭhēgānā)
+Odia: ଠିକାଣ (Ṭikaṇa)
+Pashto: اډرېس (Address)
+Punjabi: ਐਡਰੈੱਸ (Aiḍaraiṣa)
+Quechua: chakana
+Scottish Gaelic: seòladh
+Sesotho: aterese
+Shona: chikanganiso
+Sindhi: ڇپني (Chhāpnī)
+Sinhala: ලිපිනය (Lipinaya)
+Slovak: adresa
+Slovenian: naslov
+Somali: cinwaan
+Sundanese: alamat
+Swahili: anwani
+Tajik: суроға (suroğa)
+Tatar: адрес (adres)
+Telugu: చిరునామా (Cirunāmā)
+Thai: ที่อยู่ (thī̀ yū̀)
+Tibetan: ཕྱི་འདྲ་ (phyi 'dra)
+Turkmen: salgyt
+Uighur: ئادرېس (Adres)
+Ukrainian: адреса (adresa)
+Urdu: پتہ (pata)
+Uzbek: manzil
+Vietnamese: địa chỉ
+Welsh: cyfeiriad
+Xhosa: uthutho
+Yiddish: אַדרעס (adres)
+Yoruba: adiresi
+Zulu: isithangami
+Hmong: khawm
+Tajik: суроға (suroğa)
+Uzbek: manzil
+Malay: alamat
+Afrikaans: adres
+Shona: chikanganiso
+Tatar: адрес (adres)
+Uighur: ئادرېس (Adres)
+Welsh: cyfeiriad
+Galician: enderezo
+Kazakh: мекенжай (mekenjay)
+Kyrgyz: дарек (darek)
+Lao: ທີ່ຢູ່ (thī yū)
+Latvian: adrese
+Luxembourgish: Adress
+Malagasy: anaran-tsehatra
+Malayalam: വിളാസം (vilāsaṁ)
+Maori: wāhitau
+Mongolian: газарзүй (gazarzüi)
+Nepali: ठेगाना (Ṭhēgānā)
+Odia: ଠିକାଣ (Ṭikaṇa)
+Pashto: اډرېس (Address)
+Punjabi: ਐਡਰੈੱਸ (Aiḍaraiṣa)
+Quechua: chakana
+Scottish Gaelic: seòladh
+Sesotho: aterese
+Shona: chikanganiso
+Sindhi: ڇپني (Chhāpnī)
+Sinhala: ලිපිනය (Lipinaya)
+Slovak: adresa
+Slovenian: naslov
+Somali: cinwaan
+Sundanese: alamat
+Swahili: anwani
+Tajik: суроға (suroğa)
+Tatar: адрес (adres)
+Telugu: చిరునామా (Cirunāmā)
+Thai: ที่อยู่ (thī̀ yū̀)
+Tibetan: ཕྱི་འདྲ་ (phyi 'dra)
+Turkmen: salgyt
+Uighur: ئادرېس (Adres)
+Ukrainian: адреса (adresa)
+Urdu: پتہ (pata)

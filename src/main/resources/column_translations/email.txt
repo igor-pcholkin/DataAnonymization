@@ -1,0 +1,190 @@
+Bengali: ইমেইল (Imē'ila)
+Punjabi: ਈਮੇਲ (Īmēla)
+Korean: 이메일 (Imeil)
+Turkish: e-posta
+Vietnamese: thư điện tử
+Italian: email
+Dutch: e-mail
+Telugu: ఇమెయిల్ (Imēyil)
+Marathi: ईमेल (īmēla)
+Tamil: மின்னஞ்சல் (Miṉṉañcal)
+Urdu: ای میل (e-mēl)
+Malayalam: ഇമെയിൽ (Imeyil)
+Gujarati: ઇમેઇલ (Imē'ila)
+Polish: e-mail
+Ukrainian: електронна пошта (elektronna poshta)
+Kannada: ಇಮೇಲ್ (Imēl)
+Thai: อีเมล (īeml)
+Tagalog: email
+Romanian: email
+Malay: emel
+Sinhala: ඊ-මේල් (Ī-mel)
+Burmese: အီးမေးလ် (ai:ma:le)
+Azerbaijani: e-poçt
+Nepali: ईमेल (īmēla)
+Hausa: imeela
+Farsi (Persian): ایمیل (imil)
+Maori: īmēra
+Yoruba: i-meeli
+Uzbek: elektron pochta
+Kurdish: e-mail
+Pashto: ایمیل (Email)
+Mongolian: и-мэйл (i-meil)
+Kazakh: электрондық пошта (elektrondıq poshta)
+Somali: iimayl
+Maltese: imejl
+Zulu: imeyili
+Javanese: surelek
+Igbo: imeelu
+Albanian: email
+Malagasy: mailaka
+Hmong: email
+Sesotho: imeile
+Corsican: email
+Kyrgyz: электрондук почта (elektronduk pochta)
+Basque: posta elektronikoa
+Hawaiian: uila uila
+Pashto: ایمیل (Email)
+Amharic: ኢሜይል (ʾimēyil)
+Luxembourgish: Email
+Tajik: электронӣ почта (elektronī pochta)
+Armenian: էլ. փոստ (ēl. p‘ost)
+Georgian: ელ. ფოსტა (el. p‘osta)
+Nepali: ईमेल (īmēla)
+Haitian Creole: imèl
+Tajik: электронӣ почта (elektronī pochta)
+Mongolian: и-мэйл (i-meil)
+Lithuanian: el. paštas
+Luxembourgish: Email
+Maltese: imejl
+Kannada: ಇಮೇಲ್ (Imēl)
+Yoruba: i-meeli
+Azerbaijani: e-poçt
+Bosnian: e-pošta
+Pashto: ایمیل (Email)
+Mongolian: и-мэйл (i-meil)
+Fijian: imeili
+Malagasy: mailaka
+Maori: īmēra
+Urdu: ای میل (e-mēl)
+Azerbaijani: e-poçt
+Corsican: email
+Maltese: imejl
+Malagasy: mailaka
+Samoan: imēli
+Sundanese: surelek
+Swahili: barua pepe
+Tahitian: īmēra
+Tongan: ʻī-mēli
+Uzbek: elektron pochta
+Uyghur: ئېلخۇچ پوچتا (Ehluqchi Pochta)
+Vietnamese: thư điện tử
+Welsh: e-bost
+Xhosa: imeyile
+Yiddish: אימייל (eymayl)
+Yoruba: i-meeli
+Zulu: imeyili
+Hmong: email
+Tajik: электронӣ почта (elektronī pochta)
+Uzbek: elektron pochta
+Malay: emel
+Afrikaans: e-pos
+Shona: imweyili
+Tatar: электрон почта (elektron pochta)
+Uighur: ئېلخۇچ پوچتا (Ehluqchi Pochta)
+Welsh: e-bost
+Galician: correo electrónico
+Kazakh: электрондық пошта (elektrondıq poshta)
+Kyrgyz: электрондук почта (elektronduk pochta)
+Lao: ອີເມລ (īem)
+Latvian: e-pasts
+Luxembourgish: Email
+Malagasy: mailaka
+Malayalam: ഇമെയിൽ (Imeyil)
+Maori: īmēra
+Mongolian: и-мэйл (i-meil)
+Nepali: ईमेल (īmēla)
+Odia: ଇମେଲ (Iṁēla)
+Pashto: ایمیل (Email)
+Punjabi: ਈ
+Quechua: imayl
+Scottish Gaelic: post-d
+Sesotho: imeile
+Shona: imweyili
+Sindhi: اي ميل (Email)
+Sinhala: ඉමේල් (Imēl)
+Slovak: e-mail
+Slovenian: e-pošta
+Somali: iimayl
+Sundanese: surelek
+Swahili: barua pepe
+Tajik: электронӣ почта (elektronī pochta)
+Tatar: электрон почта (elektron pochta)
+Telugu: ఇమెయిల్ (Imēyil)
+Thai: อีเมล (īeml)
+Tibetan: དྲང་གི་ཐུབ་བསྐྱོད། (drang gi thub bskyod)
+Turkmen: elektron poçta
+Uighur: ئېلخۇچ پوچتا (Ehluqchi Pochta)
+Ukrainian: електронна пошта (elektronna poshta)
+Urdu: ای میل (e-mēl)
+Uzbek: elektron pochta
+Vietnamese: thư điện tử
+Welsh: e-bost
+Xhosa: imeyile
+Yiddish: אימייל (eymayl)
+Yoruba: i-meeli
+Zulu: imeyili
+Hmong: email
+Tajik: электронӣ почта (elektronī pochta)
+Uzbek: elektron pochta
+Malay: emel
+Afrikaans: e-pos
+Shona: imweyili
+Tatar: электрон почта (elektron pochta)
+Uighur: ئېلخۇچ پوچتا (Ehluqchi Pochta)
+Welsh: e-bost
+Galician: correo electrónico
+Kazakh: электрондық пошта (elektrondıq poshta)
+Kyrgyz: электрондук почта (elektronduk pochta)
+Lao: ອີເມລ (īem)
+Latvian: e-pasts
+Luxembourgish: Email
+Malagasy: mailaka
+Malayalam: ഇമെയിൽ (Imeyil)
+Maori: īmēra
+Mongolian: и-мэйл (i-meil)
+Nepali: ईमेल (īmēla)
+Odia: ଇମେଲ (Iṁēla)
+Pashto: ایمیل (Email)
+Punjabi: ਈਮੇਲ (Īmēla)
+Quechua: imayl
+Scottish Gaelic: post-d
+Sesotho: imeile
+Shona: imweyili
+Sindhi: اي ميل (Email)
+Sinhala: ඉමේල් (Imēl)
+Slovak: e-mail
+Slovenian: e-pošta
+Somali: iimayl
+Sundanese: surelek
+Swahili: barua pepe
+Tajik: электронӣ почта (elektronī pochta)
+Tatar: электрон почта (elektron pochta)
+Telugu: ఇమెయిల్ (Imēyil)
+Thai: อีเมล (īeml)
+Tibetan: དྲང་གི་ཐུབ་བསྐྱོད། (drang gi thub bskyod)
+Turkmen: elektron poçta
+Uighur: ئېلخۇچ پوچتا (Ehluqchi Pochta)
+Ukrainian: електронна пошта (elektronna poshta)
+Urdu: ای میل (e-mēl)
+Uzbek: elektron pochta
+Vietnamese: thư điện tử
+Welsh: e-bost
+Xhosa: imeyile
+Yiddish: אימייל (eymayl)
+Yoruba: i-meeli
+Zulu: imeyili
+Hmong: email
+Tajik: электронӣ почта (elektronī pochta)
+Uzbek: elektron pochta
+Malay: emel

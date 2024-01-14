@@ -1,0 +1,146 @@
+English: name
+Spanish: nombre
+French: nom
+German: Name
+Chinese (Simplified): 名字 (Míngzì)
+Russian: имя (imya)
+Hindi: नाम (nām)
+Arabic: اسم (ism)
+Japanese: 名前 (Namae)
+Portuguese: nome
+Bengali: নাম (Nam)
+Punjabi: ਨਾਮ (Nām)
+Korean: 이름 (Ireum)
+Turkish: ad
+Vietnamese: tên
+Italian: nome
+Dutch: naam
+Telugu: పేరు (Pēru)
+Marathi: नाव (Nāva)
+Tamil: பெயர் (Peiar)
+Urdu: نام (Naam)
+Malayalam: പേര് (Pēru)
+Gujarati: નામ (Nām)
+Polish: imię
+Ukrainian: ім'я (im'ya)
+Kannada: ಹೆಸರು (Hesaru)
+Thai: ชื่อ (Chue)
+Tagalog: pangalan
+Romanian: nume
+Malay: nama
+Sinhala: නම (Nama)
+Burmese: နာမည် (Nama)
+Azerbaijani: ad
+Nepali: नाम (Nām)
+Hausa: suna
+Farsi (Persian): نام (Nām)
+Maori: ingoa
+Yoruba: orúkọ
+Uzbek: ism
+Kurdish: nav
+Pashto: نوم (Naam)
+Mongolian: нэр (Ner)
+Kazakh: аты (Atı)
+Somali: magac
+Maltese: isem
+Zulu: igama
+Javanese: jeneng
+Igbo: aha
+Albanian: emër
+Malagasy: anarana
+Hmong: rov qab
+Sesotho: lebitso
+Corsican: nome
+Kyrgyz: аты (Atı)
+Basque: izena
+Hawaiian: inoa
+Pashto: نوم (Naam)
+Amharic: ስም (Sïm)
+Luxembourgish: Numm
+Tajik: ном (Nom)
+Armenian: անուն (Anun)
+Georgian: სახელი (Sakheli)
+Nepali: नाम (Nām)
+Haitian Creole: non
+Tajik: ном (Nom)
+Mongolian: нэр (Ner)
+Lithuanian: vardas
+Luxembourgish: Numm
+Maltese: isem
+Kannada: ಹೆಸರು (Hesaru)
+Yoruba: orúkọ
+Azerbaijani: ad
+Bosnian: ime
+Pashto: نوم (Naam)
+Mongolian: нэр (Ner)
+Fijian: yaca
+Malagasy: anarana
+Maori: ingoa
+Urdu: نام (Naam)
+Azerbaijani: ad
+Corsican: nome
+Maltese: isem
+Malagasy: anarana
+Samoan: suafa
+Sundanese: jeneng
+Swahili: jina
+Tahitian: ihoa
+Tongan: hingoa
+Uzbek: ism
+Uyghur: ئاتى (Ati)
+Vietnamese: tên
+Welsh: enw
+Xhosa: igama
+Yiddish: נאָמען (Nomen)
+Yoruba: orúkọ
+Zulu: igama
+Hmong: rov qab
+Tajik: ном (Nom)
+Uzbek: ism
+Malay: nama
+Afrikaans: naam
+Shona: zita
+Tatar: исем (İsem)
+Uighur: ئاتى (Ati)
+Welsh: enw
+Galician: nome
+Kazakh: аты (Atı)
+Kyrgyz: аты (Atı)
+Lao: ຊື່ (Sư̄)
+Latvian: vārds
+Luxembourgish: Numm
+Malagasy: anarana
+Malayalam: പേര് (Pēru)
+Maori: ingoa
+Mongolian: нэр (Ner)
+Nepali: नाम (Nām)
+Odia: ନାମ (Nāma)
+Pashto: نوم (Naam)
+Punjabi: ਨਾਮ (Nām)
+Quechua: iskay ñawi
+Scottish Gaelic: ainm
+Sesotho: lebitso
+Shona: zita
+Sindhi: نالو (Nālo)
+Sinhala: නම (Nama)
+Slovak: meno
+Slovenian: ime
+Somali: magac
+Sundanese: jeneng
+Swahili: jina
+Tajik: ном (Nom)
+Tatar: исем (İsem)
+Telugu: పేరు (Pēru)
+Thai: ชื่อ (Chue)
+Tibetan: མིང་རིག (Ming rig)
+Turkmen: ady
+Uighur: ئاتى (Ati)
+Ukrainian: ім'я (im'ya)
+Urdu: نام (Naam)
+Uzbek: ism
+Vietnamese: tên
+Welsh: enw
+Xhosa: igama
+Yiddish: נאָמען (Nomen)
+Yoruba: orúkọ
+Zulu: igama

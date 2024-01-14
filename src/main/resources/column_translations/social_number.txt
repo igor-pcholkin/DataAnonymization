@@ -1,0 +1,177 @@
+English: social number
+Spanish: número social
+French: numéro social
+German: Sozialversicherungsnummer
+Chinese (Simplified): 社会号码 (shèhuì hàomǎ)
+Russian: социальный номер
+Hindi: सामाजिक संख्या (sāmājik saṅkhyā)
+Arabic: الرقم الاجتماعي (al-raqm al-ijtimā'ī)
+Japanese: 社会保障番号 (shakai hoshō bangō)
+Portuguese: número social
+Bengali: সামাজিক নম্বর (sāmājik nômbôr)
+Punjabi: ਸਮਾਜਕ ਨੰਬਰ (samājaka namba)
+Korean: 사회 보장 번호 (sahoe bojang beonho)
+Turkish: sosyal numara
+Vietnamese: số xã hội
+Italian: numero sociale
+Dutch: sociaal nummer
+Telugu: సామాజిక సంఖ్య (Sāmājika saṅkhya)
+Marathi: सामाजिक क्रमांक (Sāmājika kramānka)
+Tamil: சமூக எண் (Camūka eṉ)
+Urdu: سماجی نمبر (samājī nambar)
+Malayalam: സാമൂഹ്യ നമ്പർ (sāmūhya nampar)
+Gujarati: સામાજિક નંબર (Sāmājika nambara)
+Polish: numer ubezpieczenia społecznego
+Ukrainian: соціальний номер (sotsialʹnyy nomer)
+Kannada: ಸಾಮಾಜಿಕ ಸಂಖ್ಯೆ (Sāmājika saṅkhye)
+Thai: หมายเลขสังคม (mǎay lek sangkhom)
+Tagalog: social na numero
+Romanian: număr social
+Malay: nombor sosial
+Sinhala: සාමාජික අංකය (sāmājika aṅkaya)
+Burmese: လူမှုစာရင်း (lu:ma.hso.carang:)
+Azerbaijani: sosial nömrə
+Nepali: सामाजिक नम्बर (sāmājika namba)
+Hausa: lambar kasa
+Farsi (Persian): شماره اجتماعی (shomare ejtema'i)
+Maori: tauākī hāpori
+Yoruba: nọmbà ìṣòcíàlì
+Uzbek: ijtimoiy raqam
+Kurdish: hejmara civakî
+Pashto: اجتماعي شمېره (ijtima'ī shumara)
+Mongolian: нийгмийн дугаар (niigmiin dugaar)
+Kazakh: әлеуметтік нөмірі (álewméttik nómiri)
+Somali: lambarka bulshada
+Maltese: numru soċjali
+Zulu: inombolo yobuchwepheshe
+Javanese: nomer sosial
+Igbo: nọmbà ìsòcìàlì
+Albanian: numri social
+Malagasy: kaonty sosialy
+Hmong: cov ntaub ntawv noj peb caug
+Sesotho: nomoro ea bohlokoa
+Corsican: numero suciale
+Kyrgyz: социалдык номер (sotsialdık nomer)
+Basque: zenbaki soziala
+Hawaiian: helu ho'oponopono
+Pashto: اجتماعي شمېره (ijtima'ī shumara)
+Amharic: የማህበረሰብ ቁጥር (yämahäbəräsäb k’əṭ’ər)
+Luxembourgish: Sozialnummer
+Tajik: рамзи иҷтимоӣ (ramzi ijtimoî)
+Armenian: սոցիալական համար (socʿialakan hamar)
+Georgian: სოციალური ნომერი (soč’aluri nṓmeri)
+Nepali: सामाजिक नम्बर (Sāmājika namba)
+Haitian Creole: nimewo sosyal
+Tajik: рамзи иҷтимоӣ (ramzi ijtimoî)
+Mongolian: нийгмийн дугаар (niigmiin dugaar)
+Lithuanian: socialinis numeris
+Luxembourgish: Sozialnummer
+Maltese: numru soċjali
+Kannada: ಸಾಮಾಜಿಕ ಸಂಖ್ಯೆ (Sāmājika saṅkhye)
+Yoruba: nọmbà ìṣòcíàlì
+Azerbaijani: sosial nömrə
+Corsican: numero suciale
+Maltese: numru soċjali
+Malagasy: kaonty sosialy
+Samoan: numera saogalemu
+Sundanese: nomer sosial
+Swahili: nambari ya kijamii
+Tahitian: haamatau mārō'ī
+Tongan: numera sōsiā
+Uzbek: ijtimoiy raqam
+Uyghur: سوشىيال نۇمىر (sushiyaal nimir)
+Vietnamese: số an sinh xã hội
+Welsh: rhif cymdeithasol
+Xhosa: inombolo yobugcisa
+Yiddish: sozial nummer
+Yoruba: nọmbà ìṣòcíàlì
+Zulu: inombolo yobuchwepheshe
+Hmong: cov ntaub ntawv noj peb caug
+Tajik: рамзи иҷтимоӣ (ramzi ijtimoî)
+Uzbek: ijtimoiy raqam
+Malay: nombor sosial
+Afrikaans: sosiale nommer
+Shona: nambawan
+Tatar: социаль номер (sotsial numer)
+Uighur: سوشىيال نۇمىر (sushiyaal nimir)
+Welsh: cerdyn
+Galician: número social
+Kazakh: социалдық нөмірі (sotsialdıq nómiri)
+Kyrgyz: социалдык номер (sotsialdıq nomer)
+Lao: ຈໍານວນສະຖິຕິ (cham nuan sati thit)
+Latvian: sociālais numurs
+Luxembourgish: Sozialnummer
+Malagasy: kaonty sosialy
+Malayalam: സോഷ്യൽ നമ്പർ (sōṣyal nampar)
+Maori: tauākī hāpori
+Mongolian: нийгмийн дугаар (niigmiin dugaar)
+Nepali: सामाजिक नम्बर (Sāmājika namba)
+Odia: ସାମାଜିକ ନମ୍ବର (Sāmājika namba)
+Pashto: سوشیال شمیره (sosyal shamira)
+Punjabi: ਸਾਮਾਜਿਕ ਨੰਬਰ (samājika namba)
+Quechua: wata tampukuy
+Scottish Gaelic: àireamh sòisealta
+Sesotho: nomoro ea bohlokoa
+Shona: nambawan
+Sindhi: سوشل نمبر (soshal nambar)
+Sinhala: සමාජ අංකය (samāja aṅkaya)
+Slovak: sociálne číslo
+Slovenian: socialna številka
+Somali: lambarka bulshada
+Sundanese: nomer sosial
+Swahili: nambari ya kijamii
+Tajik: рамзи иҷтимоӣ (ramzi ijtimoî)
+Tatar: социаль номер (sotsial numer)
+Telugu: సోషియల్ నంబర్ (Sōṣiyal nambal)
+Thai: หมายเลขสังคม (mǎay lek sangkhom)
+Tibetan: སྐུར་མིའི་ཨང་ཁྲེར (sku-mi'i ang-khre)
+Turkmen: sosial belgisi
+Uighur: سوشىيال نۇمىر (sushiyaal nimir)
+Ukrainian: соціальний номер (sotsialʹnyy nomer)
+Urdu: سوشل نمبر (soashal number)
+Uzbek: ijtimoiy raqam
+Vietnamese: số an sinh xã hội
+Welsh: rhif cymdeithasol
+Xhosa: inombolo yobugcisa
+Yiddish: sozial nummer
+Yoruba: nọmbà ìṣòcíàlì
+Zulu: inombolo yobuchwepheshe
+Javanese: nomer sosial
+Igbo: nọmbà ìsòcìàlì
+Albanian: numri social
+Malagasy: kaonty sosialy
+Hmong: cov ntaub ntawv noj peb caug
+Sesotho: mohato
+Corsican: numero suciale
+Kyrgyz: социалдык номер (sotsialdıq nomer)
+Basque: zenbaki soziala
+Hawaiian: helu ho'oponopono
+Pashto: سوشیال شمیره (sosyal shamira)
+Amharic: የማህበረሰብ ቁጥር (yämahäbəräsäb k’əṭ’ər)
+Luxembourgish: Sozialnummer
+Tajik: рамзи иҷтимоӣ (ramzi ijtimoî)
+Armenian: սոցիալական համար (socʿialakan hamar)
+Georgian: სოციალური ნომერი (soč’aluri nṓmeri)
+Nepali: सामाजिक नम्बर (Sāmājika namba)
+Haitian Creole: nimewo sosyal
+Tajik: рамзи иҷтимоӣ (ramzi ijtimoî)
+Mongolian: гарчиг (garchig)
+Lithuanian: socialinis numeris
+Luxembourgish: Sozialnummer
+Maltese: numru soċjali
+Kannada: ಸಾಮಾಜಿಕ ಸಂಖ್ಯೆ (Sāmājika saṅkhye)
+Yoruba: nọmbà ìṣòcíàlì
+Azerbaijani: sosial nömrə
+Corsican: numero suciale
+Maltese: numru soċjali
+Malagasy: kaonty sosialy
+Samoan: numera saogalemu
+Sundanese: nomer sosial
+Swahili: nambari ya kijamii
+Tahitian: haamatau mārō'ī
+Tongan: numera sōsiā
+Uzbek: ijtimoiy raqam
+Uyghur: سوشىيال نۇمىر (sushiyaal nimir)
+Vietnamese: số an sinh xã hội
+Welsh: rhif cymdeithasol
+Xhosa: inombolo yobugcisa

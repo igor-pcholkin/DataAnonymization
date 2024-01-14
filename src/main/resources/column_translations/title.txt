@@ -1,0 +1,199 @@
+English: title
+Spanish: título
+French: titre
+German: Titel
+Chinese (Simplified): 标题 (biāotí)
+Russian: заголовок (zagolovok)
+Hindi: शीर्षक (śīrṣaka)
+Arabic: عنوان (ʿunwān)
+Japanese: タイトル (taitoru)
+Portuguese: título
+Bengali: খবর (Khôbôr)
+Punjabi: ਸਿਰਲੇਖ (Sirlēkh)
+Korean: 제목 (jemog)
+Turkish: başlık
+Vietnamese: tiêu đề
+Italian: titolo
+Dutch: titel
+Telugu: శీర్షిక (Śīrṣika)
+Marathi: शीर्षक (Śīrṣaka)
+Tamil: தலைப்பு (Talaippu)
+Urdu: عنوان (ʿunwān)
+Malayalam: ശീർഷകം (śīrṣakaṁ)
+Gujarati: શીર્ષક (Śīrṣaka)
+Polish: tytuł
+Ukrainian: назва (nazva)
+Kannada: ಶಿರೋನಾಮ (Śirōnāma)
+Thai: ชื่อเรื่อง (chêū reụ̄xng)
+Tagalog: titulo
+Romanian: titlu
+Malay: tajuk
+Sinhala: මාතෘකාව (Māthīkāwa)
+Burmese: ခေါင်းစုံ (hkau:ng:sun)
+Azerbaijani: başlıq
+Nepali: शीर्षक (Śīrṣaka)
+Hausa: suna
+Farsi (Persian): عنوان (onvān)
+Maori: ingoa
+Yoruba: ọrọ
+Uzbek: sarlavha
+Kurdish: nav
+Pashto: عنوان (Onwan)
+Mongolian: гарчиг (garchig)
+Kazakh: атау (ataw)
+Somali: magaca
+Maltese: titlu
+Zulu: umbhali
+Javanese: judhul
+Igbo: ozi
+Albanian: titull
+Malagasy: lohahevitra
+Hmong: ntaub ntawv
+Sesotho: mohato
+Corsican: titulu
+Kyrgyz: аталыш (atalış)
+Basque: izenburua
+Hawaiian: inoa
+Pashto: عنوان (Onwan)
+Amharic: ርእየት (rəʾeyət)
+Luxembourgish: Titel
+Tajik: сарлавҳа (sarlavha)
+Armenian: վերնագիր (vernagir)
+Georgian: სათაური (satauri)
+Nepali: शीर्षक (Śīrṣaka)
+Haitian Creole: tit
+Tajik: сарлавҳа (sarlavha)
+Mongolian: гарчиг (garchig)
+Lithuanian: pavadinimas
+Luxembourgish: Titel
+Maltese: titlu
+Kannada: ಶಿರೋನಾಮ (Śirōnāma)
+Yoruba: ọrọ
+Azerbaijani: başlıq
+Corsican: titulu
+Maltese: titlu
+Malagasy: lohahevitra
+Samoan: suafa
+Sundanese: judhul
+Swahili: kichwa
+Tahitian: toʻohitaraʻa
+Tongan: taulanga
+Uzbek: sarlavha
+Uyghur: تېما (Téma)
+Vietnamese: tiêu đề
+Welsh: teitl
+Xhosa: umbhalo
+Yiddish: טיטל (titl)
+Yoruba: ọrọ
+Zulu: umbhalo
+Hmong: ntaub ntawv
+Tajik: сарлавҳа (sarlavha)
+Uzbek: sarlavha
+Malay: tajuk
+Afrikaans: titel
+Shona: kadi
+Uighur: قارتا (Qarta)
+Welsh: cerdyn
+Galician: tarxeta
+Kazakh: карт (kart)
+Kyrgyz: картка (kartka)
+Afrikaans: titel
+Shona: kudzorera
+Tatar: аталыш (atalış)
+Uighur: تېما (Téma)
+Welsh: teitl
+Galician: título
+Kazakh: атау (ataw)
+Kyrgyz: аталыш (atalış)
+Lao: ເລື່ອງ (lư̄ang)
+Latvian: nosaukums
+Luxembourgish: Titel
+Malagasy: lohahevitra
+Malayalam: ശീർഷകം (śīrṣakaṁ)
+Maori: whakahirahira
+Mongolian: гарчиг (garchig)
+Nepali: शीर्षक (Śīrṣaka)
+Odia: ଟାଇଟିଲ (Ṭā'iṭila)
+Pashto: عنوان (Onwan)
+Punjabi: ਸਿਰਲੇਖ (Sirlēkh)
+Quechua: tituluy
+Scottish Gaelic: teisteanas
+Sesotho: mohato
+Shona: kadi
+Sindhi: ٽائٽل (Ṭā'iṭl)
+Sinhala: මාතෘකාව (Māthīkāwa)
+Slovak: titul
+Slovenian: naslov
+Somali: magaca
+Sundanese: judhul
+Swahili: kichwa
+Tajik: сарлавҳа (sarlavha)
+Tatar: аталыш (atalış)
+Telugu: శీర్షిక (Śīrṣika)
+Thai: หัวข้อ (h̄ạw k̄ĥxk̄ĥā)
+Tibetan: ཁྱབ་ཚང་ (khyab tshang)
+Turkmen: atlygy
+Uighur: تېما (Téma)
+Ukrainian: заголовок (zaholovok)
+Urdu: عنوان (ʿunwān)
+Uzbek: sarlavha
+Vietnamese: tiêu đề
+Welsh: teitl
+Xhosa: umbhalo
+Yiddish: טיטל (titl)
+Yoruba: ọrọ
+Zulu: umbhalo
+Javanese: judhul
+Igbo: ozi
+Albanian: titull
+Malagasy: lohahevitra
+Hmong: ntaub ntawv
+Sesotho: mohato
+Corsican: titulu
+Kyrgyz: аталыш (atalış)
+Basque: izenburua
+Hawaiian: inoa
+Pashto: عنوان (Onwan)
+Amharic: ርእየት (rəʾeyət)
+Luxembourgish: Titel
+Tajik: сарлавҳа (sarlavha)
+Armenian: վերնագիր (vernagir)
+Georgian: სათაური (satauri)
+Nepali: शीर्षक (Śīrṣaka)
+Haitian Creole: tit
+Tajik: сарлавҳа (sarlavha)
+Mongolian: гарчиг (garchig)
+Lithuanian: pavadinimas
+Luxembourgish: Titel
+Maltese: titlu
+Kannada: ಶಿರೋನಾಮ (Śirōnāma)
+Yoruba: ọrọ
+Azerbaijani: başlıq
+Corsican: titulu
+Maltese: titlu
+Malagasy: lohahevitra
+Samoan: suafa
+Sundanese: judhul
+Swahili: kichwa
+Tahitian: toʻohitaraʻa
+Tongan: taulanga
+Uzbek: sarlavha
+Uyghur: تېما (Téma)
+Vietnamese: tiêu đề
+Welsh: teitl
+Xhosa: umbhalo
+Yiddish: טיטל (titl)
+Yoruba: ọrọ
+Zulu: umbhalo
+Hmong: ntaub ntawv
+Tajik: сарлавҳа (sarlavha)
+Uzbek: sarlavha
+Malay: tajuk
+Afrikaans: titel
+Shona: kadi
+Tatar: карт (qart)
+Uighur: قارتا (Qarta)
+Welsh: cerdyn
+Galician: tarxeta
+Kazakh: карт (kart)
+Kyrgyz: картка (kartka)

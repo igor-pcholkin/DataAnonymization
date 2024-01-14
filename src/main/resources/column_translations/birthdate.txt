@@ -1,0 +1,202 @@
+English: birth date
+Spanish: fecha de nacimiento
+French: date de naissance
+German: Geburtsdatum
+Chinese (Simplified): 出生日期 (chūshēng rìqī)
+Russian: дата рождения (data rozhdeniya)
+Hindi: जन्म तिथि (janma tithi)
+Arabic: تاريخ الولادة (tārīkh al-wilādah)
+Japanese: 誕生日 (tanjōbi)
+Portuguese: data de nascimento
+Bengali: জন্ম তারিখ (jônmô tārikh)
+Punjabi: ਜਨਮ ਤਾਰੀਖ (janma tārīkh)
+Korean: 생년월일 (saengnyeonwolil)
+Turkish: doğum tarihi
+Vietnamese: ngày sinh
+Italian: data di nascita
+Dutch: geboortedatum
+Telugu: పుట్టిన తేదీ (Puṭṭina tēdī)
+Marathi: जन्म तारीख (Janma tārīkha)
+Tamil: பிறந்த திகதி (Piṟanta tigati)
+Urdu: تاریخ پیدائش (tārīkh paidā'ish)
+Malayalam: ജനന തിയതി (janana tiyaṯi)
+Gujarati: જન્મ તારીખ (Janma tārīkha)
+Polish: data urodzenia
+Ukrainian: дата народження (data narodzhennya)
+Kannada: ಹುಟ್ಟು ದಿನ (Huṭṭu dina)
+Thai: วันเกิด (wan-kèrt)
+Tagalog: petsa ng kapanganakan
+Romanian: data nașterii
+Malay: tarikh lahir
+Sinhala: උපන් දිනය (Ūpan dinaya)
+Burmese: မွေးနေ့ (mwe nai)
+Azerbaijani: doğum tarixi
+Nepali: जन्म मिति (Janma miti)
+Hausa: kwanakin yarjejeniya
+Farsi (Persian): تاریخ تولد (tārīkh-e tavalod)
+Maori: rā whānau
+Yoruba: ọjọ́ ìbèjì
+Uzbek: tug'ilgan kun
+Kurdish: roja jidayikbûnê
+Pashto: لولې تاريخ (Lwlay tarekh)
+Mongolian: төрсөн өдөр (törsön ödör)
+Kazakh: туған күн (tuğan küń)
+Somali: taariikhda dhalashada
+Maltese: data tal-milied
+Zulu: usuku lokuzalwa
+Javanese: tanggal lair
+Igbo: ụbọchi ụbọchi
+Albanian: data e lindjes
+Malagasy: andro nahaterahana
+Hmong: hnov co ntawm hnub
+Sesotho: letsatsi la tsoalo
+Corsican: data di nascita
+Kyrgyz: туулган күн (tūlgan küñ)
+Basque: jaiotze-data
+Hawaiian: lā hānau
+Pashto: لولې تاريخ (Lwlay tarekh)
+Amharic: ልደታ (lədeta)
+Luxembourgish: Gebuertsdatum
+Tajik: санаи таваллуд (sanai tavallud)
+Armenian: ծննդյան ամսաթիվ (tsndyan amsat'iv)
+Georgian: დაბადების თარიღი (dabadebis t’arigi)
+Nepali: जन्म मिति (Janma miti)
+Haitian Creole: dat nesans
+Tajik: санаи таваллуд (sanai tavallud)
+Mongolian: төрсөн өдөр (törsön ödör)
+Lithuanian: gimimo data
+Luxembourgish: Gebuertsdatum
+Maltese: data tal-milied
+Kannada: ಹುಟ್ಟು ದಿನ (Huṭṭu dina)
+Yoruba: ọjọ́ ìbèjì
+Azerbaijani: doğum tarixi
+Corsican: data di nascita
+Maltese: data tal-milied
+Malagasy: andro nahaterahana
+Samoan: aso fanau
+Sundanese: tanggal lahir
+Swahili: tarehe ya kuzaliwa
+Tahitian: mahana fanau
+Tongan: hahau
+Uzbek: tug'ilgan kun
+Uyghur: تېما (Téma)
+Vietnamese: ngày sinh
+Welsh: dyddiad geni
+Xhosa: usuku lokuzalwa
+Yiddish: געבורטס טאָג (geburts tog)
+Yoruba: ọjọ́ ìbèjì
+Zulu: usuku lokuzalwa
+Hmong: hnov co ntawm hnub
+Tajik: санаи таваллуд (sanai tavallud)
+Uzbek: tug'ilgan kun
+Malay: tarikh lahir
+Afrikaans: geboortedatum
+Welsh: dyddiad geni
+Galician: data de nacemento
+Kazakh: туылған күн (twılğan kü'n)
+Kyrgyz: туулган күн (tuulgan küñ)
+Lao: ວັນເດືອນເຊື້ອ (wan deuan sua)
+Latvian: dzimšanas datums
+Luxembourgish: Gebuertsdatum
+Malagasy: andro nahaterahana
+Malayalam: പുതിയത് ഉണ്ടായ തീയതി (putiyatu uṇṭāya tīyati)
+Maori: rā whānau
+Mongolian: төрсөн өдөр (törsön ödör)
+Nepali: जन्म मिति (janma miti)
+Odia: ଜନ୍ମ ତାରିଖ (jônmô tārikh)
+Pashto: لولې تاريخ (Lwlay tarekh)
+Punjabi: ਜਨਮ ਦਿਨ (janam din)
+Quechua: wata kapilla
+Scottish Gaelic: là breith
+Sesotho: letsatsi la tsoalo
+Shona: kadi
+Sindhi: ڀرتي دين (Bherti dīn)
+Sinhala: උපන් දිනය (ūpan dinaya)
+Slovak: dátum narodenia
+Slovenian: datum rojstva
+Somali: taariikhda dhalashada
+Sundanese: tanggal lahir
+Swahili: tarehe ya kuzaliwa
+Tajik: санаи таваллуд (sanai tavallud)
+Tatar: туган көн (tuğan kön)
+Telugu: పుట్టిన తేదీ (Puṭṭina tēdī)
+Thai: วันเกิด (wan-kèrt)
+Tibetan: བརྡ་དེབ། (brda deb)
+Turkmen: doglan güni
+Welsh: dyddiad geni
+Galician: data de nacemento
+Kazakh: туылған күн (twılğan kü'n)
+Kyrgyz: туулган күн (tuulgan küñ)
+Lao: ວັນເດືອນເຊື້ອ (wan deuan sua)
+Latvian: dzimšanas datums
+Luxembourgish: Gebuertsdatum
+Malagasy: andro nahaterahana
+Malayalam: പുതിയത് ഉണ്ടായ തീയതി (putiyatu uṇṭāya tīyati)
+Maori: rā whānau
+Mongolian: төрсөн өдөр (törsön ödör)
+Nepali: जन्म मिति (janma miti)
+Odia: ଜନ୍ମ ତାରିଖ (jônmô tārikh)
+Pashto: لولې تاريخ (Lwlay tarekh)
+Punjabi: ਜਨਮ ਦਿਨ (janam din)
+Quechua: wata kapilla
+Scottish Gaelic: là breith
+Sesotho: letsatsi la tsoalo
+Shona: kadi
+Sindhi: ڀرتي دين (Bherti dīn)
+Sinhala: උපන් දිනය (ūpan dinaya)
+Slovak: dátum narodenia
+Slovenian: datum rojstva
+Somali: taariikhda dhalashada
+Sundanese: tanggal lahir
+Swahili: tarehe ya kuzaliwa
+Tajik: санаи таваллуд (sanai tavallud)
+Tatar: туган көн (tuğan kön)
+Telugu: పుట్టిన తేదీ (Puṭṭina tēdī)
+Thai: วันเกิด (wan-kèrt)
+Tibetan: བརྡ་དེབ། (brda deb)
+Turkmen: doglan güni
+Uighur: تېما (Téma)
+Ukrainian: дата народження (data narodzhennya)
+Urdu: تاریخ پیدائش (tārīkh paidā'ish)
+Uzbek: tug'ilgan kun
+Vietnamese: ngày sinh
+Welsh: dyddiad geni
+Xhosa: usuku lokuzalwa
+Yiddish: געבורטס טאָג (geburts tog)
+Yoruba: ọjọ́ ìbèjì
+Zulu: usuku lokuzalwa
+Javanese: tanggal lair
+Igbo: ụbọchi ụbọchi
+Albanian: data e lindjes
+Malagasy: andro nahaterahana
+Hmong: hnov co ntawm hnub
+Sesotho: mohato
+Corsican: data di nascita
+Kyrgyz: аталыш (atalış)
+Basque: jaiotze-data
+Hawaiian: lā hānau
+Pashto: لولې تاريخ (Lwlay tarekh)
+Amharic: ልደታ (lədeta)
+Luxembourgish: Gebuertsdatum
+Tajik: санаи таваллуд (sanai tavallud)
+Armenian: ծննդյան ամսաթիվ (tsndyan amsat'iv)
+Georgian: დაბადების თარიღი (dabadebis t’arigi)
+Nepali: जन्म मिति (Janma miti)
+Haitian Creole: dat nesans
+Tajik: санаи таваллуд (sanai tavallud)
+Mongolian: гарчиг (garchig)
+Lithuanian: gimimo data
+Luxembourgish: Gebuertsdatum
+Maltese: data tal-milied
+Kannada: ಹುಟ್ಟು ದಿನ (Huṭṭu dina)
+Yoruba: ọjọ́ ìbèjì
+Azerbaijani: doğum tarixi
+Corsican: data di nascita
+Maltese: data tal-milied
+Malagasy: andro nahaterahana
+Samoan: aso fanau
+Sundanese: tanggal lahir
+Swahili: tarehe ya kuzaliwa
+Tahitian: mahana fanau
+Tongan: hahau
+Uzbek: tug'ilgan kun

@@ -1,0 +1,189 @@
+English: card
+Spanish: tarjeta
+French: carte
+German: Karte
+Chinese (Simplified): 卡片 (kǎpiàn)
+Russian: карта (karta)
+Hindi: कार्ड (kārḍ)
+Arabic: بطاقة (biṭāqah)
+Japanese: カード (kādo)
+Portuguese: cartão
+Bengali: কার্ড (Kārḍa)
+Punjabi: ਕਾਰਡ (Kārḍ)
+Korean: 카드 (kadeu)
+Turkish: kart
+Vietnamese: thẻ
+Italian: carta
+Dutch: kaart
+Telugu: కార్డు (Kārḍu)
+Marathi: कार्ड (Kārḍ)
+Tamil: அட்டை (Aṭṭai)
+Urdu: کارڈ (kārḍ)
+Malayalam: കാർഡ് (kārḍ)
+Gujarati: કાર્ડ (Kārḍ)
+Polish: karta
+Ukrainian: картка (kartka)
+Kannada: ಕಾರ್ಡ್ (Kārḍ)
+Thai: การ์ด (kād)
+Tagalog: kard
+Romanian: card
+Malay: kad
+Sinhala: කාඩ් (Kāḍ)
+Burmese: ကတ် (ka.t)
+Azerbaijani: kart
+Nepali: कार्ड (Kārḍ)
+Hausa: kadi
+Farsi (Persian): کارت (kārt)
+Maori: kāri
+Yoruba: kadi
+Uzbek: karta
+Kurdish: karta
+Pashto: کارډ (Kaard)
+Mongolian: карт (kart)
+Kazakh: карт (kart)
+Somali: kaadh
+Maltese: karta
+Zulu: ikhadi
+Javanese: kartu
+Igbo: kadi
+Albanian: kartë
+Malagasy: karta
+Hmong: khawm
+Sesotho: karete
+Corsican: carta
+Kyrgyz: картка (kartka)
+Basque: txartela
+Hawaiian: palapala
+Pashto: کارډ (Kaard)
+Amharic: ካርድ (kārd)
+Luxembourgish: Kaart
+Tajik: карта (karta)
+Armenian: քարտ (kʿart)
+Georgian: ბანქობა (bankoba)
+Nepali: कार्ड (Kārḍ)
+Haitian Creole: kat
+Tajik: карта (karta)
+Mongolian: карт (kart)
+Lithuanian: kortelė
+Luxembourgish: Kaart
+Maltese: karta
+Kannada: ಕಾರ್ಡ್ (Kārḍ)
+Yoruba: kadi
+Azerbaijani: kart
+Bosnian: kartica
+Pashto: کارډ (Kaard)
+Mongolian: карт (kart)
+Fijian: kad
+Malagasy: karta
+Maori: kāri
+Urdu: کارڈ (kārḍ)
+Azerbaijani: kart
+Corsican: carta
+Maltese: karta
+Malagasy: karta
+Samoan: kādi
+Sundanese: kadu
+Swahili: kadi
+Tahitian: kāri
+Tongan: kati
+Uzbek: karta
+Uyghur: قارتا (Qarta)
+Vietnamese: thẻ
+Welsh: cerdyn
+Xhosa: ikhadi
+Yiddish: קאַרטע (karte)
+Yoruba: kadi
+Zulu: ikhadi
+Hmong: khawm
+Tajik: карта (karta)
+Uzbek: karta
+Malay: kad
+Afrikaans: kaart
+Shona: kadi
+Tatar: карт (qart)
+Uighur: قارتا (Qarta)
+Welsh: cerdyn
+Galician: tarxeta
+Kazakh: карт (kart)
+Kyrgyz: картка (kartka)
+Lao: ບັນຊີ (bansī)
+Latvian: karte
+Luxembourgish: Kaart
+Malagasy: karta
+Malayalam: കാർഡ് (kārḍ)
+Maori: kāri
+Mongolian: карт (kart)
+Nepali: कार्ड (Kārḍ)
+Odia: କାର୍ଡ (Kārḍa)
+Pashto: کارډ (Kaard)
+Punjabi: ਕਾਰਡ (Kārḍ)
+Quechua: kard
+Scottish Gaelic: cairt
+Sesotho: karete
+Shona: kadi
+Sindhi: ڪارڊ (Kāṛḍ)
+Sinhala: කාඩ් (Kāḍ)
+Slovak: karta
+Slovenian: kartica
+Somali: kaadh
+Sundanese: kadu
+Swahili: kadi
+Tajik: карта (karta)
+Tatar: карт (qart)
+Telugu: కార్డు (Kārḍu)
+Thai: การ์ด (kād)
+Tibetan: ཕྱི་འདྲ་ (phyi 'dra)
+Turkmen: karta
+Uighur: قارتا (Qarta)
+Ukrainian: картка (kartka)
+Urdu: کارڈ (kārḍ)
+Uzbek: karta
+Vietnamese: thẻ
+Welsh: cerdyn
+Xhosa: ikhadi
+Yiddish: קאַרטע (karte)
+Yoruba: kadi
+Zulu: ikhadi
+Hmong: khawm
+Tajik: карта (karta)
+Uzbek: karta
+Malay: kad
+Afrikaans: kaart
+Shona: kadi
+Tatar: карт (qart)
+Uighur: قارتا (Qarta)
+Welsh: cerdyn
+Galician: tarxeta
+Kazakh: карт (kart)
+Kyrgyz: картка (kartka)
+Lao: ບັນຊີ (bansī)
+Latvian: karte
+Luxembourgish: Kaart
+Malagasy: karta
+Malayalam: കാർഡ് (kārḍ)
+Maori: kāri
+Mongolian: карт (kart)
+Nepali: कार्ड (Kārḍ)
+Odia: କାର୍ଡ (Kārḍa)
+Pashto: کارډ (Kaard)
+Punjabi: ਕਾਰਡ (Kārḍ)
+Quechua: kard
+Scottish Gaelic: cairt
+Sesotho: karete
+Shona: kadi
+Sindhi: ڪارڊ (Kāṛḍ)
+Sinhala: කාඩ් (Kāḍ)
+Slovak: karta
+Slovenian: kartica
+Somali: kaadh
+Sundanese: kadu
+Swahili: kadi
+Tajik: карта (karta)
+Tatar: карт (qart)
+Telugu: కార్డు (Kārḍu)
+Thai: การ์ด (kād)
+Tibetan: ཕྱི་འདྲ་ (phyi 'dra)
+Turkmen: karta
+Uighur: قارتا (Qarta)
+Ukrainian: картка (kartka)
+Urdu: کارڈ (kārḍ)

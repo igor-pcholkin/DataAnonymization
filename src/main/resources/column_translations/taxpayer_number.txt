@@ -1,0 +1,200 @@
+English: taxpayer number
+Spanish: número de contribuyente
+French: numéro de contribuable
+German: Steuerzahler-Nummer
+Chinese (Simplified): 纳税人号码 (nàshuìrén hàomǎ)
+Russian: номер налогоплательщика
+Hindi: करदाता संख्या (karadātā saṅkhyā)
+Arabic: رقم المكلف (raqm al-mukallaf)
+Japanese: 納税者番号 (nōzeisha bangō)
+Portuguese: número do contribuinte
+Bengali: করদাতা নম্বর (kôrôdātā nômbôr)
+Punjabi: ਟੈਕਸਪੇਅਰ ਨੰਬਰ (ṭaiksapēara namba)
+Korean: 납세자 번호 (nabseja beonho)
+Turkish: vergi mükellefi numarası
+Vietnamese: số thuế viên
+Italian: numero di contribuente
+Dutch: belastingplichtige nummer
+Telugu: టాక్స్ భర్తీ సంఖ్య (Ṭāks bharthī saṅkhya)
+Marathi: करदाता नंबर (karadātā namba)
+Tamil: வரி செலுத்துபவர் எண் (Vari celuttupavar eṉ)
+Urdu: ٹیکس پیئر نمبر (ṭēks pyēr nambar)
+Malayalam: ടാക്സ് പേയര് നമ്പർ (ṭāksu pēyar nampar)
+Gujarati: કરદાતા નંબર (Karadātā nambra)
+Polish: numer podatnika
+Ukrainian: номер платника податків
+Kannada: ಕರದಾತಾ ಸಂಖ್ಯೆ (Karadātā saṅkhye)
+Thai: หมายเลขผู้เสียภาษี (mǎay lek phū̂ s̄ī̀ phās̱ī̀)
+Tagalog: numero ng nagbabayad ng buwis
+Romanian: numărul contribuabilului
+Malay: nombor pembayar cukai
+Sinhala: බදු ගොාත සංඛ්‍යාව (Bathu gotha saṅkhyāva)
+Burmese: အခွန်နိုင်ငံ ငွေလွှဲသူ နံပါတ် (a.hkwamni'ngammi gwah.thuu:sū nampat)
+Azerbaijani: vergi ödəyicisi nömrəsi
+Nepali: करदाता नम्बर (Karadātā namba)
+Hausa: lambar kasa
+Farsi (Persian): شماره مشترکین مالیاتی (shomare moshtarekin maliyati)
+Maori: tauākī moni
+Yoruba: nọmbà tó bá jé àwòní
+Uzbek: soliq to'lagan raqami
+Kurdish: hejmara xebata
+Pashto: د ډلې لګي نمبر (da dlī lǝgay nambar)
+Mongolian: татвар төлөгчийн дугаар (tatvar tölögtiin dugaar)
+Kazakh: салық төлетін нөмірі (salıq tóletin nómiri)
+Somali: tirada lacag bixiyeyaasha
+Maltese: numru ta 'contributur
+Zulu: inombolo yombhalati
+Javanese: nomer wong pajak
+Igbo: nọmbà ndị gbagburu ụlọ
+Albanian: numri i tatimpaguesit
+Malagasy: kaonty mpitantana
+Hmong: cov neeg tau txais npaum li cas
+Sesotho: nomoro ea mosebetsi oa lichache
+Corsican: numaru di cuntribuenti
+Kyrgyz: налоговый ишенчинин номери (nalogovyy ishenchinin nomeri)
+Basque: zerga ordaintzaile zenbakia
+Hawaiian: helu koho pono
+Pashto: نمبر نمبر نمبر (nambar nambar nambar)
+Amharic: የግብር ቁጥር (yägibr qut’er)
+Luxembourgish: Numm vum Steierzueler
+Tajik: рамзи сармаишгир (ramzi sarmaishgir)
+Armenian: հարկավարության համարը (harkavarut’yan hamarye)
+Georgian: საგადასახადო მომხმარებლის ნომერი (sagadasakhadō moxmarleblis nōmeri)
+Nepali: करदाता नम्बर (Karadātā namba)
+Haitian Creole: nimewo kontribye
+Tajik: рамзи сармаишгир (ramzi sarmaishgir)
+Mongolian: татвар төлөгчийн дугаар (tatvar tölögtiin dugaar)
+Lithuanian: mokesčių mokėtojo numeris
+Luxembourgish: Numm vum Steierzueler
+Maltese: numru ta 'contributur
+Kannada: ಕರದಾತಾ ಸಂಖ್ಯೆ (Karadātā saṅkhye)
+Yoruba: nọmbà tó bá jé àwòní
+Azerbaijani: vergi ödəyicisi nömrəsi
+Corsican: numaru di cuntribuenti
+Maltese: numru ta 'contributur
+Malagasy: kaonty mpitantana
+Samoan: numera saogalemu
+Sundanese: nomer wong pajak
+Swahili: nambari ya mlipa kodi
+Tahitian: haamatau mārō'ī
+Tongan: numera tokotaha ngaue fale
+Uzbek: soliq to'lagan raqami
+Uyghur: قالدىرۇچى نۇمىرىسى (qaldıruch numirisi)
+Vietnamese: số thuế viên
+Welsh: rhif y trethdalwr
+Xhosa: inombolo yomthengisi
+Yiddish: shteyer-zoyer nomen
+Yoruba: nọmbà tó bá jé àwòní
+Zulu: inombolo yombhalati
+Hmong: cov neeg tau txais npaum li cas
+Tajik: рамзи сармаишгир (ramzi sarmaishgir)
+Uzbek: soliq to'lagan raqami
+Malay: nombor pembayar cukai
+Afrikaans: belastingbetalernommer
+Shona: nombawan wembare
+Tatar: салык бирелгән номер (salıq birelgan nomer)
+Uighur: قالدىرۇچى نۇمىرىسى (qaldıruch numirisi)
+Welsh: rhif y trethdalwr
+Galician: número de contribuínte
+Kazakh: салық төлетін нөмірі (salıq tóletin nómiri)
+Kyrgyz: налоговый ишенчинин номери (nalogovyy ishenchinin nomeri)
+Lao: ຈໍານວນສະຖິຕິຜູ້ມັດທະຍົມ (cham nuan sati thit phu ma dat tham)
+Latvian: nodokļu maksātāja numurs
+Luxembourgish: Numm vum Steierzueler
+Malagasy: kaonty mpitantana
+Malayalam: നിക്ഷേപകർ നമ്പർ (nikṣēpakar nampar)
+Maori: tauākī moni
+Mongolian: татвар төлөгчийн дугаар (tatvar tölögtiin dugaar)
+Nepali: करदाता नम्बर (Karadātā namba)
+Odia: କରଦାତା ନମ୍ବର (Karadātā namba)
+Pashto: د ډلې لګي نمبر (da dlī lǝgay nambar)
+Punjabi: ਟੈਕਸਪੇਅਰ ਨੰਬਰ (ṭaiksapēara namba)
+Quechua: wata tampukuy
+Scottish Gaelic: àireamh lìonmhor
+Sesotho: nomoro ea mosebetsi oa lichache
+Shona: nombawan wembare
+Sindhi: ٽيڪس پيئر نمبر (ṭiks pyēr nambar)
+Sinhala: බදු ගොාත සංඛ්‍යාව (Bathu gotha saṅkhyāva)
+Slovak: číslo daňového poplatníka
+Slovenian: davčna številka
+Somali: tirada lacag bixiyeyaasha
+Sundanese: nomer wong pajak
+Swahili: nambari ya mlipa kodi
+Tajik: рамзи сармаишгир (ramzi sarmaishgir)
+Tatar: салык бирелгән номер (salıq birelgan nomer)
+Telugu: టాక్స్ పేయర్ నంబర్ (Ṭāks pēyar nambal)
+Thai: เลขที่ผู้เสียภาษี (lek thi phu sia pha si)
+Tibetan: གློག་ཀྲུང་འདི་ཨང་ཡིག (glog khrung 'di ang yig)
+Turkmen: maslahatlaýyn sany
+Uighur: قالدىرۇچى نۇمىرىسى (qaldıruch numirisi)
+Ukrainian: номер платника податків
+Urdu: ٹیکس پیئر نمبر (ṭēks pyēr nambar)
+Uzbek: soliq to'lagan raqami
+Vietnamese: số thuế viên
+Welsh: rhif y trethdalwr
+Xhosa: inombolo yomthengisi
+Yiddish: shteyer-zoyer nomen
+Yoruba: nọmbà tó bá jé àwòní
+Zulu: inombolo yombhalati
+Javanese: nomer wong pajak
+Igbo: nọmbà ndị gbagburu ụlọ
+Albanian: numri i tatimpaguesit
+Malagasy: kaonty mpitantana
+Hmong: cov neeg tau txais npaum li cas
+Sesotho: mohato
+Corsican: numaru di cuntribuenti
+Kyrgyz: налоговый ишенчинин номери (nalogovyy ishenchinin nomeri)
+Basque: zerga ordaintzaile zenbakia
+Hawaiian: helu koho pono
+Pashto: نمبر نمبر نمبر (nambar nambar nambar)
+Amharic: የግብር ቁጥር (yägibr qut’er)
+Luxembourgish: Numm vum Steierzueler
+Tajik: рамзи сармаишгир (ramzi sarmaishgir)
+Armenian: հարկավարության համարը (harkavarut’yan hamarye)
+Georgian: საგადასახადო მომხმარებლის ნომერი (sagadasakhadō moxmarleblis nōmeri)
+Nepali: करदाता नम्बर (Karadātā namba)
+Haitian Creole: nimewo kontribye
+Tajik: рамзи сармаишгир (ramzi sarmaishgir)
+Mongolian: татвар төлөгчийн дугаар (tatvar tölögtiin dugaar)
+Lithuanian: mokesčių mokėtojo numeris
+Luxembourgish: Numm vum Steierzueler
+Maltese: numru ta 'contributur
+Kannada: ಕರದಾತಾ ಸಂಖ್ಯೆ (Karadātā saṅkhye)
+Yoruba: nọmbà tó bá jé àwòní
+Azerbaijani: vergi ödəyicisi nömrəsi
+Corsican: numaru di cuntribuenti
+Maltese: numru ta 'contributur
+Malagasy: kaonty mpitantana
+Samoan: numera saogalemu
+Sundanese: nomer wong pajak
+Swahili: nambari ya mlipa kodi
+Tahitian: haamatau mārō'ī
+Tongan: numera tokotaha ngaue fale
+Uzbek: soliq to'lagan raqami
+Uyghur: قالدىرۇچى نۇمىرىسى (qaldıruch numirisi)
+Vietnamese: số thuế viên
+Welsh: rhif y trethdalwr
+Xhosa: inombolo yomthengisi
+Yiddish: shteyer-zoyer nomen
+Yoruba: nọmbà tó bá jé àwòní
+Zulu: inombolo yombhalati
+Hmong: cov neeg tau txais npaum li cas
+Tajik: рамзи сармаишгир (ramzi sarmaishgir)
+Uzbek: soliq to'lagan raqami
+Malay: nombor pembayar cukai
+Afrikaans: belastingbetalernommer
+Shona: nombawan wembare
+Tatar: салык бирелгән номер (salıq birelgan nomer)
+Uighur: قالدىرۇچى نۇمىرىسى (qaldıruch numirisi)
+Welsh: rhif y trethdalwr
+Galician: número de contribuínte
+Kazakh: салық төлетін нөмірі (salıq tóletin nómiri)
+Kyrgyz: налоговый ишенчинин номери (nalogovyy ishenchinin nomeri)
+Lao: ຈໍານວນສະຖິຕິຜູ້ມັດທະຍົມ (cham nuan sati thit phu ma dat tham)
+Latvian: nodokļu maksātāja numurs
+Luxembourgish: Numm vum Steierzueler
+Malagasy: kaonty mpitantana
+Malayalam: നിക്ഷേപകർ നമ്പർ (nikṣēpakar nampar)
+Maori: tauākī moni
+Mongolian: татвар төлөгчийн дугаар (tatvar tölögtiin dugaar)
+Nepali: करदाता नम्बर (Karadātā namba)
