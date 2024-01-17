@@ -5,9 +5,12 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
- * Anonymizer who generates dates (with times)
+ * Anonymizer generating dates (with times)
  *
  * Example: "2024-01-06T11:55:28" -> "1950-08-14T05:02:13"
+ *
+ * NB. There is no guarantee that length of the input will match length of output as in both cases
+ * seconds could be omitted when parsing/formatting.
  */
 public class DateTimeAnonymizer extends BaseAnonymizer {
     private LocalDateTime minDateTime;

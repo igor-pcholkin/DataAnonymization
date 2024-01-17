@@ -7,6 +7,7 @@ import java.time.temporal.ChronoUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class DateTimeAnonymizerTest extends BaseTest {
     @Test
@@ -26,14 +27,14 @@ class DateTimeAnonymizerTest extends BaseTest {
 
     private void testNIterations(DateTimeAnonymizer anonymizer, String regex) {
         for (int i = 0; i < 10000; i++) {
-            String input1 = LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS).toString();
+            String input1 = createCurrentDateTime().toString();
             String output11 = anonymizer.anonymize(input1);
             testMatch(output11, input1, regex);
 
             String output12 = anonymizer.anonymize(input1);
             assertEquals(output11, output12);
 
-            String input2 = LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS)
+            String input2 = createCurrentDateTime()
                     .plusSeconds(560 * 24 * 3600)
                     .toString();
             String output2 = anonymizer.anonymize(input2);
@@ -41,5 +42,17 @@ class DateTimeAnonymizerTest extends BaseTest {
 
             assertNotEquals(output2, output12);
         }
+    }
+
+    @Override
+    protected void testMatch(String output, String input, String regex) {
+        assertNotEquals (output, input);
+        assertTrue(input.length() == 16 || input.length() == 19);
+        assertTrue(output.length() == 16 || output.length() == 19);
+        assertTrue(output.matches(regex));
+    }
+
+    private LocalDateTime createCurrentDateTime() {
+        return LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS);
     }
 }
