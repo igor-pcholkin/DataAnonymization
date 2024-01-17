@@ -52,7 +52,7 @@ public class ColumnTranslationsLoader {
         }
     }
 
-    private Set<String> parseColumnTraslationsContent(String columnTraslationsContent) {
+    Set<String> parseColumnTraslationsContent(String columnTraslationsContent) {
         return Arrays.stream(columnTraslationsContent.split("\\n"))
                 .flatMap(this::getTranslationsFromLine)
                 .collect(Collectors.toSet());
