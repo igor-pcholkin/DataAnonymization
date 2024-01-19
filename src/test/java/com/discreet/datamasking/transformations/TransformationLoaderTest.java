@@ -22,7 +22,8 @@ class TransformationLoaderTest {
                             "address", "address",
                             "birthdate", "birthdate",
                                 "socialNumber", "pid",
-                        "ccard", "ccard")),
+                        "ccard", "ccard",
+                                "post_code", "post")),
 
                 new Transformation("test", "companies",
                         Map.of("name", "name",

@@ -187,3 +187,4 @@ Turkmen: salgyt
 Uighur: ئادرېس (Adres)
 Ukrainian: адреса (adresa)
 Urdu: پتہ (pata)
+Finnish: osoite

@@ -198,3 +198,5 @@ Malayalam: നിക്ഷേപകർ നമ്പർ (nikṣēpakar nampar)
 Maori: tauākī moni
 Mongolian: татвар төлөгчийн дугаар (tatvar tölögtiin dugaar)
 Nepali: करदाता नम्बर (Karadātā namba)
+Finnish: veronmaksajanumero
+Swedish: skattebetalningsnummer

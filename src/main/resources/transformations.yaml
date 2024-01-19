@@ -6,6 +6,7 @@ test:
     birthdate: birthdate
     socialNumber: pid
     ccard: ccard
+    post_code: post
   COMPANIES:
     name: name
     address: address

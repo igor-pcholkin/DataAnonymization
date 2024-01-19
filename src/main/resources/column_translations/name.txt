@@ -144,3 +144,6 @@ Xhosa: igama
 Yiddish: נאָמען (Nomen)
 Yoruba: orúkọ
 Zulu: igama
+Finnish: nimi
+Swedish: namn
+

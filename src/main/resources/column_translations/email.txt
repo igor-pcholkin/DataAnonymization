@@ -188,3 +188,5 @@ Hmong: email
 Tajik: электронӣ почта (elektronī pochta)
 Uzbek: elektron pochta
 Malay: emel
+Finnish: sähköposti
+Swedish:  e-post

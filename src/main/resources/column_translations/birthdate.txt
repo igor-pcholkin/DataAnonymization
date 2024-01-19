@@ -200,3 +200,5 @@ Swahili: tarehe ya kuzaliwa
 Tahitian: mahana fanau
 Tongan: hahau
 Uzbek: tug'ilgan kun
+Finnish: syntymäaika
+Sweden: födelsedatum

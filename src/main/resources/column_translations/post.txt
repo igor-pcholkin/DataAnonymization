@@ -1,0 +1,201 @@
+English: post
+Spanish: poste
+French: poster
+German: Beitrag
+Chinese (Simplified): 岗位 (gǎngwèi)
+Russian: почта (pochta) [Note: Can also mean "mail" or "postal service"]
+Hindi: पोस्ट (pōsṭa)
+Arabic: مشاركة (mushāraka)
+Japanese: 投稿 (tōkō)
+Portuguese: postar
+Bengali: পোস্ট (pōsṭa)
+Punjabi: ਪੋਸਟ (pōsaṭa)
+Korean: 게시물 (gesimul)
+Turkish: gönderi
+Vietnamese: bài đăng
+Italian: posta
+Dutch: bericht
+Telugu: పోస్ట్ (Pōsṭ)
+Marathi: पोस्ट (Pōsṭa)
+Tamil: போஸ்ட் (Pōsṭ)
+Urdu: پوسٹ (pōsaṭ)
+Malayalam: പോസ്റ്റ് (pōsṟṟ)
+Gujarati: પોસ્ટ (Pōsṭa)
+Polish: post
+Ukrainian: пост
+Kannada: ಪೋಸ್ಟ್ (Pōsṭ)
+Thai: โพสต์ (phôs̄t̒)
+Tagalog: post
+Romanian: postare
+Malay: pos
+Sinhala: ලිපිය (Lipiya)
+Burmese: ပို့ဆောင်းခြင်း (pau.hscar: khrang:)
+Azerbaijani: post
+Nepali: पोस्ट (Pōsaṭa)
+Hausa: post
+Farsi (Persian): پست (post)
+Maori: whakaatu
+Yoruba: post
+Uzbek: post
+Kurdish: post
+Pashto: پوسټ (posta)
+Mongolian: пост
+Kazakh: пост
+Somali: post
+Maltese: post
+Zulu: iposi
+Javanese: posting
+Igbo: post
+Albanian: post
+Malagasy: taratasy
+Hmong: post
+Sesotho: poso
+Corsican: postu
+Kyrgyz: пост
+Basque: post
+Hawaiian: post
+Pashto: پوسټ (posta)
+Amharic: ፖስት (pōst)
+Luxembourgish: Post
+Tajik: пост
+Armenian: աշխատանք
+Georgian: პოსტი (ṗosṭi)
+Nepali: पोस्ट (Pōsaṭa)
+Haitian Creole: post
+Tajik: пост
+Mongolian: пост
+Lithuanian: skelbimas
+Luxembourgish: Post
+Maltese: post
+Kannada: ಪೋಸ್ಟ್ (Pōsṭ)
+Yoruba: post
+Azerbaijani: post
+Corsican: postu
+Maltese: post
+Malagasy: taratasy
+Samoan: tusi
+Sundanese: posting
+Swahili: post
+Tahitian: post
+Tongan: fo'ifoi
+Uzbek: post
+Uyghur: post
+Vietnamese: bài đăng
+Welsh: post
+Xhosa: iposi
+Yiddish: post
+Yoruba: post
+Zulu: iposi
+Hmong: post
+Tajik: пост
+Uzbek: post
+Malay: pos
+Afrikaans: pos
+Shona: post
+Tatar: post
+Uighur: post
+Welsh: post
+Galician: post
+Kazakh: пост
+Kyrgyz: пост
+Lao: ຫມາຍໄປ (hmai pai)
+Latvian: ziņa
+Luxembourgish: Post
+Malagasy: gazety
+Malayalam: പോസ്റ്റ് (pōsṟṟ)
+Maori: whakaatu
+Mongolian: пост
+Nepali: पोस्ट (Pōsaṭa)
+Odia: ପୋଷ୍ଟ (Poṣṭa)
+Pashto: پوسټ (posta)
+Punjabi: ਪੋਸਟ (pōsaṭa)
+Quechua: suyay
+Scottish Gaelic: post
+Sesotho: poso
+Shona: wemunhu
+Sindhi: پوسٽ (posta)
+Sinhala: ලිපිය (Lipiya)
+Slovak: príspevok
+Slovenian: objava
+Somali: post
+Sundanese: posting
+Swahili: post
+Tajik: пост
+Tatar: post
+Telugu: పోస్ట్ (Pōsṭ)
+Thai: โพสต์ (phôs̄t̒)
+Tibetan: གློག་བཟེགས (glog bzhags)
+Turkmen: post
+Uighur: post
+Ukrainian: пост
+Urdu: پوسٹ (pōsaṭ)
+Uzbek: post
+Vietnamese: bài đăng
+Welsh: post
+Xhosa: iposi
+Yiddish: post
+Yoruba: post
+Zulu: iposi
+Javanese: posting
+Igbo: post
+Albanian: post
+Malagasy: taratasy
+Hmong: post
+Sesotho: oa ngoana oa motho
+Corsican: postu
+Kyrgyz: пост
+Basque: post
+Hawaiian: post
+Pashto: پوسټ (posta)
+Amharic: ፖስት (pōst)
+Luxembourgish: Post
+Tajik: пост
+Armenian: աշխատանք
+Georgian: პოსტი (ṗosṭi)
+Nepali: पोस्ट (Pōsaṭa)
+Haitian Creole: post
+Tajik: пост
+Mongolian: пост
+Lithuanian: skelbimas
+Luxembourgish: Post
+Maltese: post
+Kannada: ಪೋಸ್ಟ್ (Pōsṭ)
+Yoruba: post
+Azerbaijani: post
+Corsican: postu
+Maltese: post
+Malagasy: taratasy
+Samoan: tusi
+Sundanese: posting
+Swahili: binafsi
+Tahitian: post
+Tongan: fo'ifoi
+Uzbek: post
+Uyghur: post
+Vietnamese: bài đăng
+Welsh: post
+Xhosa: iposi
+Yiddish: post
+Yoruba: post
+Zulu: iposi
+Hmong: post
+Tajik: пост
+Uzbek: post
+Malay: pos
+Afrikaans: pos
+Shona: post
+Tatar: post
+Uighur: post
+Welsh: post
+Galician: post
+Kazakh: пост
+Kyrgyz: пост
+Lao: ຫມາຍໄປ (hmai pai)
+Latvian: ziņa
+Luxembourgish: Post
+Malagasy: gazety
+Malayalam: പോസ്റ്റ് (pōsṟṟ)
+Maori: whakaatu
+Mongolian: пост
+Nepali: पोस्ट (Pōsaṭa)
+Finnish: posti

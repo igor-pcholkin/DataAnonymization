@@ -20,7 +20,9 @@ class ColumnToAnonymizerLoaderTest {
                         "personal", "pid",
                         "social_number", "pid",
                         "taxpayer_number", "pid",
-                        "birthdate", "birthdate"
+                        "birthdate", "birthdate",
+                        "postal", "post",
+                        "post", "post"
                         ),
                 mappings);
     }

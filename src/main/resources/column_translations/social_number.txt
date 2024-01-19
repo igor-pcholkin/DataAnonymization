@@ -175,3 +175,5 @@ Uyghur: سوشىيال نۇمىر (sushiyaal nimir)
 Vietnamese: số an sinh xã hội
 Welsh: rhif cymdeithasol
 Xhosa: inombolo yobugcisa
+Finnish: henkilötunnus
+Swedish: personnummer

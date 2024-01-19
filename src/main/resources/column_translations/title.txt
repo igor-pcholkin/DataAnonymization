@@ -197,3 +197,4 @@ Welsh: cerdyn
 Galician: tarxeta
 Kazakh: карт (kart)
 Kyrgyz: картка (kartka)
+Finnish: otsikko

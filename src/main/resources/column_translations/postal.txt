@@ -1,0 +1,193 @@
+English: postal
+Spanish: postal
+French: postal
+German: postalisch
+Chinese (Simplified): 邮政的 (yóuzhèng de)
+Russian: почтовый (pochtovyy)
+Hindi: डाक (ḍāk)
+Arabic: بريدي (bureidi)
+Japanese: 郵便の (yūbin no)
+Portuguese: postal
+Bengali: ডাক (ḍāka)
+Punjabi: ਡਾਕ (ḍāka)
+Korean: 우편의 (upeonui)
+Turkish: posta
+Vietnamese: bưu chính
+Italian: postale
+Dutch: postaal
+Telugu: పోస్టల్ (Pōsṭal)
+Marathi: डाक (ḍāka)
+Tamil: அஞ்சல் (Añcal)
+Urdu: ڈاک (ḍāk)
+Malayalam: പോസ്റ്റൽ (pōsṟṟaḷ)
+Gujarati: પોસ્ટલ (Pōsṭala)
+Polish: pocztowy
+Ukrainian: поштовий (poshtovyy)
+Kannada: ಪೋಸ್ಟಲ್ (Pōsṭal)
+Thai: ไปรษณีย์ (bprà-sà-ní-y)
+Tagalog: postal
+Romanian: poștal
+Malay: pos
+Sinhala: පොස්ටල් (Postal)
+Burmese: စာပို့စ် (ca: puis)
+Azerbaijani: poçt
+Nepali: पोस्टल (Pōsaṭala)
+Hausa: postal
+Farsi (Persian): پستی (posti)
+Maori: īmēra
+Yoruba: postal
+Uzbek: pochta
+Kurdish: poşta
+Pashto: پوست (posta)
+Mongolian: шуудан
+Kazakh: поштал (postal)
+Somali: boostada
+Maltese: postali
+Zulu: iphosethi
+Javanese: pos
+Igbo: ọpụpụlọ
+Albanian: posta
+Malagasy: taratasy
+Hmong: kev post
+Sesotho: poso
+Corsican: postale
+Kyrgyz: почтал
+Basque: posta
+Hawaiian: leka leka
+Pashto: پوست (posta)
+Amharic: ፖስታል (pōsṭāl)
+Luxembourgish: postalesch
+Tajik: почта
+Armenian: Փոստային (Ṙostayin)
+Georgian: საფოსტო
+Nepali: पोस्टल (Pōsaṭala)
+Haitian Creole: postal
+Tajik: почта
+Mongolian: шуудан
+Lithuanian: paštas
+Luxembourgish: postalesch
+Maltese: postali
+Kannada: ಪೋಸ್ಟಲ್ (Pōsṭal)
+Yoruba: postal
+Azerbaijani: poçt
+Corsican: postale
+Maltese: postali
+Malagasy: taratasy
+Samoan: le tusi i le laisene
+Sundanese: pos
+Swahili: posta
+Tahitian: le tāmaraa
+Tongan: laiseni
+Uzbek: pochta
+Uyghur: پوچتا (poqta)
+Vietnamese: bưu chính
+Welsh: post
+Xhosa: iposi
+Yiddish: posht
+Yoruba: postal
+Zulu: iposi
+Hmong: kev post
+Tajik: почта
+Uzbek: pochta
+Malay: pos
+Afrikaans: pos
+Shona: post
+Tatar: postal
+Uighur: پوچتا (poqta)
+Welsh: post
+Galician: postal
+Kazakh: поштал (postal)
+Kyrgyz: почтал (postal)
+Lao: ສູ່ຄວາມທີ່ມີຄວາມປອດພາດ (sū kham thī mī kham phôt pat)
+Latvian: pasta
+Luxembourgish: postalesch
+Malagasy: taratasy
+Malayalam: പോസ്റ്റൽ (pōsṟṟaḷ)
+Maori: īmēra
+Mongolian: шуудан
+Nepali: पोस्टल (Pōsaṭala)
+Odia: ପୋଷ୍ଟାଲ (Poṣṭāla)
+Pashto: پوست (posta)
+Punjabi: ਡਾਕ (ḍāka)
+Quechua: suyay
+Scottish Gaelic: ìomhaigh
+Sesotho: poso
+Shona: wemunhu
+Sindhi: پوسٽ (posta)
+Sinhala: පොස්ටල් (Postal)
+Slovak: poštový
+Slovenian: poštni
+Somali: boostada
+Sundanese: pos
+Swahili: posta
+Tajik: почта
+Tatar: postal
+Telugu: పోస్టల్ (Pōsṭal)
+Thai: ไปรษณีย์ (bprà-sà-ní-y)
+Tibetan: གློག་བཟེགས (glog bzhags)
+Turkmen: poçta
+Uighur: پوچتا (poqta)
+Ukrainian: поштовий (poshtovyy)
+Urdu: ڈاک (ḍāk)
+Uzbek: pochta
+Vietnamese: bưu chính
+Welsh: post
+Xhosa: iposi
+Yiddish: posht
+Yoruba: postal
+Zulu: iposi
+Javanese: pos
+Igbo: ọpụpụlọ
+Albanian: posta
+Malagasy: taratasy
+Hmong: kev post
+Sesotho: oa ngoana oa motho
+Corsican: postale
+Kyrgyz: почтал
+Basque: posta
+Hawaiian: leka leka
+Pashto: پوست (posta)
+Amharic: ፖስታል (pōsṭāl)
+Luxembourgish: postalesch
+Tajik: почта
+Armenian: Փոստային (Ṙostayin)
+Georgian: საფოსტო
+Nepali: पोस्टल (Pōsaṭala)
+Haitian Creole: postal
+Tajik: почта
+Mongolian: шуудан
+Lithuanian: paštas
+Luxembourgish: postalesch
+Maltese: postali
+Kannada: ಪೋಸ್ಟಲ್ (Pōsṭal)
+Yoruba: postal
+Azerbaijani: poçt
+Corsican: postale
+Maltese: postali
+Malagasy: taratasy
+Samoan: le tusi i le laisene
+Sundanese: pos
+Swahili: binafsi
+Tahitian: le tāmaraa
+Tongan: laiseni
+Uzbek: pochta
+Uyghur: پوچتا (poqta)
+Vietnamese: bưu chính
+Welsh: post
+Xhosa: iposi
+Yiddish: posht
+Yoruba: postal
+Zulu: iposi
+Hmong: kev post
+Tajik: почта
+Uzbek: pochta
+Malay: pos
+Afrikaans: pos
+Shona: post
+Tatar: postal
+Uighur: پوچتا (poqta)
+Welsh: post
+Galician: postal
+Kazakh: поштал (postal)
+Kyrgyz: почтал (postal)
+Finnish: posti

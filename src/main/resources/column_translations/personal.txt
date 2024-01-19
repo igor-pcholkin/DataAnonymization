@@ -198,3 +198,5 @@ Malayalam: വ്യക്തിഗതമായ (vyaktigatamāya)
 Maori: whaiaro
 Mongolian: хувийн (khuvii)
 Nepali: व्यक्तिगत (Vyaktigat)
+Finnish: henkilökohtainen
+Swedish: personlig

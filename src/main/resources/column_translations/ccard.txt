@@ -187,3 +187,5 @@ Turkmen: karta
 Uighur: قارتا (Qarta)
 Ukrainian: картка (kartka)
 Urdu: کارڈ (kārḍ)
+Finnish: kortti
+Swedish: kort

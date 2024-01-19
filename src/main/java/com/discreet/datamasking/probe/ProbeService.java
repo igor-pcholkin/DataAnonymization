@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 @Service
 public class ProbeService {
@@ -19,7 +19,7 @@ public class ProbeService {
     }
 
     public Set<String> probe(String table, String column, int maxValues) {
-        Set<String> values = new HashSet<>();
+        Set<String> values = new TreeSet<>();
         String sql = String.format("select distinct %s from %s limit %d", column, table, maxValues);
         jdbcTemplate.query(sql, rs -> {
             values.add(rs.getNString(column));

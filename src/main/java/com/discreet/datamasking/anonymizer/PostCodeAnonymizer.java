@@ -1,6 +1,7 @@
 package com.discreet.datamasking.anonymizer;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * "Shuffing" Anonymizer for post codes.
@@ -11,8 +12,8 @@ public class PostCodeAnonymizer extends BaseAnonymizer {
 
     final private List<String> postCodes;
 
-    public PostCodeAnonymizer(List<String> postCodes) {
-        this.postCodes = postCodes;
+    public PostCodeAnonymizer(Set<String> postCodes) {
+        this.postCodes = postCodes.stream().toList();
     }
 
     @Override
