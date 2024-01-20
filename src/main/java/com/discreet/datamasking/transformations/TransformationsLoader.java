@@ -10,6 +10,9 @@ import java.util.List;
 import java.util.Map;
 
 public class TransformationsLoader {
+    private static final String KEY_ANONYMIZERS = "anonymizers";
+    private static final String KEY_IDS = "ids";
+
     public List<Transformation> loadDefinitions(String transformationsFile) {
         Yaml yaml = new Yaml();
         Map<String, Object> yamlTree;
@@ -45,11 +48,16 @@ public class TransformationsLoader {
         return transformations;
     }
 
-    private Transformation createTransformationForTable(String schema, String table, Map<String, Object> columnMap) {
+    private Transformation createTransformationForTable(String schema, String table, Map<String, Object> tableEntryMap) {
         Transformation transformation = new Transformation(schema, table);
-        for (String column: columnMap.keySet()) {
-            transformation.add(column, (String) columnMap.get(column));
+        for (Map.Entry<String, Object> tableEntry: tableEntryMap.entrySet()) {
+            if (tableEntry.getKey().equals(KEY_ANONYMIZERS)) {
+                transformation.setColumnToAnonymizerMap ((Map<String, String>) tableEntry.getValue());
+            } else if (tableEntry.getKey().equals(KEY_IDS)) {
+                transformation.setIdColumns ((List<String>) tableEntry.getValue());
+            }
         }
         return transformation;
     }
+
 }

@@ -12,12 +12,12 @@ import java.util.Properties;
 public class ColumnToAnonymizerLoader {
     public Map<String, String> load() {
         try (InputStream resourceAsStream = this.getClass().getClassLoader()
-                .getResourceAsStream("anonymizerToColumnMapper.properties")) {
+                .getResourceAsStream("columnToAnonymizer.properties")) {
             Properties properties = new Properties();
             properties.load(resourceAsStream);
             return new HashMap(properties);
         } catch (IOException ex) {
-            throw new RuntimeException("Can't load anonymizerToColumnMapper.properties");
+            throw new RuntimeException("Can't load columnToAnonymizer.properties");
         }
     }
 }

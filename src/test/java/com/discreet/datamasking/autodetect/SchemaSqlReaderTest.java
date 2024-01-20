@@ -20,7 +20,7 @@ class SchemaSqlReaderTest {
                 "Column{name='socialNumber', type='CHAR'}, Column{name='ccard', type='CHAR'}, " +
                 "Column{name='post_code', type='VARCHAR'}]}, " +
 
-                "DBTable{schema='test2', table='COMPANIES', columns=[Column{name='id', type='INTEGER'}, " +
+                "DBTable{schema='test2', table='COMPANIES', columns=[Column{name='company_id', type='INTEGER'}, " +
                 "Column{name='name', type='VARCHAR'}, Column{name='address', type='VARCHAR'}]}]";
         assertEquals(expectedResult, actualResult);
     }

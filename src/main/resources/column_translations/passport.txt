@@ -1,0 +1,196 @@
+English: passport
+Spanish: pasaporte
+French: passeport
+German: Reisepass
+Italian: passaporto
+Portuguese: passaporte
+Russian: паспорт (pasport)
+Dutch: paspoort
+Swedish: pass
+Norwegian: pass
+Danish: pas
+Finnish: passi
+Greek: διαβατήριο (diavatírio)
+Polish: paszport
+Czech: cestovní pas
+Slovak: cestovný pas
+Hungarian: útlevél
+Romanian: pașaport
+Bulgarian: паспорт (pasport)
+Croatian: putovnica
+Serbian: пасош (pasoš)
+Slovenian: potni list
+Bosnian: pasoš
+Macedonian: пасош (pasosh)
+Albanian: pasaportë
+Estonian: pass
+Latvian: pase
+Lithuanian: pasas
+Maltese: passaport
+Icelandic: vegabréf
+Irish: pas Éireannach
+Welsh: pasbort
+Scottish Gaelic: pas
+Basque: pasaporte
+Catalan: passaport
+Galician: pasaporte
+Austrian: Reisepass
+Swiss German: Reisepass
+Swiss French: passeport
+Swiss Italian: passaporto
+Swiss Romansh: passaport
+Luxembourgish: Reesepass
+Liechtenstein: Reisepass
+Monaco: passeport
+Andorra: passaport
+Vatican City: passaporto
+San Marino: passaporto
+Moldovan: pașaport
+Belarusian: пашпарт (pashpart)
+Ukrainian: паспорт (pasport)
+Moldovan: pașaport
+Belarusian: пашпарт (pashpart)
+Ukrainian: паспорт (pasport)
+Moldovan: pașaport
+Belarusian: пашпарт (pashpart)
+Ukrainian: паспорт (pasport)
+Bosnian: pasoš
+Macedonian: пасош (pasosh)
+Serbian: пасош (pasoš)
+Montenegrin: pasoš
+Kosovo: pasaporta
+Romanian: pașaport
+Bulgarian: паспорт (pasport)
+Macedonian: пасош (pasosh)
+Serbian: пасош (pasoš)
+Slovenian: potni list
+Croatian: putovnica
+Bosnian: pasoš
+Montenegrin: pasoš
+Kosovo: pasaporta
+Greek: διαβατήριο (diavatírio)
+Turkish: pasaport
+Cypriot Greek: διαβατήριο (diavatírio)
+Cypriot Turkish: pasaport
+Azerbaijani: pasport
+Armenian: դիմադրություն (dimadrut'yun)
+Georgian: პასპორტი (p'asporti)
+Russian: паспорт (pasport)
+Belarusian: пашпарт (pashpart)
+Ukrainian: паспорт (pasport)
+Estonian: pass
+Latvian: pase
+Lithuanian: pasas
+Finnish: passi
+Polish: paszport
+Czech: cestovní pas
+Slovak: cestovný pas
+Hungarian: útlevél
+Romanian: pașaport
+Bulgarian: паспорт (pasport)
+Croatian: putovnica
+Serbian: пасош (pasoš)
+Slovenian: potni list
+Bosnian: pasoš
+Macedonian: пасош (pasosh)
+Albanian: pasaportë
+Italian: passaporto
+Maltese: passaport
+Icelandic: vegabréf
+Irish: pas Éireannach
+Chinese (Simplified): 护照 (hùzhào)
+Russian: паспорт (pasport)
+Hindi: पासपोर्ट (pāspōrṭ)
+Arabic: جواز سفر (jawaz safari)
+Japanese: パスポート (pasupōto)
+Portuguese: passaporte
+Bengali: পাসপোর্ট (pāspōrṭa)
+Punjabi: ਪਾਸਪੋਰਟ (pāspōraṭ)
+Korean: 여권 (yeogwon)
+Turkish: pasaport
+Vietnamese: hộ chiếu
+Italian: passaporto
+Dutch: paspoort
+Telugu: పాస్‌పోర్ట్ (Pās'pōṛṭ)
+Marathi: पासपोर्ट (pāspōrṭa)
+Tamil: கடவுச்சீட்டு (Kaṭavuccīṭṭu)
+Urdu: پاسپورٹ (pāspōrṭ)
+Malayalam: പാസ്സ്പോർട്ട് (pāsspōrṭṭ)
+Gujarati: પાસપોર્ટ (Pāsapōraṭ)
+Polish: paszport
+Ukrainian: паспорт (pasport)
+Kannada: ಪಾಸ್‌ಪೋರ್ಟ್ (Pās'pōrṭ)
+Thai: หนังสือเดินทาง (Nạngs̄ụ̄̀ dēnt̄hāng)
+Tagalog: pasaporte
+Romanian: pașaport
+Malay: pasport
+Sinhala: පාසපෝට් (Pāsapot)
+Burmese: ခရိုင်နှစ် (hkriang hnḥ)
+Azerbaijani: pasport
+Nepali: पासपोर्ट (Pāspōrṭa)
+Hausa: pasapota
+Farsi (Persian): گذرنامه (gozarname)
+Maori: uruwhenua
+Yoruba: pasipọọti
+Uzbek: pasport
+Kurdish: pasport
+Pashto: پاسپورټ (pāspōṛṭ)
+Mongolian: шилжүүлгийн бичиг (shiljüülgiin bichig)
+Kazakh: паспорт (pasport)
+Somali: pasport
+Maltese: passaport
+Zulu: iphasipoti
+Javanese: paspor
+Igbo: pasipọtụ
+Albanian: pasaportë
+Malagasy: pasipòtra
+Hmong: phau passport
+Sesotho: pasipoto
+Corsican: passaportu
+Kyrgyz: паспорт (pasport)
+Basque: pasaporte
+Hawaiian: palapala hālelelo
+Pashto: پاسپورټ (pāspōṛṭ)
+Amharic: ፓስፖርት (pāspōrṭ)
+Luxembourgish: Reesepass
+Tajik: паспорт
+Armenian: դիմադրություն (dimadrut'yun)
+Georgian: პასპორტი (p'asporti)
+Nepali: पासपोर्ट (Pāspōrṭa)
+Haitian Creole: pòs
+Tajik: паспорт
+Mongolian: шилжүүлгийн бичиг
+Lithuanian: pasas
+Luxembourgish: Reesepass
+Maltese: passaport
+Kannada: ಪಾಸ್‌ಪೋರ್ಟ್ (Pās'pōrṭ)
+Yoruba: pasipọọti
+Azerbaijani: pasport
+Corsican: passaportu
+Maltese: passaport
+Malagasy: pasipòtra
+Samoan: pepa faʻamasani
+Sundanese: paspor
+Swahili: pasipoti
+Tahitian: parau tino
+Tongan: pepa fakahinohino
+Uzbek: pasport
+Uyghur: پاسپورت (paspurt)
+Vietnamese: hộ chiếu
+Welsh: pasbort
+Xhosa: iphasipoti
+Yiddish: pasport
+Yoruba: pasipọọti
+Zulu: iphasipoti
+Javanese: paspor
+Igbo: pasipọtụ
+Albanian: pasaportë
+Malagasy: pasipòtra
+Hmong: phau passport
+Sesotho: pasipoto
+Corsican: passaportu
+Kyrgyz: паспорт (pasport)
+Basque: pasaporte
+Hawaiian: palapala hālelelo
+Pashto: پاسپورټ (pāspōṛṭ)
+Amharic: ፓስፖርት (pāspōrṭ)

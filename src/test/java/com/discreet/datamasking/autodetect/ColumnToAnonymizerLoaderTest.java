@@ -2,6 +2,7 @@ package com.discreet.datamasking.autodetect;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,19 +12,21 @@ class ColumnToAnonymizerLoaderTest {
 
     @Test
     public void testLoadMappings() {
-        Map<String, String> mappings = loader.load();
-        assertEquals(Map.of(
-                        "name", "name",
-                        "title", "name",
-                        "address", "address",
-                        "ccard", "ccard",
-                        "personal", "pid",
-                        "social_number", "pid",
-                        "taxpayer_number", "pid",
-                        "birthdate", "birthdate",
-                        "postal", "post",
-                        "post", "post"
-                        ),
-                mappings);
+        Map<String, String> loadedColumnToAnonymizerMap = loader.load();
+        Map<String, String> expectedColumnToAnonymizerMap = new HashMap<>();
+        expectedColumnToAnonymizerMap.put("name", "name");
+        expectedColumnToAnonymizerMap.put("title", "name");
+        expectedColumnToAnonymizerMap.put("address", "address");
+        expectedColumnToAnonymizerMap.put("ccard", "ccard");
+        expectedColumnToAnonymizerMap.put("personal", "pid");
+        expectedColumnToAnonymizerMap.put("social_number", "pid");
+        expectedColumnToAnonymizerMap.put("taxpayer_number", "pid");
+        expectedColumnToAnonymizerMap.put("passport", "pid");
+        expectedColumnToAnonymizerMap.put("birthdate", "birthdate");
+        expectedColumnToAnonymizerMap.put("postal", "post");
+        expectedColumnToAnonymizerMap.put("post", "post");
+        expectedColumnToAnonymizerMap.put("zip", "post");
+
+        assertEquals(expectedColumnToAnonymizerMap, loadedColumnToAnonymizerMap);
     }
 }

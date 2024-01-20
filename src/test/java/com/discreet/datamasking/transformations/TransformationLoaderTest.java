@@ -16,7 +16,7 @@ class TransformationLoaderTest {
                 "src/test/resources/transformations.yaml");
 
         assertEquals(List.of(
-                new Transformation("test", "users",
+                new Transformation("test", "USERS",
                         Map.of("name", "name",
                             "email", "email",
                             "address", "address",
@@ -25,9 +25,9 @@ class TransformationLoaderTest {
                         "ccard", "ccard",
                                 "post_code", "post")),
 
-                new Transformation("test", "companies",
+                new Transformation("test", "COMPANIES",
                         Map.of("name", "name",
-                        "address", "address"))
+                        "address", "address"), List.of("company_id"))
         ), transformations);
     }
 
