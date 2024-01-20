@@ -47,8 +47,10 @@ public class TransformationsAutoDetector {
             columnTranslationsMap.entrySet().forEach(columnTranslationsEntry -> {
                 String columnTranslationsName = columnTranslationsEntry.getKey();
                 Set<String> columnTranslations = columnTranslationsEntry.getValue();
-                if (columnTranslations.contains(schemaColumn.getName())) {
-                    transformation.getColumnToAnonymizerMap().put(schemaColumn.getName(),
+                String schemaColumnName = schemaColumn.getName();
+                if (columnTranslationsName.equals(schemaColumnName) ||
+                        columnTranslations.contains(schemaColumnName)) {
+                    transformation.getColumnToAnonymizerMap().put(schemaColumnName,
                             columnToAnonymizerTable.get(columnTranslationsName));
                 }
             });
