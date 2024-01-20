@@ -1,8 +1,8 @@
 package com.discreet.datamasking.autodetect;
 
 public class Column {
-    String name;
-    String type;
+    final private String name;
+    final private String type;
 
     public Column(String name, String type) {
         this.name = name;

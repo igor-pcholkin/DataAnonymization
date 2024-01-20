@@ -10,8 +10,10 @@ import java.util.Properties;
 
 @Component
 public class ColumnToAnonymizerLoader {
-    public Map<String, String> load() {
-        try (InputStream resourceAsStream = this.getClass().getClassLoader()
+    private final static Map<String, String> INSTANCE = load();
+
+    private static Map<String, String> load() {
+        try (InputStream resourceAsStream = ColumnToAnonymizerLoader.class.getClassLoader()
                 .getResourceAsStream("columnToAnonymizer.properties")) {
             Properties properties = new Properties();
             properties.load(resourceAsStream);
@@ -19,5 +21,9 @@ public class ColumnToAnonymizerLoader {
         } catch (IOException ex) {
             throw new RuntimeException("Can't load columnToAnonymizer.properties");
         }
+    }
+
+    public Map<String, String> getColumnToAnonymizerTable() {
+        return INSTANCE;
     }
 }

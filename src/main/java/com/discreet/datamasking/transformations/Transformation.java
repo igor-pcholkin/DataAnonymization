@@ -1,5 +1,6 @@
 package com.discreet.datamasking.transformations;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -13,6 +14,7 @@ public class Transformation {
     public Transformation(String schema, String table) {
         this.schema = schema;
         this.table = table;
+        columnToAnonymizerMap = new HashMap<>();
     }
 
     public Transformation(String schema, String table, Map<String, String> columnToAnonymizerMap) {

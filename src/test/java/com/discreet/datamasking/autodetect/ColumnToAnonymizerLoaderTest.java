@@ -12,7 +12,7 @@ class ColumnToAnonymizerLoaderTest {
 
     @Test
     public void testLoadMappings() {
-        Map<String, String> loadedColumnToAnonymizerMap = loader.load();
+        Map<String, String> loadedColumnToAnonymizerMap = loader.getColumnToAnonymizerTable();
         Map<String, String> expectedColumnToAnonymizerMap = new HashMap<>();
         expectedColumnToAnonymizerMap.put("name", "name");
         expectedColumnToAnonymizerMap.put("title", "name");
@@ -26,6 +26,7 @@ class ColumnToAnonymizerLoaderTest {
         expectedColumnToAnonymizerMap.put("postal", "post");
         expectedColumnToAnonymizerMap.put("post", "post");
         expectedColumnToAnonymizerMap.put("zip", "post");
+        expectedColumnToAnonymizerMap.put("email", "email");
 
         assertEquals(expectedColumnToAnonymizerMap, loadedColumnToAnonymizerMap);
     }

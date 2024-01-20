@@ -1,8 +1,6 @@
 package com.discreet.datamasking;
 
-import com.discreet.datamasking.autodetect.ColumnTranslationsLoader;
-import com.discreet.datamasking.autodetect.DBTable;
-import com.discreet.datamasking.autodetect.SchemaSqlReader;
+import com.discreet.datamasking.autodetect.TransformationsAutoDetector;
 import com.discreet.datamasking.transformations.Transformation;
 import com.discreet.datamasking.transformations.TransformationsLoader;
 import com.discreet.datamasking.transformations.TransformationsProcessor;
@@ -14,8 +12,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import picocli.CommandLine;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 @SpringBootApplication
 @Slf4j
@@ -25,10 +21,7 @@ public class DatamaskingApplication implements CommandLineRunner {
 	private TransformationsProcessor processor;
 
 	@Autowired
-	private SchemaSqlReader schemaSqlReader;
-
-	@Autowired
-	private ColumnTranslationsLoader columnTranslationsLoader;
+	private TransformationsAutoDetector autoDetector;
 
 	public static void main(String[] args) {
 		SpringApplication.run(DatamaskingApplication.class, args);
@@ -39,26 +32,18 @@ public class DatamaskingApplication implements CommandLineRunner {
 		try {
 			CommandLineArgs commandLineArgs = new CommandLineArgs();
 			new CommandLine(commandLineArgs).parseArgs(args);
+			List<Transformation> transformations;
 			if (commandLineArgs.getSchemaFileName() != null) {
-				autodetectSchema(commandLineArgs);
+				transformations = autoDetector.autodetectSchema(commandLineArgs);
 			} else {
-				List<Transformation> transformations = new TransformationsLoader().loadDefinitions(commandLineArgs.getTransformationsFileName());
-				processor.process(transformations);
+				transformations = new TransformationsLoader()
+						.loadDefinitions(commandLineArgs.getTransformationsFileName());
 			}
+			processor.process(transformations);
 		}
 		catch (RuntimeException ex) {
 			log.error(ex.getMessage());
 		}
 	}
 
-	private void autodetectSchema(CommandLineArgs commandLineArgs) {
-		Map<String, Set<String>> columnTranslations = columnTranslationsLoader.readColumns();
-		System.out.println(columnTranslations.keySet());
-		String schemaFileName = commandLineArgs.getSchemaFileName();
-		if (commandLineArgs.getDefaultSchemaName() != null) {
-			schemaSqlReader.setDefaultSchema(commandLineArgs.getDefaultSchemaName());
-		}
-		List<DBTable> tables = schemaSqlReader.readDDL(schemaFileName);
-		System.out.println(tables);
-	}
 }
