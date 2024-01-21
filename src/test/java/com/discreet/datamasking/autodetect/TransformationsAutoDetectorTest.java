@@ -26,13 +26,8 @@ class TransformationsAutoDetectorTest {
         ));
 
         ColumnTranslationsLoader columnTranslationsLoader = mock(ColumnTranslationsLoader.class);
-        ColumnToAnonymizerLoader columnToAnonymizerLoader = mock(ColumnToAnonymizerLoader.class);
 
-        Map<String, String> columnToAnonymizerMap = Map.of("name", "name",
-                "passport", "pid");
-        when(columnToAnonymizerLoader.getColumnToAnonymizerTable()).thenReturn(columnToAnonymizerMap);
-
-        autoDetector.setColumnToAnonymizerLoader(columnToAnonymizerLoader);
+        autoDetector.setColumnToAnonymizerLoader(new ColumnToAnonymizerLoader());
         autoDetector.setSchemaSqlReader(schemaSqlReader);
         autoDetector.setColumnTranslationsLoader(columnTranslationsLoader);
 
@@ -43,6 +38,45 @@ class TransformationsAutoDetectorTest {
         List<Transformation> expectedTransformations = List.of(
                 new Transformation("test", "users",
                         Map.of("name", "name", "passport", "pid"), List.of("id"))
+        );
+
+        assertEquals(expectedTransformations, actualTransformations);
+    }
+
+    @Test
+    public void testAutodetectSchemaWithTranslations() {
+        SchemaSqlReader schemaSqlReader = mock(SchemaSqlReader.class);
+        when(schemaSqlReader.readDDL("schema.sql")).thenReturn(List.of(
+                new DBTable("test", "users",
+                        List.of(new Column("user_id", "INT"),
+                                new Column("geboortedatum", "DATE"),
+                                new Column("henkilötunnus", "VARCHAR(256)"),
+                                new Column("titl", "VARCHAR(256)"),
+                                new Column("nodokļu_maksātāja_numurs", "VARCHAR(256)"),
+                                new Column("kart", "CHAR(16)"),
+                                new Column("adiresi", "VARCHAR(256)"),
+                                new Column("poster", "VARCHAR(256)")))
+
+        ));
+
+        autoDetector.setColumnToAnonymizerLoader(new ColumnToAnonymizerLoader());
+        autoDetector.setSchemaSqlReader(schemaSqlReader);
+        autoDetector.setColumnTranslationsLoader(new ColumnTranslationsLoader());
+
+        CommandLineArgs commandLineArgs = new CommandLineArgs();
+        commandLineArgs.setSchemaFileName("schema.sql");
+
+        List<Transformation> actualTransformations = autoDetector.autodetectSchema(commandLineArgs);
+        List<Transformation> expectedTransformations = List.of(
+                new Transformation("test", "users",
+                        Map.of("adiresi", "address",
+                                "henkilötunnus", "pid",
+                                "nodokļu_maksātāja_numurs", "pid",
+                                "kart", "ccard",
+                                "titl", "name",
+                                "poster", "post",
+                                "geboortedatum", "birthdate"
+                ), List.of("user_id"))
         );
 
         assertEquals(expectedTransformations, actualTransformations);

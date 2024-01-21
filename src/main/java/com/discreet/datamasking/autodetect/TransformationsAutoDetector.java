@@ -63,8 +63,13 @@ public class TransformationsAutoDetector {
             columnToAnonymizerKey = getTranslatedColumnKey(schemaColumnName, columnTranslationsMap);
         }
         if (columnToAnonymizerKey != null) {
-            transformation.getColumnToAnonymizerMap().put(schemaColumnName,
-                    columnToAnonymizerTable.get(columnToAnonymizerKey));
+            String anonymizer = columnToAnonymizerTable.get(columnToAnonymizerKey);
+            if (anonymizer != null) {
+                transformation.getColumnToAnonymizerMap().put(schemaColumnName,
+                        columnToAnonymizerTable.get(columnToAnonymizerKey));
+            } else {
+                throw new RuntimeException("Error, column to anonymizer table doesn't contain mapping for " + columnToAnonymizerKey);
+            }
         }
     }
 
@@ -72,7 +77,7 @@ public class TransformationsAutoDetector {
         return columnTranslationsMap.entrySet().stream().filter(columnTranslationsEntry -> {
             Set<String> columnTranslations = columnTranslationsEntry.getValue();
             return columnTranslations.contains(schemaColumnName);
-        }).map(e -> e.getKey()).findFirst().orElse(null);
+        }).map(Map.Entry::getKey).findFirst().orElse(null);
     }
 
     private void detectAndSetIdColumns(Transformation transformation, List<Column> columns) {
