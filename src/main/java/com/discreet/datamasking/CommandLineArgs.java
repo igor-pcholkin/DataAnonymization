@@ -27,4 +27,7 @@ public class CommandLineArgs {
         return transformationsFileName;
     }
 
+    public void setSchemaFileName(String schemaFileName) {
+        this.schemaFileName = schemaFileName;
+    }
 }

@@ -30,33 +30,49 @@ public class TransformationsAutoDetector {
         if (columnToAnonymizerTable == null) {
             columnToAnonymizerTable = columnToAnonymizerLoader.getColumnToAnonymizerTable();
         }
+        Set<String> columnToAnonymizerKeys = columnToAnonymizerTable.keySet();
         Map<String, Set<String>> columnTranslations = columnTranslationsLoader.readColumns();
         String schemaFileName = commandLineArgs.getSchemaFileName();
         if (commandLineArgs.getDefaultSchemaName() != null) {
             schemaSqlReader.setDefaultSchema(commandLineArgs.getDefaultSchemaName());
         }
         List<DBTable> tables = schemaSqlReader.readDDL(schemaFileName);
-        return tables.stream().map(table -> mapTableToTransformation(table, columnTranslations))
+        return tables.stream().map(table -> mapTableToTransformation(table, columnToAnonymizerKeys, columnTranslations))
                 .collect(Collectors.toList());
     }
 
-    private Transformation mapTableToTransformation(DBTable table, Map<String, Set<String>> columnTranslationsMap) {
+    private Transformation mapTableToTransformation(DBTable table,
+                                                    Set<String> columnToAnonymizerKeys,
+                                                    Map<String, Set<String>> columnTranslationsMap) {
         Transformation transformation = new Transformation(table.getSchema(), table.getTable());
 
-        table.getColumns().forEach(schemaColumn -> {
-            columnTranslationsMap.entrySet().forEach(columnTranslationsEntry -> {
-                String columnTranslationsName = columnTranslationsEntry.getKey();
-                Set<String> columnTranslations = columnTranslationsEntry.getValue();
-                String schemaColumnName = schemaColumn.getName();
-                if (columnTranslationsName.equals(schemaColumnName) ||
-                        columnTranslations.contains(schemaColumnName)) {
-                    transformation.getColumnToAnonymizerMap().put(schemaColumnName,
-                            columnToAnonymizerTable.get(columnTranslationsName));
-                }
-            });
-        });
+        table.getColumns().forEach(schemaColumn ->
+                setAnonymizerForColumn(schemaColumn, transformation, columnToAnonymizerKeys, columnTranslationsMap));
         detectAndSetIdColumns(transformation, table.getColumns());
         return transformation;
+    }
+
+    private void setAnonymizerForColumn(Column schemaColumn, Transformation transformation,
+                                        Set<String> columnToAnonymizerKeys,
+                                        Map<String, Set<String>> columnTranslationsMap) {
+        String schemaColumnName = schemaColumn.getName();
+        String columnToAnonymizerKey;
+        if (columnToAnonymizerKeys.contains(schemaColumnName)) {
+            columnToAnonymizerKey = schemaColumnName;
+        } else {
+            columnToAnonymizerKey = getTranslatedColumnKey(schemaColumnName, columnTranslationsMap);
+        }
+        if (columnToAnonymizerKey != null) {
+            transformation.getColumnToAnonymizerMap().put(schemaColumnName,
+                    columnToAnonymizerTable.get(columnToAnonymizerKey));
+        }
+    }
+
+    private String getTranslatedColumnKey(String schemaColumnName, Map<String, Set<String>> columnTranslationsMap) {
+        return columnTranslationsMap.entrySet().stream().filter(columnTranslationsEntry -> {
+            Set<String> columnTranslations = columnTranslationsEntry.getValue();
+            return columnTranslations.contains(schemaColumnName);
+        }).map(e -> e.getKey()).findFirst().orElse(null);
     }
 
     private void detectAndSetIdColumns(Transformation transformation, List<Column> columns) {
@@ -76,4 +92,15 @@ public class TransformationsAutoDetector {
         }
     }
 
+    public void setSchemaSqlReader(SchemaSqlReader schemaSqlReader) {
+        this.schemaSqlReader = schemaSqlReader;
+    }
+
+    public void setColumnTranslationsLoader(ColumnTranslationsLoader columnTranslationsLoader) {
+        this.columnTranslationsLoader = columnTranslationsLoader;
+    }
+
+    public void setColumnToAnonymizerLoader(ColumnToAnonymizerLoader columnToAnonymizerLoader) {
+        this.columnToAnonymizerLoader = columnToAnonymizerLoader;
+    }
 }
