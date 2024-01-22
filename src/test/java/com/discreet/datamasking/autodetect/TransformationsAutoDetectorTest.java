@@ -34,7 +34,7 @@ class TransformationsAutoDetectorTest {
         CommandLineArgs commandLineArgs = new CommandLineArgs();
         commandLineArgs.setSchemaFileName("schema.sql");
 
-        List<Transformation> actualTransformations = autoDetector.autodetectSchema(commandLineArgs);
+        List<Transformation> actualTransformations = autoDetector.autodetectTransformations(commandLineArgs);
         List<Transformation> expectedTransformations = List.of(
                 new Transformation("test", "users",
                         Map.of("name", "name", "passport", "pid"), List.of("id"))
@@ -66,7 +66,7 @@ class TransformationsAutoDetectorTest {
         CommandLineArgs commandLineArgs = new CommandLineArgs();
         commandLineArgs.setSchemaFileName("schema.sql");
 
-        List<Transformation> actualTransformations = autoDetector.autodetectSchema(commandLineArgs);
+        List<Transformation> actualTransformations = autoDetector.autodetectTransformations(commandLineArgs);
         List<Transformation> expectedTransformations = List.of(
                 new Transformation("test", "users",
                         Map.of("adiresi", "address",

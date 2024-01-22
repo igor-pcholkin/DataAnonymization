@@ -26,7 +26,7 @@ public class TransformationsAutoDetector {
 
     private static final String DEFAULT_ID_COLUMN = "id";
 
-    public List<Transformation> autodetectSchema(CommandLineArgs commandLineArgs) {
+    public List<Transformation> autodetectTransformations(CommandLineArgs commandLineArgs) {
         if (columnToAnonymizerTable == null) {
             columnToAnonymizerTable = columnToAnonymizerLoader.getColumnToAnonymizerTable();
         }
