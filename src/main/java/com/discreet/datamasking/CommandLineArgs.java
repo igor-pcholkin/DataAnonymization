@@ -7,6 +7,10 @@ public class CommandLineArgs {
             description = "ddl schema file name to use for auto-detection of DB table columns which can be anonymized")
     private String schemaFileName;
 
+    @CommandLine.Option(names = { "-sn", "--schemaName" },
+            description = "schema name to use for reading metadata from DB and auto-detection of DB table columns which can be anonymized")
+    private String schemaName;
+
     @CommandLine.Option(names = { "-tfn", "--transformationsFileName" },
             description = "ddl schema file name to use for auto-detection of DB table columns which can be anonymized")
     private String transformationsFileName;
@@ -17,6 +21,10 @@ public class CommandLineArgs {
 
     public String getSchemaFileName() {
         return schemaFileName;
+    }
+
+    public String getSchemaName() {
+        return schemaName;
     }
 
     public String getDefaultSchemaName() {

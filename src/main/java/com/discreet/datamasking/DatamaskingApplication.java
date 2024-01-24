@@ -33,7 +33,7 @@ public class DatamaskingApplication implements CommandLineRunner {
 			CommandLineArgs commandLineArgs = new CommandLineArgs();
 			new CommandLine(commandLineArgs).parseArgs(args);
 			List<Transformation> transformations;
-			if (commandLineArgs.getSchemaFileName() != null) {
+			if (commandLineArgs.getSchemaFileName() != null || commandLineArgs.getSchemaName() != null) {
 				transformations = autoDetector.autodetectTransformations(commandLineArgs);
 			} else {
 				transformations = new TransformationsLoader()

@@ -17,6 +17,9 @@ public class TransformationsAutoDetector {
     private SchemaSqlReader schemaSqlReader;
 
     @Autowired
+    private SchemaMetadataReader schemaMetadataReader;
+
+    @Autowired
     private ColumnTranslationsLoader columnTranslationsLoader;
 
     @Autowired
@@ -32,13 +35,23 @@ public class TransformationsAutoDetector {
         }
         Set<String> columnToAnonymizerKeys = columnToAnonymizerTable.keySet();
         Map<String, Set<String>> columnTranslations = columnTranslationsLoader.readColumns();
-        String schemaFileName = commandLineArgs.getSchemaFileName();
-        if (commandLineArgs.getDefaultSchemaName() != null) {
-            schemaSqlReader.setDefaultSchema(commandLineArgs.getDefaultSchemaName());
-        }
-        List<DBTable> tables = schemaSqlReader.readDDL(schemaFileName);
+        List<DBTable> tables = readSchema(commandLineArgs);
+
         return tables.stream().map(table -> mapTableToTransformation(table, columnToAnonymizerKeys, columnTranslations))
                 .collect(Collectors.toList());
+    }
+
+    private List<DBTable> readSchema(CommandLineArgs commandLineArgs) {
+        List<DBTable> tables = null;
+        if (commandLineArgs.getSchemaFileName() != null) {
+            if (commandLineArgs.getDefaultSchemaName() != null) {
+                schemaSqlReader.setDefaultSchema(commandLineArgs.getDefaultSchemaName());
+            }
+            tables = schemaSqlReader.readDDL(commandLineArgs.getSchemaFileName());
+        } else if (commandLineArgs.getSchemaName() != null) {
+            tables = schemaMetadataReader.read(commandLineArgs.getSchemaName());
+        }
+        return tables;
     }
 
     private Transformation mapTableToTransformation(DBTable table,
