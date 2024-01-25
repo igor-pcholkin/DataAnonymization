@@ -13,6 +13,8 @@ import picocli.CommandLine;
 
 import java.util.List;
 
+import static org.springframework.util.ObjectUtils.isEmpty;
+
 @SpringBootApplication
 @Slf4j
 public class DatamaskingApplication implements CommandLineRunner {
@@ -31,7 +33,12 @@ public class DatamaskingApplication implements CommandLineRunner {
 	public void run(String... args) {
 		try {
 			CommandLineArgs commandLineArgs = new CommandLineArgs();
-			new CommandLine(commandLineArgs).parseArgs(args);
+			CommandLine commandLine = new CommandLine(commandLineArgs);
+			commandLine.parseArgs(args);
+			if (commandLineArgs.isUsageHelpRequested() || isEmpty(args)) {
+				commandLine.usage(System.out);
+				return;
+			}
 			List<Transformation> transformations;
 			if (commandLineArgs.getSchemaFileName() != null || commandLineArgs.getSchemaName() != null) {
 				transformations = autoDetector.autodetectTransformations(commandLineArgs);
@@ -43,6 +50,7 @@ public class DatamaskingApplication implements CommandLineRunner {
 		}
 		catch (RuntimeException ex) {
 			log.error(ex.getMessage());
+			System.err.println(ex.getMessage());
 		}
 	}
 

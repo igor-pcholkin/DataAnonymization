@@ -1,3 +1,4 @@
 .mvn/
 target/
 .idea
+logs/

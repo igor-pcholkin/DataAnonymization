@@ -2,7 +2,11 @@ package com.discreet.datamasking;
 
 import picocli.CommandLine;
 
+@CommandLine.Command(name = "datamasking_app")
 public class CommandLineArgs {
+    @CommandLine.Option(names = {"?", "-h", "--help"}, usageHelp = true, description = "display this help message")
+    private boolean usageHelpRequested;
+
     @CommandLine.Option(names = { "-sfn", "--schemaFileName" },
             description = "ddl schema file name to use for auto-detection of DB table columns which can be anonymized")
     private String schemaFileName;
@@ -37,5 +41,9 @@ public class CommandLineArgs {
 
     public void setSchemaFileName(String schemaFileName) {
         this.schemaFileName = schemaFileName;
+    }
+
+    public boolean isUsageHelpRequested() {
+        return usageHelpRequested;
     }
 }
