@@ -5,7 +5,8 @@ import com.alibaba.druid.sql.ast.SQLStatement;
 import com.alibaba.druid.sql.ast.statement.SQLColumnDefinition;
 import com.alibaba.druid.sql.ast.statement.SQLCreateTableStatement;
 import com.alibaba.druid.sql.ast.statement.SQLExprTableSource;
-import com.alibaba.druid.util.JdbcConstants;
+import com.alibaba.druid.sql.parser.ParserException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.io.FileInputStream;
@@ -16,19 +17,30 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
+@Slf4j
 public class SchemaSqlReader {
 
     private String defaultSchema;
+    private String dbEngine;
     public void setDefaultSchema(String defaultSchema) {
         this.defaultSchema = defaultSchema;
+    }
+
+    public void setDBEngine(String dbEngine) {
+        this.dbEngine = dbEngine;
     }
 
     public List<DBTable> readDDL(String schemaFile) {
         List<DBTable> tables = new ArrayList<>();
         String sql = readDDLRaw(schemaFile);
-        List<SQLStatement> statements = SQLUtils.parseStatements(sql, JdbcConstants.MYSQL);
-        for (SQLStatement statement : statements) {
-            addStatementAsDBTable(tables, statement);
+        try {
+            List<SQLStatement> statements = SQLUtils.parseStatements(sql, dbEngine);
+            for (SQLStatement statement : statements) {
+                addStatementAsDBTable(tables, statement);
+            }
+        } catch (ParserException ex) {
+            log.error(ex.getMessage());
+            throw new RuntimeException("Error: cannot parse schema, please ensure that correct DB dialect (engine) is set using -dbe option.");
         }
         return tables;
     }
@@ -65,4 +77,5 @@ public class SchemaSqlReader {
     private Column mapColumn(SQLColumnDefinition columnDefinition) {
         return new Column(columnDefinition.getName().getSimpleName(), columnDefinition.getDataType().getName());
     }
+
 }

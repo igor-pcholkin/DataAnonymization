@@ -23,6 +23,10 @@ public class CommandLineArgs {
             description = "default schema name to use in case if schema name is missing in DDL schema")
     private String defaultSchemaName;
 
+    @CommandLine.Option(names = { "-dbe", "--dbEngine" },
+            description = "DB engine, one of mysql, oracle, postgresql, db2, jtds, sybase, sqlserver, mariadb, derby, hive, h2, informix")
+    private String dbEngine;
+
     public String getSchemaFileName() {
         return schemaFileName;
     }
@@ -45,5 +49,13 @@ public class CommandLineArgs {
 
     public boolean isUsageHelpRequested() {
         return usageHelpRequested;
+    }
+
+    public String getDbEngine() {
+        return dbEngine;
+    }
+
+    public void setDbEngine(String dbEngine) {
+        this.dbEngine = dbEngine;
     }
 }

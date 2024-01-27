@@ -53,6 +53,7 @@ public class TransformationsAutoDetector {
 
     private List<DBTable> readSchemaFromFile(CommandLineArgs commandLineArgs) {
         schemaSqlReader.setDefaultSchema(commandLineArgs.getDefaultSchemaName());
+        schemaSqlReader.setDBEngine(commandLineArgs.getDbEngine());
         return schemaSqlReader.readDDL(commandLineArgs.getSchemaFileName());
     }
 

@@ -12,6 +12,7 @@ class SchemaSqlReaderTest {
     @Test
     public void testLoadSchema() {
         schemaSqlReader.setDefaultSchema("test2");
+        schemaSqlReader.setDBEngine("mysql");
         List<DBTable> schema = schemaSqlReader.readDDL("src/test/resources/com/discreet/datamasking/itest/schema.sql");
         String actualResult = schema.toString();
         String expectedResult = "[DBTable{schema='test2', table='USERS', columns=[Column{name='id', type='INTEGER'}, " +
@@ -28,11 +29,27 @@ class SchemaSqlReaderTest {
     @Test
     public void testExceptionForNoShemaName() {
         schemaSqlReader.setDefaultSchema(null);
+        schemaSqlReader.setDBEngine("mysql");
         try {
             schemaSqlReader.readDDL("src/test/resources/com/discreet/datamasking/itest/schema.sql");
             fail();
         } catch (RuntimeException ex) {
             assertEquals("No schema name is found for table USERS, please use -dsn (--defaultSchemaName) command line argument to set a default one.", ex.getMessage());
         }
+    }
+
+    @Test
+    public void testDBEngineNotSet() {
+        schemaSqlReader.setDefaultSchema("test2");
+        assertThrows(RuntimeException.class, () ->
+                schemaSqlReader.readDDL("src/test/resources/com/discreet/datamasking/itest/schema.sql"));
+    }
+
+    @Test
+    public void testIncorrectDDL() {
+        schemaSqlReader.setDefaultSchema("test2");
+        schemaSqlReader.setDBEngine("mysql");
+        assertThrows(RuntimeException.class, () ->
+                schemaSqlReader.readDDL("src/test/resources/transformations.yaml"));
     }
 }
