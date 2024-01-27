@@ -1,5 +1,6 @@
 package com.discreet.datamasking.itest;
 
+import com.discreet.datamasking.autodetect.SchemaMetadataReader;
 import com.discreet.datamasking.probe.ProbeService;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -12,4 +13,7 @@ public class CustomApplication {
     public ProbeService getProbeService(JdbcTemplate jdbcTemplate) {
         return new ProbeService(jdbcTemplate);
     }
+
+    @Bean
+    public SchemaMetadataReader getMetadataReader(JdbcTemplate jdbcTemplate) { return new SchemaMetadataReader(jdbcTemplate); }
 }

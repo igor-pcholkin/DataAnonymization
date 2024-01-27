@@ -1,6 +1,7 @@
 package com.discreet.datamasking.autodetect;
 
 import java.util.List;
+import java.util.Objects;
 
 public class DBTable {
     private String schema;
@@ -33,5 +34,18 @@ public class DBTable {
                 ", table='" + table + '\'' +
                 ", columns=" + columns +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DBTable dbTable = (DBTable) o;
+        return Objects.equals(schema, dbTable.schema) && Objects.equals(table, dbTable.table) && Objects.equals(columns, dbTable.columns);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(schema, table, columns);
     }
 }

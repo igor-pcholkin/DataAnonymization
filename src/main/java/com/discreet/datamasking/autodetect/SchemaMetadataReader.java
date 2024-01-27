@@ -2,15 +2,19 @@ package com.discreet.datamasking.autodetect;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
 import java.util.List;
 
-@Component
+@Service
 public class SchemaMetadataReader {
     @Autowired
     private JdbcTemplate jdbcTemplate;
+
+    public SchemaMetadataReader(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     public List<DBTable> read(String schema) {
         List<DBTable> tables = new LinkedList<>();
