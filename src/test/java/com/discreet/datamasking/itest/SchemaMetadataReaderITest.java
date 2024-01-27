@@ -1,5 +1,6 @@
 package com.discreet.datamasking.itest;
 
+import com.discreet.datamasking.EmptySchemaException;
 import com.discreet.datamasking.autodetect.Column;
 import com.discreet.datamasking.autodetect.DBTable;
 import com.discreet.datamasking.autodetect.SchemaMetadataReader;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class SchemaMetadataReaderITest extends BaseITest {
     @Autowired
@@ -36,8 +38,6 @@ class SchemaMetadataReaderITest extends BaseITest {
 
     @Test
     public void testReadUnknownSchema() {
-        List<DBTable> actualMetadata = schemaMetadataReader.read("test2");
-        List<DBTable> expectedMetadata = List.of();
-        assertEquals(expectedMetadata, actualMetadata);
+        assertThrows(EmptySchemaException.class, () -> schemaMetadataReader.read("test2"));
     }
 }
