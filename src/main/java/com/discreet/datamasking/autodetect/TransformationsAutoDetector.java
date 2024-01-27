@@ -44,14 +44,16 @@ public class TransformationsAutoDetector {
     private List<DBTable> readSchema(CommandLineArgs commandLineArgs) {
         List<DBTable> tables = null;
         if (commandLineArgs.getSchemaFileName() != null) {
-            if (commandLineArgs.getDefaultSchemaName() != null) {
-                schemaSqlReader.setDefaultSchema(commandLineArgs.getDefaultSchemaName());
-            }
-            tables = schemaSqlReader.readDDL(commandLineArgs.getSchemaFileName());
+            tables = readSchemaFromFile(commandLineArgs);
         } else if (commandLineArgs.getSchemaName() != null) {
             tables = schemaMetadataReader.read(commandLineArgs.getSchemaName());
         }
         return tables;
+    }
+
+    private List<DBTable> readSchemaFromFile(CommandLineArgs commandLineArgs) {
+        schemaSqlReader.setDefaultSchema(commandLineArgs.getDefaultSchemaName());
+        return schemaSqlReader.readDDL(commandLineArgs.getSchemaFileName());
     }
 
     private Transformation mapTableToTransformation(DBTable table,
