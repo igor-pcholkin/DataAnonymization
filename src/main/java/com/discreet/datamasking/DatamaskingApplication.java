@@ -7,8 +7,9 @@ import com.discreet.datamasking.transformations.TransformationsProcessor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.ConfigurableApplicationContext;
 import picocli.CommandLine;
 
 import java.util.List;
@@ -26,7 +27,10 @@ public class DatamaskingApplication implements CommandLineRunner {
 	private TransformationsAutoDetector autoDetector;
 
 	public static void main(String[] args) {
-		SpringApplication.run(DatamaskingApplication.class, args);
+		ConfigurableApplicationContext applicationContext = new SpringApplicationBuilder(DatamaskingApplication.class)
+				.properties("spring.config.name:application,myapp",
+						"spring.config.location:file:conf/application.properties")
+				.build().run(args);
 	}
 
 	@Override
