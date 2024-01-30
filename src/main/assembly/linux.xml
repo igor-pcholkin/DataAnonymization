@@ -17,7 +17,7 @@
             <outputDirectory>/</outputDirectory>
         </file>
         <file>
-            <source>scripts/datamasking.sh</source>
+            <source>scripts/dataprotection.sh</source>
             <outputDirectory>/</outputDirectory>
         </file>
     </files>

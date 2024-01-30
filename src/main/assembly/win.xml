@@ -17,7 +17,7 @@
             <outputDirectory>/</outputDirectory>
         </file>
         <file>
-            <source>scripts/datamasking.bat</source>
+            <source>scripts/dataprotection.bat</source>
             <outputDirectory>/</outputDirectory>
         </file>
     </files>

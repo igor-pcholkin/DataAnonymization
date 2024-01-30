@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.discreet</groupId>
-	<artifactId>datamasking</artifactId>
+	<artifactId>dataprotection</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>datamasking</name>
-	<description>Data Masking</description>
+	<name>dataprotection</name>
+	<description>Data Protection</description>
 	<properties>
 		<java.version>19</java.version>
 	</properties>
@@ -92,7 +92,7 @@
 							<goal>single</goal>
 						</goals>
 						<configuration>
-							<finalName>datamasking-package</finalName>
+							<finalName>dataprotection-package</finalName>
 							<appendAssemblyId>true</appendAssemblyId>
 							<descriptors>
 								<descriptor>src/main/assembly/win.xml</descriptor>
@@ -106,7 +106,7 @@
 							<goal>single</goal>
 						</goals>
 						<configuration>
-							<finalName>datamasking-package</finalName>
+							<finalName>dataprotection-package</finalName>
 							<appendAssemblyId>true</appendAssemblyId>
 							<descriptors>
 								<descriptor>src/main/assembly/linux.xml</descriptor>
