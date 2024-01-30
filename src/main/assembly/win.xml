@@ -1,5 +1,5 @@
 <assembly>
-    <id>zip</id>
+    <id>win</id>
     <includeBaseDirectory>true</includeBaseDirectory>
 
     <formats>
@@ -17,7 +17,7 @@
             <outputDirectory>/</outputDirectory>
         </file>
         <file>
-            <source>scripts/run.sh</source>
+            <source>scripts/datamasking.bat</source>
             <outputDirectory>/</outputDirectory>
         </file>
     </files>

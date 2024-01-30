@@ -86,14 +86,30 @@
 				<version>3.5.0</version>
 				<executions>
 					<execution>
+						<id>assembly-win</id>
 						<phase>package</phase>
 						<goals>
 							<goal>single</goal>
 						</goals>
 						<configuration>
-							<appendAssemblyId>false</appendAssemblyId>
+							<finalName>datamasking-package</finalName>
+							<appendAssemblyId>true</appendAssemblyId>
 							<descriptors>
-								<descriptor>src/main/assembly/zip.xml</descriptor>
+								<descriptor>src/main/assembly/win.xml</descriptor>
+							</descriptors>
+						</configuration>
+					</execution>
+					<execution>
+						<id>assembly-linux</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<finalName>datamasking-package</finalName>
+							<appendAssemblyId>true</appendAssemblyId>
+							<descriptors>
+								<descriptor>src/main/assembly/linux.xml</descriptor>
 							</descriptors>
 						</configuration>
 					</execution>
