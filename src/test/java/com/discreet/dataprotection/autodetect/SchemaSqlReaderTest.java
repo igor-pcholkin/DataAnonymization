@@ -1,7 +1,5 @@
 package com.discreet.dataprotection.autodetect;
 
-import com.discreet.dataprotection.autodetect.DBTable;
-import com.discreet.dataprotection.autodetect.SchemaSqlReader;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

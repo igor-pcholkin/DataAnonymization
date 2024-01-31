@@ -54,19 +54,24 @@ public class SchemaSqlReader {
             List<Column> columns = createTableStatement.getTableElementList().stream()
                     .filter(c -> c instanceof SQLColumnDefinition)
                     .map(c -> mapColumn((SQLColumnDefinition) c)).collect(Collectors.toList());
-            String schemaName = tableSource.getSchema();
+            String schemaName = unquote(tableSource.getSchema());
+            String tableName = unquote(tableSource.getName().getSimpleName());
             if (schemaName == null) {
                 if (defaultSchema != null) {
                     schemaName = defaultSchema;
                 } else {
                     throw new RuntimeException(String.format("No schema name is found for table %s, please use " +
                                     "-dsn (--defaultSchemaName) command line argument to set a default one.",
-                            tableSource.getName().getSimpleName()));
+                            tableName));
                 }
             }
-            DBTable table = new DBTable(schemaName, tableSource.getName().getSimpleName(), columns);
+            DBTable table = new DBTable(schemaName, tableName, columns);
             tables.add(table);
         }
+    }
+
+    private String unquote(String name) {
+        return name == null ? null : name.replaceAll("^[\"\'`]|[\"\'`]$", "");
     }
 
     private String readDDLRaw(String schemaFile) {
@@ -78,7 +83,7 @@ public class SchemaSqlReader {
     }
 
     private Column mapColumn(SQLColumnDefinition columnDefinition) {
-        return new Column(columnDefinition.getName().getSimpleName(), columnDefinition.getDataType().getName());
+        return new Column(unquote(columnDefinition.getName().getSimpleName()), columnDefinition.getDataType().getName());
     }
 
 }
