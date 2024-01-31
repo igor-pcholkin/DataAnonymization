@@ -40,7 +40,8 @@ public class SchemaSqlReader {
             }
         } catch (ParserException ex) {
             log.error(ex.getMessage());
-            throw new RuntimeException("Error: cannot parse schema, please ensure that correct DB dialect (engine) is set using -dbe option.");
+            throw new RuntimeException("Error: cannot parse schema, please ensure that correct DB dialect (engine) is set using -dbe option.\n" +
+                    "Also check output logs.");
         }
         return tables;
     }

@@ -42,11 +42,12 @@ public class TransformationsAutoDetector {
     }
 
     private List<DBTable> readSchema(CommandLineArgs commandLineArgs) {
+        System.out.println("Reading schema...");
         List<DBTable> tables = null;
         if (commandLineArgs.getSchemaFileName() != null) {
             tables = readSchemaFromFile(commandLineArgs);
         } else if (commandLineArgs.getSchemaName() != null) {
-            tables = schemaMetadataReader.read(commandLineArgs.getSchemaName());
+            tables = readSchemaFromMetadata(commandLineArgs.getSchemaName());
         }
         return tables;
     }
@@ -57,9 +58,15 @@ public class TransformationsAutoDetector {
         return schemaSqlReader.readDDL(commandLineArgs.getSchemaFileName());
     }
 
+    private List<DBTable> readSchemaFromMetadata(String schemaName) {
+        return schemaMetadataReader.read(schemaName);
+    }
+
     private Transformation mapTableToTransformation(DBTable table,
                                                     Set<String> columnToAnonymizerKeys,
                                                     Map<String, Set<String>> columnTranslationsMap) {
+        System.out.println(String.format("Processing db table %s.%s...", table.getSchema(), table.getTable()));
+
         Transformation transformation = new Transformation(table.getSchema(), table.getTable());
 
         table.getColumns().forEach(schemaColumn ->
