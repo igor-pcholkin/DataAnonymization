@@ -34,8 +34,6 @@ public class SchemaSqlReader {
         List<DBTable> tables = new ArrayList<>();
         String sql = readDDLRaw(schemaFile);
         try {
-            // help druid parser with hints
-            sql = sql.replaceAll("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)","");
             List<SQLStatement> statements = SQLUtils.parseStatements(sql, dbEngine);
             for (SQLStatement statement : statements) {
                 addStatementAsDBTable(tables, statement);
@@ -76,7 +74,10 @@ public class SchemaSqlReader {
 
     private String readDDLRaw(String schemaFile) {
         try (InputStream schemaStream = new FileInputStream(schemaFile)) {
-            return new String(schemaStream.readAllBytes());
+            String rawContents = new String(schemaStream.readAllBytes());
+            // help druid parser with hints
+            rawContents = rawContents.replaceAll("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)","");
+            return rawContents;
         } catch (IOException ex) {
             throw new RuntimeException("Schema can't be loaded, please use the -sfn (--schemaFileName) option to set the path");
         }
