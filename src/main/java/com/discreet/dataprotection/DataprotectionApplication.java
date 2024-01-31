@@ -4,6 +4,7 @@ import com.discreet.dataprotection.autodetect.TransformationsAutoDetector;
 import com.discreet.dataprotection.transformations.Transformation;
 import com.discreet.dataprotection.transformations.TransformationsLoader;
 import com.discreet.dataprotection.transformations.TransformationsProcessor;
+import com.discreet.dataprotection.transformations.TransformationsWriter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -12,6 +13,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 import picocli.CommandLine;
 
+import java.io.File;
 import java.util.List;
 
 import static org.springframework.util.ObjectUtils.isEmpty;
@@ -25,6 +27,9 @@ public class DataprotectionApplication implements CommandLineRunner {
 
 	@Autowired
 	private TransformationsAutoDetector autoDetector;
+
+	@Autowired
+	private TransformationsWriter writer;
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext applicationContext = new SpringApplicationBuilder(DataprotectionApplication.class)
@@ -46,11 +51,12 @@ public class DataprotectionApplication implements CommandLineRunner {
 			List<Transformation> transformations;
 			if (commandLineArgs.getSchemaFileName() != null || commandLineArgs.getSchemaName() != null) {
 				transformations = autoDetector.autodetectTransformations(commandLineArgs);
+				writer.write(transformations, new File("transformations.yaml"));
 			} else {
 				transformations = new TransformationsLoader()
 						.loadDefinitions(commandLineArgs.getTransformationsFileName());
+				processor.process(transformations);
 			}
-			processor.process(transformations);
 		}
 		catch (RuntimeException ex) {
 			log.error(ex.getMessage());
