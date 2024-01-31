@@ -1,12 +1,6 @@
 package com.discreet.dataprotection.autodetect;
 
 import com.discreet.dataprotection.CommandLineArgs;
-import com.discreet.dataprotection.autodetect.Column;
-import com.discreet.dataprotection.autodetect.ColumnToAnonymizerLoader;
-import com.discreet.dataprotection.autodetect.ColumnTranslationsLoader;
-import com.discreet.dataprotection.autodetect.DBTable;
-import com.discreet.dataprotection.autodetect.SchemaSqlReader;
-import com.discreet.dataprotection.autodetect.TransformationsAutoDetector;
 import com.discreet.dataprotection.transformations.Transformation;
 import org.junit.jupiter.api.Test;
 
@@ -88,4 +82,56 @@ class TransformationsAutoDetectorTest {
         assertEquals(expectedTransformations, actualTransformations);
     }
 
+    @Test
+    public void testAutodetectTableWithoutId() {
+        SchemaSqlReader schemaSqlReader = mock(SchemaSqlReader.class);
+        when(schemaSqlReader.readDDL("schema.sql")).thenReturn(List.of(
+                new DBTable("test", "users",
+                        List.of(
+                                new Column("name", "VARCHAR(256)"),
+                                new Column("passport", "VARCHAR(256")))
+
+        ));
+
+        ColumnTranslationsLoader columnTranslationsLoader = mock(ColumnTranslationsLoader.class);
+
+        autoDetector.setColumnToAnonymizerLoader(new ColumnToAnonymizerLoader());
+        autoDetector.setSchemaSqlReader(schemaSqlReader);
+        autoDetector.setColumnTranslationsLoader(columnTranslationsLoader);
+
+        CommandLineArgs commandLineArgs = new CommandLineArgs();
+        commandLineArgs.setSchemaFileName("schema.sql");
+
+        try {
+            List<Transformation> actualTransformations = autoDetector.autodetectTransformations(commandLineArgs);
+            fail();
+        } catch (RuntimeException ex) {
+            assertEquals("Error: can't autodetect id column for test.users", ex.getMessage());
+        }
+    }
+
+    @Test
+    public void testAutodetectIgnoreTableWithoutId() {
+        SchemaSqlReader schemaSqlReader = mock(SchemaSqlReader.class);
+        when(schemaSqlReader.readDDL("schema.sql")).thenReturn(List.of(
+                new DBTable("test", "users",
+                        List.of(
+                                new Column("name", "VARCHAR(256)"),
+                                new Column("passport", "VARCHAR(256")))
+
+        ));
+
+        ColumnTranslationsLoader columnTranslationsLoader = mock(ColumnTranslationsLoader.class);
+
+        autoDetector.setColumnToAnonymizerLoader(new ColumnToAnonymizerLoader());
+        autoDetector.setSchemaSqlReader(schemaSqlReader);
+        autoDetector.setColumnTranslationsLoader(columnTranslationsLoader);
+
+        CommandLineArgs commandLineArgs = new CommandLineArgs();
+        commandLineArgs.setSchemaFileName("schema.sql");
+        commandLineArgs.setIgnoreMissingIds(true);
+
+        List<Transformation> actualTransformations = autoDetector.autodetectTransformations(commandLineArgs);
+        assertEquals(List.of(), actualTransformations);
+    }
 }

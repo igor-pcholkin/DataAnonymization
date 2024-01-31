@@ -34,6 +34,8 @@ public class SchemaSqlReader {
         List<DBTable> tables = new ArrayList<>();
         String sql = readDDLRaw(schemaFile);
         try {
+            // help druid parser with hints
+            sql = sql.replaceAll("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)","");
             List<SQLStatement> statements = SQLUtils.parseStatements(sql, dbEngine);
             for (SQLStatement statement : statements) {
                 addStatementAsDBTable(tables, statement);

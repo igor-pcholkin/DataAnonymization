@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -37,7 +38,9 @@ public class TransformationsAutoDetector {
         Map<String, Set<String>> columnTranslations = columnTranslationsLoader.readColumns();
         List<DBTable> tables = readSchema(commandLineArgs);
 
-        return tables.stream().map(table -> mapTableToTransformation(table, columnToAnonymizerKeys, columnTranslations))
+        return tables.stream().map(table -> mapTableToTransformation(table, columnToAnonymizerKeys, columnTranslations,
+                        commandLineArgs))
+                .filter(Objects::nonNull)
                 .collect(Collectors.toList());
     }
 
@@ -64,14 +67,16 @@ public class TransformationsAutoDetector {
 
     private Transformation mapTableToTransformation(DBTable table,
                                                     Set<String> columnToAnonymizerKeys,
-                                                    Map<String, Set<String>> columnTranslationsMap) {
-        System.out.println(String.format("Processing db table %s.%s...", table.getSchema(), table.getTable()));
+                                                    Map<String, Set<String>> columnTranslationsMap,
+                                                    CommandLineArgs commandLineArgs) {
+        System.out.printf("Processing db table %s.%s...%n", table.getSchema(), table.getTable());
 
         Transformation transformation = new Transformation(table.getSchema(), table.getTable());
 
+        Transformation finalTransformation = transformation;
         table.getColumns().forEach(schemaColumn ->
-                setAnonymizerForColumn(schemaColumn, transformation, columnToAnonymizerKeys, columnTranslationsMap));
-        detectAndSetIdColumns(transformation, table.getColumns());
+                setAnonymizerForColumn(schemaColumn, finalTransformation, columnToAnonymizerKeys, columnTranslationsMap));
+        transformation = detectAndSetIdColumns(transformation, table.getColumns(), commandLineArgs.isIgnoreMissingIds());
         return transformation;
     }
 
@@ -103,18 +108,25 @@ public class TransformationsAutoDetector {
         }).map(Map.Entry::getKey).findFirst().orElse(null);
     }
 
-    private void detectAndSetIdColumns(Transformation transformation, List<Column> columns) {
+    private Transformation detectAndSetIdColumns(Transformation transformation, List<Column> columns, boolean ignoreMissingIds) {
         List<String> columnNames = columns.stream().map(Column::getName).toList();
         String idCandidate;
         if (columnNames.contains(DEFAULT_ID_COLUMN)) {
             idCandidate = DEFAULT_ID_COLUMN;
         } else {
             idCandidate = columnNames.stream()
-                    .filter(column -> column.endsWith("_id")).findFirst().orElseGet(null);
+                    .filter(column -> column.endsWith("_id")).findFirst().orElse(null);
         }
         if (idCandidate != null) {
             transformation.setIdColumns(List.of(idCandidate));
+            return transformation;
         } else {
+            if (ignoreMissingIds) {
+                System.out.printf("Skipping table %s.%s as no id column was detected%n",
+                        transformation.getSchema(),
+                        transformation.getTable());
+                return null;
+            }
             throw new RuntimeException(String.format("Error: can't autodetect id column for %s.%s",
                     transformation.getSchema(), transformation.getTable()));
         }

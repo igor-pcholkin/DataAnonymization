@@ -27,6 +27,10 @@ public class CommandLineArgs {
             description = "DB engine, one of mysql, oracle, postgresql, db2, jtds, sybase, sqlserver, mariadb, derby, hive, h2, informix")
     private String dbEngine;
 
+    @CommandLine.Option(names = { "-iid", "--ignoreMissingIds" },
+            description = "Ignore db tables with missing or not detected id columns")
+    private boolean ignoreMissingIds;
+
     public String getSchemaFileName() {
         return schemaFileName;
     }
@@ -53,6 +57,14 @@ public class CommandLineArgs {
 
     public String getDbEngine() {
         return dbEngine;
+    }
+
+    public boolean isIgnoreMissingIds() {
+        return ignoreMissingIds;
+    }
+
+    public void setIgnoreMissingIds(boolean ignoreMissingIds) {
+        this.ignoreMissingIds = ignoreMissingIds;
     }
 
     public void setDbEngine(String dbEngine) {
