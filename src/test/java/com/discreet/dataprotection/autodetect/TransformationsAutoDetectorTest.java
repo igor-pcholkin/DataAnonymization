@@ -55,7 +55,9 @@ class TransformationsAutoDetectorTest {
                                 new Column("nodokļu_maksātāja_numurs", "VARCHAR(256)"),
                                 new Column("kart", "CHAR(16)"),
                                 new Column("adiresi", "VARCHAR(256)"),
-                                new Column("poster", "VARCHAR(256)")))
+                                new Column("poster", "VARCHAR(256)"),
+                                new Column("rkt_otsikko", "VARCHAR(256)"),
+                                new Column("kav_kav", "VARCHAR(256)")))
 
         ));
 
@@ -75,7 +77,8 @@ class TransformationsAutoDetectorTest {
                                 "kart", "ccard",
                                 "titl", "name",
                                 "poster", "post",
-                                "geboortedatum", "birthdate"
+                                "geboortedatum", "birthdate",
+                                "rkt_otsikko", "name"
                 ), List.of("user_id"))
         );
 

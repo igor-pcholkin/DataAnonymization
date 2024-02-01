@@ -5,6 +5,8 @@ import com.discreet.dataprotection.transformations.Transformation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -85,7 +87,7 @@ public class TransformationsAutoDetector {
                                         Map<String, Set<String>> columnTranslationsMap) {
         String schemaColumnName = schemaColumn.getName();
         String columnToAnonymizerKey;
-        if (columnToAnonymizerKeys.contains(schemaColumnName)) {
+        if (isColumnNameInsideSet(schemaColumnName, columnToAnonymizerKeys)) {
             columnToAnonymizerKey = schemaColumnName;
         } else {
             columnToAnonymizerKey = getTranslatedColumnKey(schemaColumnName, columnTranslationsMap);
@@ -104,8 +106,31 @@ public class TransformationsAutoDetector {
     private String getTranslatedColumnKey(String schemaColumnName, Map<String, Set<String>> columnTranslationsMap) {
         return columnTranslationsMap.entrySet().stream().filter(columnTranslationsEntry -> {
             Set<String> columnTranslations = columnTranslationsEntry.getValue();
-            return columnTranslations.contains(schemaColumnName);
+            return isColumnNameInsideSet(schemaColumnName, columnTranslations);
         }).map(Map.Entry::getKey).findFirst().orElse(null);
+    }
+
+    private boolean isColumnNameInsideSet(String columnName, Set<String> names) {
+        if (names.contains(columnName)) {
+            return true;
+        } else if (columnName.indexOf('_') > -1) {
+            Set<String> schemaColumnNameTokens = split(columnName, "_");
+            return intersects(names, schemaColumnNameTokens);
+        } else {
+            return false;
+        }
+    }
+
+    private Set<String> split(String name, String delim) {
+        Set<String> splitted = new HashSet<>();
+        Collections.addAll(splitted, name.split(delim));
+        return splitted;
+    }
+
+    private boolean intersects(Set<String> names, Set<String> schemaColumnNameTokens) {
+        Set<String> intersection = new HashSet<>(schemaColumnNameTokens);
+        intersection.retainAll(names);
+        return !intersection.isEmpty();
     }
 
     private Transformation detectAndSetIdColumns(Transformation transformation, List<Column> columns, boolean ignoreMissingIds) {

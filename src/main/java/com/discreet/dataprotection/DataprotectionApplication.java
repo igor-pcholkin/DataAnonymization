@@ -60,6 +60,9 @@ public class DataprotectionApplication implements CommandLineRunner {
 		}
 		catch (RuntimeException ex) {
 			log.error(ex.getMessage());
+			if (ex.getCause() != null) {
+				log.error(ex.getMessage());
+			}
 			System.err.println(ex.getMessage());
 		}
 	}
