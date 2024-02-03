@@ -3,10 +3,13 @@ package com.discreet.dataprotection.autodetect;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -18,13 +21,15 @@ public class ColumnTranslationsLoader {
     public Map<String, Set<String>> readColumns() {
         log.debug("Loading column translations...");
         Map<String, Set<String>> columnTranslationsMap = new HashMap<>();
-        try (InputStream columnsFolderStream = this.getClass().getClassLoader()
+        try (InputStream columnsFolderStream = ColumnTranslationsLoader.class.getClassLoader()
                 .getResourceAsStream("column_translations")) {
             if (columnsFolderStream != null) {
-                String[] columnFileNames = new String(columnsFolderStream.readAllBytes()).split("\\n");
+                BufferedReader reader = new BufferedReader(new InputStreamReader(columnsFolderStream));
+                List<String> columnFileNames = reader.lines().toList();
                 for (String columnFileName: columnFileNames) {
                     addColumnTranslationsToMap(columnTranslationsMap, columnFileName);
                 }
+                reader.close();
                 return columnTranslationsMap;
             } else {
                 throw new RuntimeException("Cannot load contents of column translations folder");
