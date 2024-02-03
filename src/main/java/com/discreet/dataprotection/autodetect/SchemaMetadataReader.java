@@ -33,10 +33,6 @@ public class SchemaMetadataReader {
                 tables.add(dbTable);
             });
         } catch (BadSqlGrammarException ex) {
-            log.error(ex.getMessage());
-            if (ex.getCause() != null) {
-                log.error(ex.getCause().getMessage());
-            }
             throw new EmptySchemaException("Error: can't read schema: " + schema);
         }
         if (isEmpty(tables)) {

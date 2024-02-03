@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <statusListener class="ch.qos.logback.core.status.NopStatusListener" />
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/dm.log</file>
+        <append>false</append>
+        <encoder>
+            <pattern>%date %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.discreet.dataprotection" level="INFO">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <root level="ERROR">
+        <appender-ref ref="FILE" />
+    </root>
+</configuration>

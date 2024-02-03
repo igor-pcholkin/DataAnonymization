@@ -21,7 +21,8 @@ class TransformationsAutoDetectorTest {
                 new DBTable("test", "users",
                         List.of(new Column("id", "INT"),
                                 new Column("name", "VARCHAR(256)"),
-                                new Column("passport", "VARCHAR(256")))
+                                new Column("passport", "VARCHAR(256"),
+                                new Column("post_code", "VARCHAR(256")))
 
         ));
 
@@ -37,7 +38,8 @@ class TransformationsAutoDetectorTest {
         List<Transformation> actualTransformations = autoDetector.autodetectTransformations(commandLineArgs);
         List<Transformation> expectedTransformations = List.of(
                 new Transformation("test", "users",
-                        Map.of("name", "name", "passport", "pid"), List.of("id"))
+                        Map.of("name", "name", "passport", "pid",
+                                "post_code", "post"), List.of("id"))
         );
 
         assertEquals(expectedTransformations, actualTransformations);
@@ -57,7 +59,8 @@ class TransformationsAutoDetectorTest {
                                 new Column("adiresi", "VARCHAR(256)"),
                                 new Column("poster", "VARCHAR(256)"),
                                 new Column("rkt_otsikko", "VARCHAR(256)"),
-                                new Column("kav_kav", "VARCHAR(256)")))
+                                new Column("kav_kav", "VARCHAR(256)"),
+                                new Column("postali_code", "VARCHAR(256")))
 
         ));
 
@@ -78,7 +81,8 @@ class TransformationsAutoDetectorTest {
                                 "titl", "name",
                                 "poster", "post",
                                 "geboortedatum", "birthdate",
-                                "rkt_otsikko", "name"
+                                "rkt_otsikko", "name",
+                                "postali_code", "post"
                 ), List.of("user_id"))
         );
 

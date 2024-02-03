@@ -1,5 +1,6 @@
 package com.discreet.dataprotection.transformations;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.Yaml;
@@ -16,8 +17,11 @@ import java.util.stream.Collectors;
 import static java.util.stream.Collectors.groupingBy;
 
 @Component
+@Slf4j
 public class TransformationsWriter {
     public void write(List<Transformation> transformations, File file) {
+        log.info("Writing transformations to {}", file.getAbsolutePath());
+
         Map<String, Object> tree = generateTree(transformations);
         DumperOptions options = new DumperOptions();
         options.setIndent(2);

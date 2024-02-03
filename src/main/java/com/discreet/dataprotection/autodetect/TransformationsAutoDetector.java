@@ -2,6 +2,7 @@ package com.discreet.dataprotection.autodetect;
 
 import com.discreet.dataprotection.CommandLineArgs;
 import com.discreet.dataprotection.transformations.Transformation;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +15,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Component
+@Slf4j
 public class TransformationsAutoDetector {
 
     @Autowired
@@ -47,7 +49,7 @@ public class TransformationsAutoDetector {
     }
 
     private List<DBTable> readSchema(CommandLineArgs commandLineArgs) {
-        System.out.println("Reading schema...");
+        log.info("Reading schema...");
         List<DBTable> tables = null;
         if (commandLineArgs.getSchemaFileName() != null) {
             tables = readSchemaFromFile(commandLineArgs);
@@ -71,7 +73,7 @@ public class TransformationsAutoDetector {
                                                     Set<String> columnToAnonymizerKeys,
                                                     Map<String, Set<String>> columnTranslationsMap,
                                                     CommandLineArgs commandLineArgs) {
-        System.out.printf("Processing db table %s.%s...%n", table.getSchema(), table.getTable());
+        log.info("Processing db table {}.{}...", table.getSchema(), table.getTable());
 
         Transformation transformation = new Transformation(table.getSchema(), table.getTable());
 
@@ -86,10 +88,8 @@ public class TransformationsAutoDetector {
                                         Set<String> columnToAnonymizerKeys,
                                         Map<String, Set<String>> columnTranslationsMap) {
         String schemaColumnName = schemaColumn.getName();
-        String columnToAnonymizerKey;
-        if (isColumnNameInsideSet(schemaColumnName, columnToAnonymizerKeys)) {
-            columnToAnonymizerKey = schemaColumnName;
-        } else {
+        String columnToAnonymizerKey = getColumnKey(schemaColumnName, columnToAnonymizerKeys);
+        if (columnToAnonymizerKey == null) {
             columnToAnonymizerKey = getTranslatedColumnKey(schemaColumnName, columnTranslationsMap);
         }
         if (columnToAnonymizerKey != null) {
@@ -106,18 +106,19 @@ public class TransformationsAutoDetector {
     private String getTranslatedColumnKey(String schemaColumnName, Map<String, Set<String>> columnTranslationsMap) {
         return columnTranslationsMap.entrySet().stream().filter(columnTranslationsEntry -> {
             Set<String> columnTranslations = columnTranslationsEntry.getValue();
-            return isColumnNameInsideSet(schemaColumnName, columnTranslations);
+            return getColumnKey(schemaColumnName, columnTranslations) != null;
         }).map(Map.Entry::getKey).findFirst().orElse(null);
     }
 
-    private boolean isColumnNameInsideSet(String columnName, Set<String> names) {
+    private String getColumnKey(String columnName, Set<String> names) {
         if (names.contains(columnName)) {
-            return true;
+            return columnName;
         } else if (columnName.indexOf('_') > -1) {
             Set<String> schemaColumnNameTokens = split(columnName, "_");
-            return intersects(names, schemaColumnNameTokens);
+            schemaColumnNameTokens.retainAll(names);
+            return schemaColumnNameTokens.stream().findFirst().orElse(null);
         } else {
-            return false;
+            return null;
         }
     }
 
@@ -125,12 +126,6 @@ public class TransformationsAutoDetector {
         Set<String> splitted = new HashSet<>();
         Collections.addAll(splitted, name.split(delim));
         return splitted;
-    }
-
-    private boolean intersects(Set<String> names, Set<String> schemaColumnNameTokens) {
-        Set<String> intersection = new HashSet<>(schemaColumnNameTokens);
-        intersection.retainAll(names);
-        return !intersection.isEmpty();
     }
 
     private Transformation detectAndSetIdColumns(Transformation transformation, List<Column> columns, boolean ignoreMissingIds) {
@@ -147,7 +142,7 @@ public class TransformationsAutoDetector {
             return transformation;
         } else {
             if (ignoreMissingIds) {
-                System.out.printf("Skipping table %s.%s as no id column was detected%n",
+                log.info("Skipping table {}.{} as no id column was detected",
                         transformation.getSchema(),
                         transformation.getTable());
                 return null;
