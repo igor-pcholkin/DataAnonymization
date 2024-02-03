@@ -1,5 +1,6 @@
 package com.discreet.dataprotection.autodetect;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -12,8 +13,10 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Component
+@Slf4j
 public class ColumnTranslationsLoader {
     public Map<String, Set<String>> readColumns() {
+        log.debug("Loading column translations...");
         Map<String, Set<String>> columnTranslationsMap = new HashMap<>();
         try (InputStream columnsFolderStream = this.getClass().getClassLoader()
                 .getResourceAsStream("column_translations")) {

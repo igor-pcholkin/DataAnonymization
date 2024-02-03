@@ -23,9 +23,9 @@
     </files>
     <dependencySets>
         <dependencySet>
-            <outputDirectory>lib</outputDirectory>
+            <outputDirectory>/</outputDirectory>
             <excludes>
-                <exclude>${project.groupId}:${project.artifactId}:jar:*</exclude>
+                <exclude>*:*</exclude>
             </excludes>
         </dependencySet>
     </dependencySets>

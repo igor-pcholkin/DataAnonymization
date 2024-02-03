@@ -13,7 +13,8 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 import picocli.CommandLine;
 
-import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.List;
 
 import static org.springframework.util.ObjectUtils.isEmpty;
@@ -43,6 +44,7 @@ public class DataprotectionApplication implements CommandLineRunner {
 		try {
 			CommandLineArgs commandLineArgs = new CommandLineArgs();
 			CommandLine commandLine = new CommandLine(commandLineArgs);
+			log.debug("Parsing arguments...");
 			commandLine.parseArgs(args);
 			if (commandLineArgs.isUsageHelpRequested() || isEmpty(args)) {
 				commandLine.usage(System.out);
@@ -51,14 +53,14 @@ public class DataprotectionApplication implements CommandLineRunner {
 			List<Transformation> transformations;
 			if (commandLineArgs.getSchemaFileName() != null || commandLineArgs.getSchemaName() != null) {
 				transformations = autoDetector.autodetectTransformations(commandLineArgs);
-				writer.write(transformations, new File("transformations.yaml"));
+				writer.write(transformations, Files.createTempFile("transformations", ".yaml").toFile());
 			} else {
 				transformations = new TransformationsLoader()
 						.loadDefinitions(commandLineArgs.getTransformationsFileName());
 				processor.process(transformations);
 			}
 		}
-		catch (RuntimeException ex) {
+		catch (RuntimeException | IOException ex) {
 			log.error(ex.getMessage());
 			if (ex.getCause() != null) {
 				log.error(ex.getMessage());

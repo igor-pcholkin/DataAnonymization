@@ -35,6 +35,7 @@ public class TransformationsAutoDetector {
     private static final String DEFAULT_ID_COLUMN = "id";
 
     public List<Transformation> autodetectTransformations(CommandLineArgs commandLineArgs) {
+        log.debug("Auto-detecting transformations...");
         if (columnToAnonymizerTable == null) {
             columnToAnonymizerTable = columnToAnonymizerLoader.getColumnToAnonymizerTable();
         }
