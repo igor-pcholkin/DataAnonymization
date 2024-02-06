@@ -22,7 +22,7 @@ The dataprotection application retrieves data from a relational database, proces
 Data processing involves anonymizing it according to rules specified in a transformation configuration file. 
 Anonymizing data is a light form of one-way encryption that maintains the structure and possibly the semantic meaning of the data. 
 The transformation configuration file outlines which specific columns in the database schema and 
-tables should be anonymized, as well as how
+tables should be anonymized, as well as how.
 
 ### Reference Documentation
 For further reference, please consider the following sections:
