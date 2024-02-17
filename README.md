@@ -95,7 +95,7 @@ This (the only) DB will be used for anonymization and data analysis.
 
 **1a.** Auto-detect data eligible for anonymization using supplied DDL schema file:
 
-`dataprotection.sh -dbe mysql -dsn test -sfn schema.sql -iid`
+`./dataprotection.sh -dbe mysql -dsn test -sfn schema.sql -iid`
 
 - it will automatically identify database columns in the schema that likely require anonymization. 
 Subsequently, it will generate a transformation.yaml file, which can be further refined through post-processing (manual editing) and subsequently utilized for actual anonymization. 
@@ -106,7 +106,7 @@ Without this option, the application will generate an error and halt the autodet
 or:<br/>
 **1b.** Auto-detect data eligible for anonymization using supplied schema name. 
 
-`dataprotection.sh -sn test`
+`./dataprotection.sh -sn test`
 
 - In this step, the application behaves similarly to the previous one, but instead of relying on a DDL file, it loads schema metadata directly from the database. 
 This approach is useful when a DDL file is unavailable. 
