@@ -4,7 +4,7 @@ import static java.lang.Character.isSpaceChar;
 import static java.lang.Character.toTitleCase;
 
 /**
- * Anonymizer working with emails.
+ * Anonymizer which changes email to a randomly looking one.
  *
  * Example:
  */

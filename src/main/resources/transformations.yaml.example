@@ -1,0 +1,16 @@
+test:
+  USERS:
+    anonymizers:
+      name: name
+      email: email
+      address: address
+      birthdate: birthdate
+      socialNumber: pid
+      ccard: ccard
+      post_code: post
+  COMPANIES:
+    ids:
+      - company_id
+    anonymizers:
+      name: name
+      address: address
