@@ -129,4 +129,4 @@ This approach is useful when a DDL file is unavailable.
 For further reference, please consider the following links:
 
 * [General Data Protection Regulation](https://gdpr-info.eu/)
-* [Health Insurance Portability and Accountability Act](Health_Insurance_Portability_and_Accountability_Act)
+* [Health Insurance Portability and Accountability Act](https://en.wikipedia.org/wiki/Health_Insurance_Portability_and_Accountability_Act)
