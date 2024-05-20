@@ -22,7 +22,10 @@ class SchemaSqlReaderTest {
                 "Column{name='post_code', type='VARCHAR'}]}, " +
 
                 "DBTable{schema='test2', table='COMPANIES', columns=[Column{name='company_id', type='INTEGER'}, " +
-                "Column{name='name', type='VARCHAR'}, Column{name='address', type='VARCHAR'}]}]";
+                "Column{name='name', type='VARCHAR'}, Column{name='address', type='VARCHAR'}]}, " +
+
+                "DBTable{schema='test2', table='LOGS', columns=[Column{name='id', type='INTEGER'}, " +
+                "Column{name='user_id', type='INTEGER'}, Column{name='ipAddress', type='VARCHAR'}]}]";
         assertEquals(expectedResult, actualResult);
     }
 

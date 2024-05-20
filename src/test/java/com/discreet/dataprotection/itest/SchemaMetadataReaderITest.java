@@ -24,6 +24,10 @@ class SchemaMetadataReaderITest extends BaseITest {
                         List.of(new Column("COMPANY_ID", "INTEGER"),
                                 new Column("NAME", "CHARACTER VARYING(256)"),
                                 new Column("ADDRESS", "CHARACTER VARYING(256)"))),
+                new DBTable("test", "LOGS",
+                        List.of(new Column("ID", "INTEGER"),
+                                new Column("USER_ID", "INTEGER"),
+                                new Column("IPADDRESS", "CHARACTER VARYING(39)"))),
                 new DBTable("test", "USERS",
                         List.of(new Column("ID", "INTEGER"),
                                 new Column("NAME", "CHARACTER VARYING(256)"),
@@ -33,6 +37,7 @@ class SchemaMetadataReaderITest extends BaseITest {
                                 new Column("SOCIALNUMBER", "CHARACTER(12)"),
                                 new Column("CCARD", "CHARACTER(16)"),
                                 new Column("POST_CODE", "CHARACTER VARYING(20)"))));
+
         assertEquals(expectedMetadata, actualMetadata);
     }
 

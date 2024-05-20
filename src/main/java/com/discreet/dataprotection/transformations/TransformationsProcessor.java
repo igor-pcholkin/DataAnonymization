@@ -57,7 +57,8 @@ public class TransformationsProcessor {
 
     private void anonymizeRow(ResultSet rs, Transformation transformation) {
        String modifiedColumns = transformation.getColumnToAnonymizerMap().keySet().stream().map(column ->
-               String.format("%s='%s'", column, anonymizeColumn(transformation, column, rs))).collect(Collectors.joining(","));
+               String.format("%s='%s'", column, anonymizeColumn(transformation, column, rs)))
+               .collect(Collectors.joining(","));
 
         String update = String.format("update %s.%s set %s where %s", transformation.getSchema(),
                 transformation.getTable(), modifiedColumns, getIdsCondition(transformation));

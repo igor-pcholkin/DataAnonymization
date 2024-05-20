@@ -3,11 +3,12 @@
  <!-- TOC -->
 * [Getting Started](#getting-started)
     * [What is the dataprotection application?](#what-is-the-dataprotection-application)
-    * [What is a sensitive data?](#what-is-a-sensitive-data)
+    * [What is a sensitive data?](#what-is-a-sensitive-data-)
     * [Why sensitive data should be kept secure?](#why-sensitive-data-should-be-kept-secure)
     * [Anonymization approach](#anonymization-approach)
     * [How does the application work?](#how-does-the-application-work)
     * [What anonymizers are available?](#what-anonymizers-are-available)
+    * [How to add a custom anonymizer](#how-to-add-a-custom-anonymizer)
     * [Additional functions](#additional-functions)
     * [Running the application](#running-the-application)
     * [Configuration](#configuration)
@@ -62,6 +63,12 @@ Displayed on the left is the ID of each anonymizer, which should be specified in
 **ccard** - the credit card anonymizer replaces credit card numbers with randomly generated ones<br/>
 **pid** - a basic "one-size-fits-all" anonymizer capable of handling various personal identification codes, social security numbers, and tax payer numbers<br/>
 **post** - the post code anonymizer replaces post codes with alternative values sourced from the same column in the database<br/>
+
+### How to add a custom anonymizer
+
+* Add a new anonymizer class (with test) to com.discreet.dataprotection.anonymizer package. Extend it either from BaseAnonymizer or CharSequenceAnonymizer.
+* Register the anonymizer class with corresponding alias in AnonymizerTable.java
+* Use anonymizer alias as a value mapped to db column in transformations.yaml file.
 
 ### Additional functions
 

@@ -1,13 +1,6 @@
 package com.discreet.dataprotection;
 
-import com.discreet.dataprotection.anonymizer.AddressAnonymizer;
-import com.discreet.dataprotection.anonymizer.Anonymizer;
-import com.discreet.dataprotection.anonymizer.BirthDateAnonymizer;
-import com.discreet.dataprotection.anonymizer.CreditCardAnonymizer;
-import com.discreet.dataprotection.anonymizer.EmailAnonymizer;
-import com.discreet.dataprotection.anonymizer.FullNameAnonymizer;
-import com.discreet.dataprotection.anonymizer.PersonalNumberAnonymizer;
-import com.discreet.dataprotection.anonymizer.PostCodeAnonymizer;
+import com.discreet.dataprotection.anonymizer.*;
 import com.discreet.dataprotection.probe.ProbeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -26,7 +19,8 @@ public class AnonymizerTable {
             "birthdate", new BirthDateAnonymizer(),
             "ccard", new CreditCardAnonymizer(),
             "address", new AddressAnonymizer(),
-            "pid", new PersonalNumberAnonymizer()
+            "pid", new PersonalNumberAnonymizer(),
+            "ip", new IpAddressAnonymizer()
             );
 
     final private Map<String, Anonymizer> postCodeAnonymizers = new ConcurrentHashMap<>();
