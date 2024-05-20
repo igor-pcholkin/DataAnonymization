@@ -28,6 +28,7 @@ public class TransformationsProcessor {
     @Transactional
     public void process(List<Transformation> transformations) {
         for (Transformation transformation: transformations) {
+            addPostCodeAnonymizerIfNeeded(transformation);
             processTransformation(transformation);
         }
     }
@@ -38,7 +39,6 @@ public class TransformationsProcessor {
                 getIdColumnsAsString(transformation),
                 columns, transformation.getSchema(),
                 transformation.getTable());
-        addPostCodeAnonymizerIfNeeded(transformation);
         jdbcTemplate.query(sql, rs -> {
             anonymizeRow(rs, transformation);
         });
