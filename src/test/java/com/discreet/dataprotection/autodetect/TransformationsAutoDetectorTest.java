@@ -1,6 +1,5 @@
 package com.discreet.dataprotection.autodetect;
 
-import com.discreet.dataprotection.CommandLineArgs;
 import com.discreet.dataprotection.transformations.Transformation;
 import org.junit.jupiter.api.Test;
 
@@ -32,10 +31,8 @@ class TransformationsAutoDetectorTest {
         autoDetector.setSchemaSqlReader(schemaSqlReader);
         autoDetector.setColumnTranslationsLoader(columnTranslationsLoader);
 
-        CommandLineArgs commandLineArgs = new CommandLineArgs();
-        commandLineArgs.setSchemaFileName("schema.sql");
-
-        List<Transformation> actualTransformations = autoDetector.autodetectTransformations(commandLineArgs);
+        List<Transformation> actualTransformations = autoDetector.autodetectTransformations(
+                "schema.sql", null, false, null, null);
         List<Transformation> expectedTransformations = List.of(
                 new Transformation("test", "users",
                         Map.of("name", "name", "passport", "pid",
@@ -68,10 +65,8 @@ class TransformationsAutoDetectorTest {
         autoDetector.setSchemaSqlReader(schemaSqlReader);
         autoDetector.setColumnTranslationsLoader(new ColumnTranslationsLoader());
 
-        CommandLineArgs commandLineArgs = new CommandLineArgs();
-        commandLineArgs.setSchemaFileName("schema.sql");
-
-        List<Transformation> actualTransformations = autoDetector.autodetectTransformations(commandLineArgs);
+        List<Transformation> actualTransformations = autoDetector.autodetectTransformations("schema.sql",
+                null, false, null, null);
         List<Transformation> expectedTransformations = List.of(
                 new Transformation("test", "users",
                         Map.of("adiresi", "address",
@@ -106,11 +101,9 @@ class TransformationsAutoDetectorTest {
         autoDetector.setSchemaSqlReader(schemaSqlReader);
         autoDetector.setColumnTranslationsLoader(columnTranslationsLoader);
 
-        CommandLineArgs commandLineArgs = new CommandLineArgs();
-        commandLineArgs.setSchemaFileName("schema.sql");
-
         try {
-            List<Transformation> actualTransformations = autoDetector.autodetectTransformations(commandLineArgs);
+            List<Transformation> actualTransformations = autoDetector.autodetectTransformations("schema.sql",
+                    null, false, null, null);
             fail();
         } catch (RuntimeException ex) {
             assertEquals("Error: can't autodetect id column for test.users", ex.getMessage());
@@ -134,11 +127,8 @@ class TransformationsAutoDetectorTest {
         autoDetector.setSchemaSqlReader(schemaSqlReader);
         autoDetector.setColumnTranslationsLoader(columnTranslationsLoader);
 
-        CommandLineArgs commandLineArgs = new CommandLineArgs();
-        commandLineArgs.setSchemaFileName("schema.sql");
-        commandLineArgs.setIgnoreMissingIds(true);
-
-        List<Transformation> actualTransformations = autoDetector.autodetectTransformations(commandLineArgs);
+        List<Transformation> actualTransformations = autoDetector.autodetectTransformations("schema.sql",
+                null, true, null, null);
         assertEquals(List.of(), actualTransformations);
     }
 }

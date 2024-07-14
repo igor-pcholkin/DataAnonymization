@@ -1,6 +1,5 @@
 package com.discreet.dataprotection.autodetect;
 
-import com.discreet.dataprotection.CommandLineArgs;
 import com.discreet.dataprotection.transformations.Transformation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,36 +33,38 @@ public class TransformationsAutoDetector {
 
     private static final String DEFAULT_ID_COLUMN = "id";
 
-    public List<Transformation> autodetectTransformations(CommandLineArgs commandLineArgs) {
+    public List<Transformation> autodetectTransformations(String schemaFilename, String schemaName,
+        boolean ignoreMissingIds, String defaultSchemaName, String dbEngine) {
         log.debug("Auto-detecting transformations...");
         if (columnToAnonymizerTable == null) {
             columnToAnonymizerTable = columnToAnonymizerLoader.getColumnToAnonymizerTable();
         }
         Set<String> columnToAnonymizerKeys = columnToAnonymizerTable.keySet();
         Map<String, Set<String>> columnTranslations = columnTranslationsLoader.readColumns();
-        List<DBTable> tables = readSchema(commandLineArgs);
+        List<DBTable> tables = readSchema(schemaFilename, schemaName, defaultSchemaName, dbEngine);
 
         return tables.stream().map(table -> mapTableToTransformation(table, columnToAnonymizerKeys, columnTranslations,
-                        commandLineArgs))
+                        ignoreMissingIds))
                 .filter(Objects::nonNull)
                 .collect(Collectors.toList());
     }
 
-    private List<DBTable> readSchema(CommandLineArgs commandLineArgs) {
+    private List<DBTable> readSchema(String schemaFileName, String schemaName, String defaultSchemaName,
+                                     String dbEngine) {
         log.info("Reading schema...");
         List<DBTable> tables = null;
-        if (commandLineArgs.getSchemaFileName() != null) {
-            tables = readSchemaFromFile(commandLineArgs);
-        } else if (commandLineArgs.getSchemaName() != null) {
-            tables = readSchemaFromMetadata(commandLineArgs.getSchemaName());
+        if (schemaFileName != null) {
+            tables = readSchemaFromFile(defaultSchemaName, dbEngine, schemaFileName);
+        } else if (schemaName != null) {
+            tables = readSchemaFromMetadata(schemaName);
         }
         return tables;
     }
 
-    private List<DBTable> readSchemaFromFile(CommandLineArgs commandLineArgs) {
-        schemaSqlReader.setDefaultSchema(commandLineArgs.getDefaultSchemaName());
-        schemaSqlReader.setDBEngine(commandLineArgs.getDbEngine());
-        return schemaSqlReader.readDDL(commandLineArgs.getSchemaFileName());
+    private List<DBTable> readSchemaFromFile(String defaultSchemaName, String dbEngine, String schemaFileName) {
+        schemaSqlReader.setDefaultSchema(defaultSchemaName);
+        schemaSqlReader.setDBEngine(dbEngine);
+        return schemaSqlReader.readDDL(schemaFileName);
     }
 
     private List<DBTable> readSchemaFromMetadata(String schemaName) {
@@ -73,7 +74,7 @@ public class TransformationsAutoDetector {
     private Transformation mapTableToTransformation(DBTable table,
                                                     Set<String> columnToAnonymizerKeys,
                                                     Map<String, Set<String>> columnTranslationsMap,
-                                                    CommandLineArgs commandLineArgs) {
+                                                    boolean isIgnoreMissingIds) {
         log.info("Processing db table {}.{}...", table.getSchema(), table.getTable());
 
         Transformation transformation = new Transformation(table.getSchema(), table.getTable());
@@ -81,7 +82,7 @@ public class TransformationsAutoDetector {
         Transformation finalTransformation = transformation;
         table.getColumns().forEach(schemaColumn ->
                 setAnonymizerForColumn(schemaColumn, finalTransformation, columnToAnonymizerKeys, columnTranslationsMap));
-        transformation = detectAndSetIdColumns(transformation, table.getColumns(), commandLineArgs.isIgnoreMissingIds());
+        transformation = detectAndSetIdColumns(transformation, table.getColumns(), isIgnoreMissingIds);
         return transformation;
     }
 

@@ -2,11 +2,30 @@ package com.discreet.dataprotection;
 
 import picocli.CommandLine;
 
-@CommandLine.Command(name = "dataprotection")
+@CommandLine.Command(name = "dataprotection", subcommands = {Detect.class, Transform.class })
 public class CommandLineArgs {
-    @CommandLine.Option(names = {"?", "-h", "--help"}, usageHelp = true, description = "display this help message")
-    private boolean usageHelpRequested;
+    DataprotectionApplication application;
 
+    public CommandLineArgs(DataprotectionApplication application) {
+        this.application = application;
+    }
+
+    @CommandLine.Option(names = { "-h", "--h", "--help", "help" },
+            description = "show help for this command", help = true, usageHelp = true, hidden = true)
+    private boolean isHelpNeeded;
+
+    @CommandLine.Spec
+    CommandLine.Model.CommandSpec spec;
+}
+
+@CommandLine.Command(name = "detect", description = "(Auto)-detect data for anonymization")
+class Detect implements Runnable {
+    @CommandLine.ParentCommand
+    private CommandLineArgs parent;
+
+    @CommandLine.Option(names = { "-h", "--h", "--help", "help" },
+            description = "show help for this command", help = true, usageHelp = true, hidden = true)
+    private boolean isHelpNeeded;
     @CommandLine.Option(names = { "-sfn", "--schemaFileName" },
             description = "ddl schema file name to use for auto-detection of DB table columns which can be anonymized")
     private String schemaFileName;
@@ -14,10 +33,6 @@ public class CommandLineArgs {
     @CommandLine.Option(names = { "-sn", "--schemaName" },
             description = "schema name to use for reading metadata from DB and auto-detection of DB table columns which can be anonymized")
     private String schemaName;
-
-    @CommandLine.Option(names = { "-tfn", "--transformationsFileName" },
-            description = "yaml file describing for each schema/table how each column should be anonymized")
-    private String transformationsFileName;
 
     @CommandLine.Option(names = { "-dsn", "--defaultSchemaName" },
             description = "default schema name to use in case if schema name is missing in DDL schema")
@@ -31,43 +46,34 @@ public class CommandLineArgs {
             description = "Ignore db tables with missing or not detected id columns")
     private boolean ignoreMissingIds;
 
-    public String getSchemaFileName() {
-        return schemaFileName;
+    @CommandLine.Spec
+    CommandLine.Model.CommandSpec spec;
+    @Override
+    public void run() {
+        if (schemaFileName != null || schemaName != null) {
+            parent.application.executeAutodetectTransformationsCommand(schemaFileName, schemaName, ignoreMissingIds,
+                    defaultSchemaName, dbEngine);
+        }
     }
+}
 
-    public String getSchemaName() {
-        return schemaName;
-    }
+@CommandLine.Command(name = "transform", description = "Anonimize data using supplied transformations file")
+class Transform implements Runnable {
+    @CommandLine.ParentCommand
+    private CommandLineArgs parent;
 
-    public String getDefaultSchemaName() {
-        return defaultSchemaName;
-    }
+    @CommandLine.Option(names = { "-h", "--h", "--help", "help" },
+            description = "show help for this command", help = true, usageHelp = true, hidden = true)
+    private boolean isHelpNeeded;
 
-    public String getTransformationsFileName() {
-        return transformationsFileName;
-    }
+    @CommandLine.Option(names = { "-tfn", "--transformationsFileName" },
+            description = "yaml file describing for each schema/table how each column should be anonymized")
+    private String transformationsFileName;
 
-    public void setSchemaFileName(String schemaFileName) {
-        this.schemaFileName = schemaFileName;
-    }
-
-    public boolean isUsageHelpRequested() {
-        return usageHelpRequested;
-    }
-
-    public String getDbEngine() {
-        return dbEngine;
-    }
-
-    public boolean isIgnoreMissingIds() {
-        return ignoreMissingIds;
-    }
-
-    public void setIgnoreMissingIds(boolean ignoreMissingIds) {
-        this.ignoreMissingIds = ignoreMissingIds;
-    }
-
-    public void setDbEngine(String dbEngine) {
-        this.dbEngine = dbEngine;
+    @CommandLine.Spec
+    CommandLine.Model.CommandSpec spec;
+    @Override
+    public void run() {
+        parent.application.executeTransformCommand(transformationsFileName);
     }
 }

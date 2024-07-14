@@ -41,31 +41,32 @@ public class DataprotectionApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) {
-		try {
-			CommandLineArgs commandLineArgs = new CommandLineArgs();
-			CommandLine commandLine = new CommandLine(commandLineArgs);
-			log.debug("Parsing arguments...");
-			commandLine.parseArgs(args);
-			if (commandLineArgs.isUsageHelpRequested() || isEmpty(args)) {
-				commandLine.usage(System.out);
-				return;
-			}
-			List<Transformation> transformations;
-			if (commandLineArgs.getSchemaFileName() != null || commandLineArgs.getSchemaName() != null) {
-				transformations = autoDetector.autodetectTransformations(commandLineArgs);
-				writer.write(transformations, Files.createTempFile("transformations", ".yaml").toFile());
-			} else {
-				transformations = new TransformationsLoader()
-						.loadDefinitions(commandLineArgs.getTransformationsFileName());
-				processor.process(transformations);
-			}
+		CommandLineArgs commandLineArgs = new CommandLineArgs(this);
+		CommandLine commandLine = new CommandLine(commandLineArgs);
+		if (isEmpty(args)) {
+			commandLine.usage(System.out);
+		} else {
+			commandLine.execute(args);
 		}
-		catch (RuntimeException | IOException ex) {
+	}
+
+	public void executeAutodetectTransformationsCommand(String schemaFilename, String schemaName,
+		boolean ignoreMissingIds, String defaultSchemaName, String dbEngine) {
+        try {
+			List<Transformation> transformations = autoDetector.autodetectTransformations(schemaFilename, schemaName,
+					ignoreMissingIds, defaultSchemaName, dbEngine);
+            writer.write(transformations, Files.createTempFile("transformations", ".yaml").toFile());
+        } catch (RuntimeException | IOException ex) {
 			log.error(ex.getMessage());
 			if (ex.getCause() != null) {
 				log.error(ex.getMessage());
 			}
 		}
-	}
+    }
 
+	public void executeTransformCommand(String transformationsFileName) {
+		List<Transformation> transformations = new TransformationsLoader()
+			.loadDefinitions(transformationsFileName);
+		processor.process(transformations);
+	}
 }
