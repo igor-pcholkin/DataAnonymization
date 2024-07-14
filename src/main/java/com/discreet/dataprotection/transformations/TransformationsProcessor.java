@@ -2,6 +2,7 @@ package com.discreet.dataprotection.transformations;
 
 import com.discreet.dataprotection.AnonymizerTable;
 import com.discreet.dataprotection.anonymizer.Anonymizer;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -16,7 +17,9 @@ import java.util.stream.Collectors;
 import static org.springframework.util.CollectionUtils.isEmpty;
 
 @Component
+@Slf4j
 public class TransformationsProcessor {
+
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
@@ -33,15 +36,18 @@ public class TransformationsProcessor {
         }
     }
 
-    private void processTransformation(Transformation transformation) {
-        String columns = String.join(",", transformation.getColumnToAnonymizerMap().keySet());
-        String sql = String.format("select %s,%s from %s.%s",
-                getIdColumnsAsString(transformation),
-                columns, transformation.getSchema(),
-                transformation.getTable());
-        jdbcTemplate.query(sql, rs -> {
-            anonymizeRow(rs, transformation);
-        });
+    void processTransformation(Transformation transformation) {
+        log.info("Processing db table {}.{}...", transformation.getSchema(), transformation.getTable());
+        if (!transformation.getColumnToAnonymizerMap().isEmpty()) {
+            String columns = String.join(",", transformation.getColumnToAnonymizerMap().keySet());
+            String sql = String.format("select %s,%s from %s.%s",
+                    getIdColumnsAsString(transformation),
+                    columns, transformation.getSchema(),
+                    transformation.getTable());
+            jdbcTemplate.query(sql, rs -> {
+                anonymizeRow(rs, transformation);
+            });
+        }
     }
 
     private void addPostCodeAnonymizerIfNeeded(Transformation transformation) {
@@ -111,5 +117,9 @@ public class TransformationsProcessor {
             throw new RuntimeException(e);
         }
         return anonymizer.anonymize(input);
+    }
+
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
     }
 }
