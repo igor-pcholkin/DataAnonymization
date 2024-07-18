@@ -17,7 +17,7 @@
             <outputDirectory>/</outputDirectory>
         </file>
         <file>
-            <source>scripts/dataprotection.sh</source>
+            <source>scripts/dp.sh</source>
             <outputDirectory>/</outputDirectory>
         </file>
     </files>

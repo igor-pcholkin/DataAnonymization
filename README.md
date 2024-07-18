@@ -63,12 +63,14 @@ Displayed on the left is the ID of each anonymizer, which should be specified in
 **ccard** - the credit card anonymizer replaces credit card numbers with randomly generated ones<br/>
 **pid** - a basic "one-size-fits-all" anonymizer capable of handling various personal identification codes, social security numbers, and tax payer numbers<br/>
 **post** - the post code anonymizer replaces post codes with alternative values sourced from the same column in the database<br/>
+**ip** - the ip address anonymizer replaces ip address with another random ip address<br/>
 
 ### How to add a custom anonymizer
 
 * Add a new anonymizer class (with test) to com.discreet.dataprotection.anonymizer package. Extend it either from BaseAnonymizer or CharSequenceAnonymizer.
 * Register the anonymizer class with corresponding alias in AnonymizerTable.java
 * Use anonymizer alias as a value mapped to db column in transformations.yaml file.
+* (Optionally) for using anonymizer in auto-detection process, map it to corresponding column name in columnToAnonymizer.properties
 
 ### Additional functions
 
@@ -77,32 +79,43 @@ This information can be provided in two ways: through a Data Definition Language
 
 ### Running the application
 
-Application can be started used supplied script: dataprotection.bat for windows or dataprotection.sh for Linux or MacOS.
+Application can be started used supplied script: dp.bat for windows or dp.sh for Linux or MacOS.
 The application requires Java 19 (or newer version), which should be installed separately.
 Upon execution without arguments, the application provides information about available command line arguments. 
-At the moment they are the following:
-* ?, -h, --help _display this help message_
-* -dbe, --dbEngine=[dbEngine] _one of mysql, oracle, postgresql, db2, jtds, sybase, sqlserver, mariadb, derby, hive, h2, informix_
-* -dsn, --defaultSchemaName=[defaultSchemaName]               _name to use in case if schema name is
-    missing in DDL schema_
-* -iid, --ignoreMissingIds                                    _ignore db tables with missing or not detected id columns_
-* -sfn, --schemaFileName=[schemaFileName]                     _ddl schema file name to use for auto-detection of DB
-  table columns which can be anonymized_
-* -sn, --schemaName=[schemaName]                              _schema name to use for reading metadata from DB and
-  auto-detection of DB table columns which can be anonymized_
-* -tfn, --transformationsFileName=[transformationsFileName]   _yaml file describing for each schema/table how each
-  column should be anonymized_
+At the moment the application works in 2 modes: "transform" and "detect", each represented by corresponding 
+command and related options:
+
+* **transform** </br>
+  _anonymize database_ 
+  * -tfn, --transformationsFileName=[transformationsFileName] </br>
+  _yaml file describing for each schema/table how each column should be anonymized_
+* **detect** </br>
+  _auto detect what schema tables and columns in a given columns can be anonymized. The result is a temporary 
+transformations.yaml file which can be later used with "transform" command._
+  * -dbe, --dbEngine=[dbEngine] </br>
+  _one of mysql, oracle, postgresql, db2, jtds, sybase, sqlserver, mariadb, derby, hive, h2, informix_
+  * -dsn, --defaultSchemaName=[defaultSchemaName] </br>
+  _name to use in case if schema name is missing in DDL schema_
+  * -iid, --ignoreMissingIds </br>
+  _ignore db tables with missing or not detected id columns_
+  * -sfn, --schemaFileName=[schemaFileName] </br>
+  _ddl schema file name to use for auto-detection of DB table columns which can be anonymized_
+  * -sn, --schemaName=[schemaName] </br>
+  _schema name to use for reading metadata from DB and auto-detection of DB table columns which can be anonymized_
 
 ### Configuration
 
-conf/application.properties file should be used to set up DB connection URL and credentials.
-This (the only) DB will be used for anonymization and data analysis.
+* **conf/application.properties** file should be used to set up DB connection URL and credentials.
+This (the only) DB will be used for anonymization and data analysis. <br/>
+* **AnonymizerTable.java** - for registering a custom anonymizer <br/>
+* **columnToAnonymizer.properties** file is used when adding new anonymizer and using it for auto-detection of columns
+in database for anonymization.
   
 ### Use cases
 
 **1a.** Auto-detect data eligible for anonymization using supplied DDL schema file:
 
-`./dataprotection.sh -dbe mysql -dsn test -sfn schema.sql -iid`
+`./dp.sh detect -dbe mysql -dsn test -sfn schema.sql -iid`
 
 - it will automatically identify database columns in the schema that likely require anonymization. 
 Subsequently, it will generate a transformation.yaml file, which can be further refined through post-processing (manual editing) and subsequently utilized for actual anonymization. 
@@ -113,7 +126,7 @@ Without this option, the application will generate an error and halt the autodet
 or:<br/>
 **1b.** Auto-detect data eligible for anonymization using supplied schema name. 
 
-`./dataprotection.sh -sn test`
+`./dp.sh detect -sn test`
 
 - In this step, the application behaves similarly to the previous one, but instead of relying on a DDL file, it loads schema metadata directly from the database. 
 This approach is useful when a DDL file is unavailable. 
@@ -130,7 +143,7 @@ This approach is useful when a DDL file is unavailable.
 
 **2.** Use the generated file transformation.yaml for actual anonymization of the selected schema:
 
-`./dataprotection.sh -tfn transformations.yaml`
+`./dp.sh transform -tfn transformations.yaml`
 
 ### Reference Documentation
 For further reference, please consider the following links:

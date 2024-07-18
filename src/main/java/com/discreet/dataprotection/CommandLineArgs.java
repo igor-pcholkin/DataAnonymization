@@ -2,7 +2,7 @@ package com.discreet.dataprotection;
 
 import picocli.CommandLine;
 
-@CommandLine.Command(name = "dataprotection", subcommands = {Detect.class, Transform.class })
+@CommandLine.Command(name = "dp", subcommands = {Detect.class, Transform.class })
 public class CommandLineArgs {
     DataprotectionApplication application;
 

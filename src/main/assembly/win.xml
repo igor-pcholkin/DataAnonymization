@@ -17,7 +17,7 @@
             <outputDirectory>/</outputDirectory>
         </file>
         <file>
-            <source>scripts/dataprotection.bat</source>
+            <source>scripts/dp.bat</source>
             <outputDirectory>/</outputDirectory>
         </file>
     </files>
