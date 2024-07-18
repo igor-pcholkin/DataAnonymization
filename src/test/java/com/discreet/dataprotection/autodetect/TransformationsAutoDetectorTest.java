@@ -21,7 +21,8 @@ class TransformationsAutoDetectorTest {
                         List.of(new Column("id", "INT"),
                                 new Column("name", "VARCHAR(256)"),
                                 new Column("passport", "VARCHAR(256"),
-                                new Column("post_code", "VARCHAR(256")))
+                                new Column("post_code", "VARCHAR(256"),
+                                new Column("ip", "VARCHAR(256")))
 
         ));
 
@@ -35,8 +36,10 @@ class TransformationsAutoDetectorTest {
                 "schema.sql", null, false, null, null);
         List<Transformation> expectedTransformations = List.of(
                 new Transformation("test", "users",
-                        Map.of("name", "name", "passport", "pid",
-                                "post_code", "post"), List.of("id"))
+                        Map.of("name", "name",
+                                "passport", "pid",
+                                "post_code", "post",
+                                "ip", "ip"), List.of("id"))
         );
 
         assertEquals(expectedTransformations, actualTransformations);

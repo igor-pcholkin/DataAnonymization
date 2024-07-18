@@ -28,6 +28,7 @@ class ColumnToAnonymizerLoaderTest {
         expectedColumnToAnonymizerMap.put("post", "post");
         expectedColumnToAnonymizerMap.put("zip", "post");
         expectedColumnToAnonymizerMap.put("email", "email");
+        expectedColumnToAnonymizerMap.put("ip", "ip");
 
         assertEquals(expectedColumnToAnonymizerMap, loadedColumnToAnonymizerMap);
     }
