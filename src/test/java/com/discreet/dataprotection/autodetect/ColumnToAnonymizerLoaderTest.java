@@ -19,6 +19,7 @@ class ColumnToAnonymizerLoaderTest {
         expectedColumnToAnonymizerMap.put("title", "name");
         expectedColumnToAnonymizerMap.put("address", "address");
         expectedColumnToAnonymizerMap.put("ccard", "ccard");
+        expectedColumnToAnonymizerMap.put("credit_card", "ccard");
         expectedColumnToAnonymizerMap.put("personal", "pid");
         expectedColumnToAnonymizerMap.put("social_number", "pid");
         expectedColumnToAnonymizerMap.put("taxpayer_number", "pid");
@@ -29,6 +30,9 @@ class ColumnToAnonymizerLoaderTest {
         expectedColumnToAnonymizerMap.put("zip", "post");
         expectedColumnToAnonymizerMap.put("email", "email");
         expectedColumnToAnonymizerMap.put("ip", "ip");
+        expectedColumnToAnonymizerMap.put("ip-address", "ip");
+        expectedColumnToAnonymizerMap.put("ip_address", "ip");
+        expectedColumnToAnonymizerMap.put("ipaddress", "ip");
 
         assertEquals(expectedColumnToAnonymizerMap, loadedColumnToAnonymizerMap);
     }

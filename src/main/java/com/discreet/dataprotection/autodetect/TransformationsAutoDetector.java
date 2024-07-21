@@ -13,6 +13,9 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import static org.springframework.util.StringUtils.capitalize;
+import static org.springframework.util.StringUtils.uncapitalize;
+
 @Component
 @Slf4j
 public class TransformationsAutoDetector {
@@ -40,13 +43,18 @@ public class TransformationsAutoDetector {
             columnToAnonymizerTable = columnToAnonymizerLoader.getColumnToAnonymizerTable();
         }
         Set<String> columnToAnonymizerKeys = columnToAnonymizerTable.keySet();
+        Set<String> columnToAnonymizerUpperKeys = capitalizedValues(columnToAnonymizerKeys);
         Map<String, Set<String>> columnTranslations = columnTranslationsLoader.readColumns();
         List<DBTable> tables = readSchema(schemaFilename, schemaName, defaultSchemaName, dbEngine);
 
         return tables.stream().map(table -> mapTableToTransformation(table, columnToAnonymizerKeys, columnTranslations,
-                        ignoreMissingIds))
+                        ignoreMissingIds, columnToAnonymizerUpperKeys))
                 .filter(Objects::nonNull)
                 .collect(Collectors.toList());
+    }
+
+    private Set<String> capitalizedValues(Set<String> values) {
+        return values.stream().map(k -> capitalize(k)).collect(Collectors.toSet());
     }
 
     private List<DBTable> readSchema(String schemaFileName, String schemaName, String defaultSchemaName,
@@ -74,30 +82,32 @@ public class TransformationsAutoDetector {
     private Transformation mapTableToTransformation(DBTable table,
                                                     Set<String> columnToAnonymizerKeys,
                                                     Map<String, Set<String>> columnTranslationsMap,
-                                                    boolean isIgnoreMissingIds) {
+                                                    boolean isIgnoreMissingIds,
+                                                    Set<String> columnToAnonymizerUpperKeys) {
         log.info("Processing db table {}.{}...", table.getSchema(), table.getTable());
 
         Transformation transformation = new Transformation(table.getSchema(), table.getTable());
 
         Transformation finalTransformation = transformation;
         table.getColumns().forEach(schemaColumn ->
-                setAnonymizerForColumn(schemaColumn, finalTransformation, columnToAnonymizerKeys, columnTranslationsMap));
+                setAnonymizerForColumn(schemaColumn, finalTransformation, columnToAnonymizerKeys,
+                        columnToAnonymizerUpperKeys, columnTranslationsMap));
         transformation = detectAndSetIdColumns(transformation, table.getColumns(), isIgnoreMissingIds);
         return transformation;
     }
 
     private void setAnonymizerForColumn(Column schemaColumn, Transformation transformation,
                                         Set<String> columnToAnonymizerKeys,
+                                        Set<String> columnToAnonymizerUpperKeys,
                                         Map<String, Set<String>> columnTranslationsMap) {
-        String schemaColumnName = schemaColumn.getName();
-        String columnToAnonymizerKey = getColumnKey(schemaColumnName, columnToAnonymizerKeys);
+        String columnToAnonymizerKey = getColumnKey(schemaColumn.getName(), columnToAnonymizerKeys, columnToAnonymizerUpperKeys);
         if (columnToAnonymizerKey == null) {
-            columnToAnonymizerKey = getTranslatedColumnKey(schemaColumnName, columnTranslationsMap);
+            columnToAnonymizerKey = getTranslatedColumnKey(schemaColumn.getName(), columnTranslationsMap);
         }
         if (columnToAnonymizerKey != null) {
             String anonymizer = columnToAnonymizerTable.get(columnToAnonymizerKey);
             if (anonymizer != null) {
-                transformation.getColumnToAnonymizerMap().put(schemaColumnName,
+                transformation.getColumnToAnonymizerMap().put(schemaColumn.getName(),
                         columnToAnonymizerTable.get(columnToAnonymizerKey));
             } else {
                 throw new RuntimeException("Error, column to anonymizer table doesn't contain mapping for " + columnToAnonymizerKey);
@@ -108,20 +118,36 @@ public class TransformationsAutoDetector {
     private String getTranslatedColumnKey(String schemaColumnName, Map<String, Set<String>> columnTranslationsMap) {
         return columnTranslationsMap.entrySet().stream().filter(columnTranslationsEntry -> {
             Set<String> columnTranslations = columnTranslationsEntry.getValue();
-            return getColumnKey(schemaColumnName, columnTranslations) != null;
+            return getColumnKey(schemaColumnName, columnTranslations, columnTranslations) != null;
         }).map(Map.Entry::getKey).findFirst().orElse(null);
     }
 
-    private String getColumnKey(String columnName, Set<String> names) {
-        if (names.contains(columnName)) {
-            return columnName;
+    private String getColumnKey(String columnName, Set<String> anonymizerColumnNames, Set<String> anonymizerColumnUpperNames) {
+        String lowerCaseColumnName = columnName.toLowerCase();
+        if (anonymizerColumnNames.contains(lowerCaseColumnName)){
+            return lowerCaseColumnName;
         } else if (columnName.indexOf('_') > -1) {
-            Set<String> schemaColumnNameTokens = split(columnName, "_");
-            schemaColumnNameTokens.retainAll(names);
-            return schemaColumnNameTokens.stream().findFirst().orElse(null);
+            return findColumnSplittedBy(lowerCaseColumnName, anonymizerColumnNames, "_");
+        } else if (columnName.indexOf('-') > -1) {
+            return findColumnSplittedBy(lowerCaseColumnName, anonymizerColumnNames, "-");
         } else {
-            return null;
+            return orCamelCaseCheckedColumnName(columnName, anonymizerColumnUpperNames);
         }
+    }
+
+    private String findColumnSplittedBy(String lowerCaseColumnName, Set<String> anonymizerColumnNames, String delim) {
+        Set<String> schemaColumnNameTokens = split(lowerCaseColumnName, delim);
+        schemaColumnNameTokens.retainAll(anonymizerColumnNames);
+        return schemaColumnNameTokens.stream().findFirst().orElse(null);
+    }
+
+    private String orCamelCaseCheckedColumnName(String columnName, Set<String> anonymizerColumnUpperNames) {
+        return anonymizerColumnUpperNames.stream().filter( anonymizerColumnUpperName ->
+            capitalize(columnName).contains(anonymizerColumnUpperName)
+        )
+        .map(s -> uncapitalize(s))
+        .findFirst()
+        .orElse(null);
     }
 
     private Set<String> split(String name, String delim) {
@@ -131,13 +157,13 @@ public class TransformationsAutoDetector {
     }
 
     private Transformation detectAndSetIdColumns(Transformation transformation, List<Column> columns, boolean ignoreMissingIds) {
-        List<String> columnNames = columns.stream().map(Column::getName).toList();
+        List<String> columnNames = columns.stream().map(c -> c.getName()).toList();
         String idCandidate;
         if (columnNames.contains(DEFAULT_ID_COLUMN)) {
             idCandidate = DEFAULT_ID_COLUMN;
         } else {
             idCandidate = columnNames.stream()
-                    .filter(column -> column.endsWith("_id")).findFirst().orElse(null);
+                    .filter(column -> column.endsWith("-id") || column.endsWith("_id") || column.endsWith("Id")).findFirst().orElse(null);
         }
         if (idCandidate != null) {
             transformation.setIdColumns(List.of(idCandidate));
