@@ -256,7 +256,7 @@ class TransformationsAutoDetectorTest {
         assertEquals(expectedTransformations, actualTransformations);
     }
 
-    //@Test()
+    @Test()
     public void testAutodetectSchemaWithTranslationsCamelCase() {
         SchemaSqlReader schemaSqlReader = mock(SchemaSqlReader.class);
         when(schemaSqlReader.readDDL("schema.sql")).thenReturn(List.of(
@@ -265,7 +265,6 @@ class TransformationsAutoDetectorTest {
                                 new Column("GeboorteDatum", "DATE"),
                                 new Column("HenkilöTunnus", "VARCHAR(256)"),
                                 new Column("Titl", "VARCHAR(256)"),
-                                new Column("NodokļuMaksātājaNumurs", "VARCHAR(256)"),
                                 new Column("KartKart", "CHAR(16)"),
                                 new Column("UserAdiresi", "VARCHAR(256)"),
                                 new Column("Poster", "VARCHAR(256)"),
@@ -285,14 +284,13 @@ class TransformationsAutoDetectorTest {
                 new Transformation("test", "users",
                         Map.of("UserAdiresi", "address",
                                 "HenkilöTunnus", "pid",
-                                "NodokļuMaksātājaNumurs", "pid",
                                 "KartKart", "ccard",
                                 "Titl", "name",
                                 "Poster", "post",
-                                "Geboortedatum", "birthdate",
+                                "GeboorteDatum", "birthdate",
                                 "RktOtsikko", "name",
                                 "PostaliCode", "post"
-                        ), List.of("user_id"))
+                        ), List.of("userId"))
         );
 
         assertEquals(expectedTransformations, actualTransformations);

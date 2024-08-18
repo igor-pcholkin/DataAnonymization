@@ -4,13 +4,9 @@ import com.discreet.dataprotection.transformations.Transformation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.springframework.util.StringUtils.capitalize;
@@ -36,6 +32,8 @@ public class TransformationsAutoDetector {
 
     private static final String DEFAULT_ID_COLUMN = "id";
 
+    private final HashMap<String, Set<String>> capitalizedCache = new HashMap<>();
+
     public List<Transformation> autodetectTransformations(String schemaFilename, String schemaName,
         boolean ignoreMissingIds, String defaultSchemaName, String dbEngine) {
         log.debug("Auto-detecting transformations...");
@@ -54,7 +52,7 @@ public class TransformationsAutoDetector {
     }
 
     private Set<String> capitalizedValues(Set<String> values) {
-        return values.stream().map(k -> capitalize(k)).collect(Collectors.toSet());
+        return values.stream().map(StringUtils::capitalize).collect(Collectors.toSet());
     }
 
     private List<DBTable> readSchema(String schemaFileName, String schemaName, String defaultSchemaName,
@@ -118,11 +116,21 @@ public class TransformationsAutoDetector {
     private String getTranslatedColumnKey(String schemaColumnName, Map<String, Set<String>> columnTranslationsMap) {
         return columnTranslationsMap.entrySet().stream().filter(columnTranslationsEntry -> {
             Set<String> columnTranslations = columnTranslationsEntry.getValue();
-            return getColumnKey(schemaColumnName, columnTranslations, columnTranslations) != null;
+            Set<String> capitalizedTranslations = getOrSetInCache(columnTranslationsEntry.getKey(), columnTranslations);
+            return getColumnKey(schemaColumnName, columnTranslations, capitalizedTranslations) != null;
         }).map(Map.Entry::getKey).findFirst().orElse(null);
     }
 
-    private String getColumnKey(String columnName, Set<String> anonymizerColumnNames, Set<String> anonymizerColumnUpperNames) {
+    private Set<String> getOrSetInCache(String key, Set<String> columnTranslations) {
+        Set<String> columnCapitalizedTranslations = capitalizedCache.get(key);
+        if (columnCapitalizedTranslations == null) {
+            columnCapitalizedTranslations = columnTranslations.stream().map(StringUtils::capitalize).collect(Collectors.toSet());
+            capitalizedCache.put(key, columnCapitalizedTranslations);
+        }
+        return columnCapitalizedTranslations;
+    }
+
+    private String getColumnKey(String columnName, Set<String> anonymizerColumnNames, Set<String> anonymizerColumnCapitalizedNames) {
         String lowerCaseColumnName = columnName.toLowerCase();
         if (anonymizerColumnNames.contains(lowerCaseColumnName)){
             return lowerCaseColumnName;
@@ -131,7 +139,7 @@ public class TransformationsAutoDetector {
         } else if (columnName.indexOf('-') > -1) {
             return findColumnSplittedBy(lowerCaseColumnName, anonymizerColumnNames, "-");
         } else {
-            return orCamelCaseCheckedColumnName(columnName, anonymizerColumnUpperNames);
+            return orCamelCaseCheckedColumnName(columnName, anonymizerColumnCapitalizedNames);
         }
     }
 
@@ -141,11 +149,11 @@ public class TransformationsAutoDetector {
         return schemaColumnNameTokens.stream().findFirst().orElse(null);
     }
 
-    private String orCamelCaseCheckedColumnName(String columnName, Set<String> anonymizerColumnUpperNames) {
+    protected String orCamelCaseCheckedColumnName(String columnName, Set<String> anonymizerColumnUpperNames) {
         return anonymizerColumnUpperNames.stream().filter( anonymizerColumnUpperName ->
             capitalize(columnName).contains(anonymizerColumnUpperName)
         )
-        .map(s -> uncapitalize(s))
+        .map(StringUtils::uncapitalize)
         .findFirst()
         .orElse(null);
     }
@@ -157,14 +165,16 @@ public class TransformationsAutoDetector {
     }
 
     private Transformation detectAndSetIdColumns(Transformation transformation, List<Column> columns, boolean ignoreMissingIds) {
-        List<String> columnNames = columns.stream().map(c -> c.getName()).toList();
+        List<String> columnNames = columns.stream().map(Column::getName).toList();
         String idCandidate;
         if (columnNames.contains(DEFAULT_ID_COLUMN)) {
             idCandidate = DEFAULT_ID_COLUMN;
         } else {
             idCandidate = columnNames.stream()
-                    .map(c -> c.toLowerCase())
-                    .filter(column -> column.endsWith("id") || column.endsWith("code"))
+                    .filter(column -> {
+                        String lowerCaseColumn = column.toLowerCase();
+                        return lowerCaseColumn.endsWith("id") || lowerCaseColumn.endsWith("code");
+                    })
                     .findFirst().orElse(null);
         }
         if (idCandidate != null) {
