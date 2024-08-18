@@ -163,7 +163,9 @@ public class TransformationsAutoDetector {
             idCandidate = DEFAULT_ID_COLUMN;
         } else {
             idCandidate = columnNames.stream()
-                    .filter(column -> column.endsWith("-id") || column.endsWith("_id") || column.endsWith("Id")).findFirst().orElse(null);
+                    .map(c -> c.toLowerCase())
+                    .filter(column -> column.endsWith("id") || column.endsWith("code"))
+                    .findFirst().orElse(null);
         }
         if (idCandidate != null) {
             transformation.setIdColumns(List.of(idCandidate));
@@ -175,7 +177,8 @@ public class TransformationsAutoDetector {
                         transformation.getTable());
                 return null;
             }
-            throw new RuntimeException(String.format("Error: can't autodetect id column for %s.%s",
+            throw new RuntimeException(String.format("Error: can't autodetect id column for %s.%s. " +
+                    "As option run the application with -iid argument.",
                     transformation.getSchema(), transformation.getTable()));
         }
     }

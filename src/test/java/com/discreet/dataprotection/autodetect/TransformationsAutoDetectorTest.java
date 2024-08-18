@@ -320,7 +320,8 @@ class TransformationsAutoDetectorTest {
                     null, false, null, null);
             fail();
         } catch (RuntimeException ex) {
-            assertEquals("Error: can't autodetect id column for test.users", ex.getMessage());
+            assertEquals("Error: can't autodetect id column for test.users. " +
+                    "As option run the application with -iid argument.", ex.getMessage());
         }
     }
 
@@ -344,5 +345,69 @@ class TransformationsAutoDetectorTest {
         List<Transformation> actualTransformations = autoDetector.autodetectTransformations("schema.sql",
                 null, true, null, null);
         assertEquals(List.of(), actualTransformations);
+    }
+
+    @Test
+    public void testAutodetectSchemaWithoutTranslationsUpperID() {
+        SchemaSqlReader schemaSqlReader = mock(SchemaSqlReader.class);
+        when(schemaSqlReader.readDDL("schema.sql")).thenReturn(List.of(
+                new DBTable("test", "users",
+                        List.of(new Column("ID", "INT"),
+                                new Column("Name", "VARCHAR(256)"),
+                                new Column("Passport", "VARCHAR(256"),
+                                new Column("Post_code", "VARCHAR(256"),
+                                new Column("Ip", "VARCHAR(256")))
+
+        ));
+
+        ColumnTranslationsLoader columnTranslationsLoader = mock(ColumnTranslationsLoader.class);
+
+        autoDetector.setColumnToAnonymizerLoader(new ColumnToAnonymizerLoader());
+        autoDetector.setSchemaSqlReader(schemaSqlReader);
+        autoDetector.setColumnTranslationsLoader(columnTranslationsLoader);
+
+        List<Transformation> actualTransformations = autoDetector.autodetectTransformations(
+                "schema.sql", null, false, null, null);
+        List<Transformation> expectedTransformations = List.of(
+                new Transformation("test", "users",
+                        Map.of("Name", "name",
+                                "Passport", "pid",
+                                "Post_code", "post",
+                                "Ip", "ip"), List.of("id"))
+        );
+
+        assertEquals(expectedTransformations, actualTransformations);
+    }
+
+    @Test
+    public void testAutodetectSchemaWithoutTranslationsIdIsCode() {
+        SchemaSqlReader schemaSqlReader = mock(SchemaSqlReader.class);
+        when(schemaSqlReader.readDDL("schema.sql")).thenReturn(List.of(
+                new DBTable("test", "users",
+                        List.of(new Column("Code", "VARCHAR(20)"),
+                                new Column("Name", "VARCHAR(256)"),
+                                new Column("Passport", "VARCHAR(256"),
+                                new Column("Post_code", "VARCHAR(256"),
+                                new Column("Ip", "VARCHAR(256")))
+
+        ));
+
+        ColumnTranslationsLoader columnTranslationsLoader = mock(ColumnTranslationsLoader.class);
+
+        autoDetector.setColumnToAnonymizerLoader(new ColumnToAnonymizerLoader());
+        autoDetector.setSchemaSqlReader(schemaSqlReader);
+        autoDetector.setColumnTranslationsLoader(columnTranslationsLoader);
+
+        List<Transformation> actualTransformations = autoDetector.autodetectTransformations(
+                "schema.sql", null, false, null, null);
+        List<Transformation> expectedTransformations = List.of(
+                new Transformation("test", "users",
+                        Map.of("Name", "name",
+                                "Passport", "pid",
+                                "Post_code", "post",
+                                "Ip", "ip"), List.of("Code"))
+        );
+
+        assertEquals(expectedTransformations, actualTransformations);
     }
 }
