@@ -8,10 +8,12 @@
     * [Anonymization approach](#anonymization-approach)
     * [How does the application work?](#how-does-the-application-work)
     * [What anonymizers are available?](#what-anonymizers-are-available)
+    * [Setup](#setup)
+    * [Configuration](#configuration)
     * [How to add a custom anonymizer](#how-to-add-a-custom-anonymizer)
     * [Additional functions](#additional-functions)
     * [Running the application](#running-the-application)
-    * [Configuration](#configuration)
+
     * [Use cases](#use-cases)
     * [Reference Documentation](#reference-documentation)
 <!-- TOC -->
@@ -65,6 +67,29 @@ Displayed on the left is the ID of each anonymizer, which should be specified in
 **post** - the post code anonymizer replaces post codes with alternative values sourced from the same column in the database<br/>
 **ip** - the ip address anonymizer replaces ip address with another random ip address<br/>
 
+### Setup
+
+This is a console application which requires Java 19 (which should be downloaded and setup separately).
+After java 19 is installed, set JAVA_HOME to the corresponding folder, e.g.  
+
+`export JAVA_HOME=~/.jdks/corretto-19.0.2`
+
+The application can be built using `mvn install` command run in the project folder.
+If maven is not installed it should be done, e.g. in Linux, using the following command:
+
+`sudo apt install maven`
+
+It will build zip packages for windows and linux and place it into `target` folder.
+After unpacking one of the packages you should be able to run the `dp.sh` script with arguments as shown below.
+
+### Configuration
+
+* **conf/application.properties** file should be used to set up DB connection URL and credentials.
+  This (the only) DB will be used for anonymization and data analysis. <br/>
+* **AnonymizerTable.java** - (optionally) for registering a custom anonymizer <br/>
+* **columnToAnonymizer.properties** (optionally) - the file is used when adding new anonymizer and using it for auto-detection of columns
+  in database for anonymization.
+
 ### How to add a custom anonymizer
 
 * Add a new anonymizer class (with test) to com.discreet.dataprotection.anonymizer package. Extend it either from BaseAnonymizer or CharSequenceAnonymizer.
@@ -103,14 +128,6 @@ transformations.yaml file which can be later used with "transform" command._
   * -sn, --schemaName=[schemaName] </br>
   _schema name to use for reading metadata from DB and auto-detection of DB table columns which can be anonymized_
 
-### Configuration
-
-* **conf/application.properties** file should be used to set up DB connection URL and credentials.
-This (the only) DB will be used for anonymization and data analysis. <br/>
-* **AnonymizerTable.java** - for registering a custom anonymizer <br/>
-* **columnToAnonymizer.properties** file is used when adding new anonymizer and using it for auto-detection of columns
-in database for anonymization.
-  
 ### Use cases
 
 **1a.** Auto-detect data eligible for anonymization using supplied DDL schema file:
