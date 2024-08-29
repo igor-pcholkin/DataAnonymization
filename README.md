@@ -13,7 +13,6 @@
     * [How to add a custom anonymizer](#how-to-add-a-custom-anonymizer)
     * [Additional functions](#additional-functions)
     * [Running the application](#running-the-application)
-
     * [Use cases](#use-cases)
     * [Reference Documentation](#reference-documentation)
 <!-- TOC -->
