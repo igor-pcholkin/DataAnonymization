@@ -10,7 +10,6 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.springframework.util.StringUtils.capitalize;
-import static org.springframework.util.StringUtils.uncapitalize;
 
 @Component
 @Slf4j
@@ -29,8 +28,6 @@ public class TransformationsAutoDetector {
     private ColumnToAnonymizerLoader columnToAnonymizerLoader;
 
     private Map<String, String> columnToAnonymizerTable;
-
-    private static final String DEFAULT_ID_COLUMN = "id";
 
     private final HashMap<String, Set<String>> capitalizedCache = new HashMap<>();
 
@@ -167,16 +164,12 @@ public class TransformationsAutoDetector {
     private Transformation detectAndSetIdColumns(Transformation transformation, List<Column> columns, boolean ignoreMissingIds) {
         List<String> columnNames = columns.stream().map(Column::getName).toList();
         String idCandidate;
-        if (columnNames.contains(DEFAULT_ID_COLUMN)) {
-            idCandidate = DEFAULT_ID_COLUMN;
-        } else {
-            idCandidate = columnNames.stream()
-                    .filter(column -> {
-                        String lowerCaseColumn = column.toLowerCase();
-                        return lowerCaseColumn.endsWith("id") || lowerCaseColumn.endsWith("code");
-                    })
-                    .findFirst().orElse(null);
-        }
+        idCandidate = columnNames.stream()
+            .filter(column -> {
+                String lowerCaseColumn = column.toLowerCase();
+                return lowerCaseColumn.endsWith("id") || lowerCaseColumn.endsWith("code") || lowerCaseColumn.endsWith("number");
+            })
+            .findFirst().orElse(null);
         if (idCandidate != null) {
             transformation.setIdColumns(List.of(idCandidate));
             return transformation;

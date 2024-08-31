@@ -22,7 +22,10 @@ public class ProbeService {
         Set<String> values = new TreeSet<>();
         String sql = String.format("select distinct %s from %s limit %d", column, table, maxValues);
         jdbcTemplate.query(sql, rs -> {
-            values.add(rs.getNString(column));
+            String value = rs.getString(column);
+            if (value != null) {
+                values.add(value);
+            }
         });
         return values;
     }

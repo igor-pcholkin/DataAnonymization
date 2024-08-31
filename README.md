@@ -17,7 +17,7 @@
     * [Reference Documentation](#reference-documentation)
 <!-- TOC -->
 
-### What is the dataprotection application?
+### What is the dataprotection application? 
 
 The dataprotection application is a command-line tool designed to safeguard sensitive data. 
 It achieves this by anonymization of the sensitive data within an enterprise's relational database.
@@ -73,10 +73,7 @@ After java 19 is installed, set JAVA_HOME to the corresponding folder, e.g.
 
 `export JAVA_HOME=~/.jdks/corretto-19.0.2`
 
-The application can be built using `mvn install` command run in the project folder.
-If maven is not installed it should be done, e.g. in Linux, using the following command:
-
-`sudo apt install maven`
+The application can be built using `mvnw package` command run in the project folder.
 
 It will build zip packages for windows and linux and place it into `target` folder.
 After unpacking one of the packages you should be able to run the `dp.sh` script with arguments as shown below.

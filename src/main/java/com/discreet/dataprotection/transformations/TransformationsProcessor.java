@@ -12,7 +12,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
+import com.discreet.dataprotection.CantReadColumnException;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static org.springframework.util.CollectionUtils.isEmpty;
 
@@ -44,9 +46,16 @@ public class TransformationsProcessor {
                     getIdColumnsAsString(transformation),
                     columns, transformation.getSchema(),
                     transformation.getTable());
-            jdbcTemplate.query(sql, rs -> {
-                anonymizeRow(rs, transformation);
-            });
+            try {
+                jdbcTemplate.query(sql, rs -> {
+                    anonymizeRow(rs, transformation);
+                });
+            } catch (CantReadColumnException ex) {
+                log.error(String.format("There was a problem reading id column for %s.%s, skipping the table...",
+                        transformation.getSchema(),
+                        transformation.getTable()));
+                // skip
+            }
         }
     }
 
@@ -62,15 +71,19 @@ public class TransformationsProcessor {
     }
 
     private void anonymizeRow(ResultSet rs, Transformation transformation) {
-       String modifiedColumns = transformation.getColumnToAnonymizerMap().keySet().stream().map(column ->
-               String.format("%s='%s'", column, anonymizeColumn(transformation, column, rs)))
-               .collect(Collectors.joining(","));
+        String modifiedColumns = transformation.getColumnToAnonymizerMap().keySet().stream().flatMap(column -> {
+           String anonymized = anonymizeColumn(transformation, column, rs);
+           if (anonymized != null) {
+               anonymized = anonymized.replaceAll("'", "");
+           }
+           return anonymized != null ? Stream.of(String.format("%s='%s'", column, anonymized)): Stream.empty();
+       }).collect(Collectors.joining(","));
 
-        String update = String.format("update %s.%s set %s where %s", transformation.getSchema(),
+       String update = String.format("update %s.%s set %s where %s", transformation.getSchema(),
                 transformation.getTable(), modifiedColumns, getIdsCondition(transformation));
 
-        Long[] idValues = getColumnIdValues(transformation, rs);
-        jdbcTemplate.update(update, idValues);
+       Long[] idValues = getColumnIdValues(transformation, rs);
+       jdbcTemplate.update(update, idValues);
     }
 
     private Long[] getColumnIdValues(Transformation transformation, ResultSet rs) {
@@ -79,7 +92,7 @@ public class TransformationsProcessor {
                     try {
                         return rs.getLong(idColumn);
                     } catch (SQLException e) {
-                        throw new RuntimeException("Can read id from column: " + idColumn);
+                        throw new CantReadColumnException("Can read id from column: " + idColumn);
                     }
                 }).toArray(Long[]::new);
     }
@@ -111,12 +124,12 @@ public class TransformationsProcessor {
             if (anonymizerName.equals("birthdate")) {
                 input = String.valueOf(rs.getDate(column));
             } else {
-                input = rs.getNString(column);
+                input = rs.getString(column);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return anonymizer.anonymize(input);
+        return input != null ? anonymizer.anonymize(input) : null;
     }
 
     public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {

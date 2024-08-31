@@ -26,7 +26,7 @@ public class SchemaMetadataReader {
         List<DBTable> tables = new LinkedList<>();
         try {
             jdbcTemplate.query("SHOW TABLES FROM " + schema, rs -> {
-                String table = rs.getNString(1);
+                String table = rs.getString(1);
                 List<Column> columns = new LinkedList<>();
                 DBTable dbTable = new DBTable(schema, table, columns);
                 addColumns(dbTable);
@@ -45,7 +45,7 @@ public class SchemaMetadataReader {
         String sql = String.format("SHOW COLUMNS FROM %s.%s", dbTable.getSchema(), dbTable.getTable());
         List<Column> columns = dbTable.getColumns();
         jdbcTemplate.query(sql, rs -> {
-            Column column = new Column(rs.getNString(1), rs.getNString(2));
+            Column column = new Column(rs.getString(1), rs.getString(2));
             columns.add(column);
         });
     }
