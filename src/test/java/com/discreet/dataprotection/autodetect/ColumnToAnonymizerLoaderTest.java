@@ -33,6 +33,7 @@ class ColumnToAnonymizerLoaderTest {
         expectedColumnToAnonymizerMap.put("ip-address", "ip");
         expectedColumnToAnonymizerMap.put("ip_address", "ip");
         expectedColumnToAnonymizerMap.put("ipaddress", "ip");
+        expectedColumnToAnonymizerMap.put("phone", "pid");
 
         assertEquals(expectedColumnToAnonymizerMap, loadedColumnToAnonymizerMap);
     }

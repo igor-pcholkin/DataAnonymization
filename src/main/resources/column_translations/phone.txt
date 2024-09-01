@@ -1,0 +1,100 @@
+Mandarin Chinese: 电话 (diànhuà)
+Spanish: Teléfono
+English: Phone
+Hindi: फ़ोन (phōna)
+Arabic: هاتف (hātif)
+Bengali: ফোন (phōna)
+Portuguese: Telefone
+Russian: Телефон (telefon)
+Japanese: 電話 (denwa)
+Punjabi: ਫੋਨ (phōna)
+German: Telefon
+Javanese: Telpon
+Wu Chinese: 电话 (diǎnghu)
+Malay/Indonesian: Telefon
+Telugu: ఫోన్ (Phōn)
+Vietnamese: Điện thoại
+Korean: 전화 (jeonhwa)
+French: Téléphone
+Marathi: फोन (phōna)
+Tamil: தொலைபேசி (Toḷaipēci)
+Urdu: فون (phōn)
+Turkish: Telefon
+Italian: Telefono
+Yue Chinese (Cantonese): 電話 (din6 waa2)
+Thai: โทรศัพท์ (thorasap)
+Gujarati: ફોન (phōn)
+Jin Chinese: 电话 (diànhuà)
+Southern Min Chinese (Hokkien-Taiwanese): 电话 (tiān-oē)
+Persian: تلفن (telefon)
+Polish: Telefon
+Pashto: ټیلیفون (tēlifūn)
+Kannada: ಫೋನ್ (Phōn)
+Xiang Chinese: 电话 (diànhuà)
+Malayalam: ഫോൺ (phōṇ)
+Sundanese: Telepon
+Hausa: Waya
+Odia (Oriya): ଫୋନ (phōna)
+Burmese: ဖုန်း (phone)
+Hakka Chinese: 电话 (tièn-fò)
+Ukrainian: Телефон (telefon)
+Bhojpuri: फोन (phōna)
+Tagalog/Filipino: Telepono
+Yoruba: Foonu
+Maithili: फोन (phōna)
+Uzbek: Telefon
+Sindhi: فون (phōn)
+Amharic: ስልክ (sïlk’)
+Fula/Pulaar: Telefoon
+Romanian: Telefon
+Oromo: Bilbilaa
+Igbo: Ekwentị
+Azerbaijani: Telefon
+Dutch: Telefoon
+Kurdish: Telefûn
+Serbo-Croatian: Telefon
+Malagasy: Finday
+Saraiki: فون (phōn)
+Nepali: फोन (phōna)
+Sinhalese: දුරකථනය (durakathanaya)
+Chittagonian: ফইন (phain)
+Zhuang: 电话 (diǎnhuā)
+Khmer: ទូរស័ព្ទ (tūrəsap)
+Turkmen: Telefon
+Assamese: ফোন (phōna)
+Madurese: Telepon
+Somali: Telefoon
+Marwari: फोन (phōna)
+Magahi: फोन (phōna)
+Haryanvi: फोन (phōna)
+Hungarian: Telefon
+Chhattisgarhi: फोन (phōna)
+Greek: Τηλέφωνο (tiléfono)
+Chewa/Nyanja: Foni
+Deccan: फोन (phōn)
+Akan: Telefɔn
+Kazakh: Телефон (telefon)
+Northern Min Chinese (Min Bei): 电话 (dièng-uā)
+Sylheti: ফোন (phōn)
+Zulu: Ucingo
+Czech: Telefon
+Kinyarwanda: Telefoni
+Dhundhari: फोन (phōna)
+Haitian Creole: Telefòn
+Chichewa: Foni
+Uyghur: تېلېفون (telefon)
+Quechua: T'ulaqatu
+Swedish: Telefon
+Ilocano: Telepono
+Jamaican Patois: Phone
+Tatar: Телефон (telefon)
+Shona: Nhare
+Belarusian: Тэлефон (tèlefon)
+Balochi: ٹیلیفون (telifun)
+Fijian: Talevoni
+Hmong: Xov tooj
+Slovak: Telefón
+Tajik: Телефон (telefon)
+Lingala: Telefoni
+Serbian: Телефон (telefon)
+Latvian: Telefons

@@ -20,10 +20,11 @@ class TransformationsAutoDetectorTest {
                 new DBTable("test", "users",
                         List.of(new Column("id", "INT"),
                                 new Column("name", "VARCHAR(256)"),
-                                new Column("passport", "VARCHAR(256"),
-                                new Column("post_code", "VARCHAR(256"),
-                                new Column("credit_card", "VARCHAR(256"),
-                                new Column("ip", "VARCHAR(256")))
+                                new Column("passport", "VARCHAR(256)"),
+                                new Column("post_code", "VARCHAR(256)"),
+                                new Column("credit_card", "VARCHAR(256)"),
+                                new Column("ip", "VARCHAR(256)"),
+                                new Column("phone", "VARCHAR(16)")))
 
         ));
 
@@ -40,7 +41,8 @@ class TransformationsAutoDetectorTest {
                         Map.of("name", "name",
                                 "passport", "pid",
                                 "post_code", "post",
-                                    "credit_card", "ccard",
+                                "credit_card", "ccard",
+                                    "phone", "pid",
                                 "ip", "ip"), List.of("id"))
         );
 
@@ -54,9 +56,9 @@ class TransformationsAutoDetectorTest {
                 new DBTable("test", "users",
                         List.of(new Column("Id", "INT"),
                                 new Column("Name", "VARCHAR(256)"),
-                                new Column("Passport", "VARCHAR(256"),
-                                new Column("Post_code", "VARCHAR(256"),
-                                new Column("Ip", "VARCHAR(256")))
+                                new Column("Passport", "VARCHAR(256)"),
+                                new Column("Post_code", "VARCHAR(256)"),
+                                new Column("Ip", "VARCHAR(256)")))
 
         ));
 
@@ -86,9 +88,9 @@ class TransformationsAutoDetectorTest {
                 new DBTable("test", "users",
                         List.of(new Column("mainId", "INT"),
                                 new Column("nameOfUser", "VARCHAR(256)"),
-                                new Column("userPassport", "VARCHAR(256"),
-                                new Column("postCode", "VARCHAR(256"),
-                                new Column("ipAddress", "VARCHAR(256")))
+                                new Column("userPassport", "VARCHAR(256)"),
+                                new Column("postCode", "VARCHAR(256)"),
+                                new Column("ipAddress", "VARCHAR(256)")))
         ));
 
         ColumnTranslationsLoader columnTranslationsLoader = mock(ColumnTranslationsLoader.class);
@@ -117,9 +119,9 @@ class TransformationsAutoDetectorTest {
                 new DBTable("test", "users",
                         List.of(new Column("main-id", "INT"),
                                 new Column("name-of-user", "VARCHAR(256)"),
-                                new Column("user-passport", "VARCHAR(256"),
-                                new Column("post-code", "VARCHAR(256"),
-                                new Column("ip-address", "VARCHAR(256")))
+                                new Column("user-passport", "VARCHAR(256)"),
+                                new Column("post-code", "VARCHAR(256)"),
+                                new Column("ip-address", "VARCHAR(256)")))
         ));
 
         ColumnTranslationsLoader columnTranslationsLoader = mock(ColumnTranslationsLoader.class);
@@ -148,9 +150,9 @@ class TransformationsAutoDetectorTest {
                 new DBTable("test", "users",
                         List.of(new Column("main_id", "INT"),
                                 new Column("name_of_user", "VARCHAR(256)"),
-                                new Column("user_passport", "VARCHAR(256"),
-                                new Column("post_code", "VARCHAR(256"),
-                                new Column("ip_address", "VARCHAR(256")))
+                                new Column("user_passport", "VARCHAR(256)"),
+                                new Column("post_code", "VARCHAR(256)"),
+                                new Column("ip_address", "VARCHAR(256)")))
         ));
 
         ColumnTranslationsLoader columnTranslationsLoader = mock(ColumnTranslationsLoader.class);
@@ -187,6 +189,7 @@ class TransformationsAutoDetectorTest {
                                 new Column("poster", "VARCHAR(256)"),
                                 new Column("rkt_otsikko", "VARCHAR(256)"),
                                 new Column("kav_kav", "VARCHAR(256)"),
+                                new Column("telefons", "VARCHAR(16)"),
                                 new Column("postali_code", "VARCHAR(256")))
 
         ));
@@ -202,11 +205,12 @@ class TransformationsAutoDetectorTest {
                         Map.of("adiresi", "address",
                                 "henkilötunnus", "pid",
                                 "nodokļu_maksātāja_numurs", "pid",
-                                "kart", "ccard",
+                                "kart", "name",
                                 "titl", "name",
                                 "poster", "post",
                                 "geboortedatum", "birthdate",
                                 "rkt_otsikko", "name",
+                                "telefons", "pid",
                                 "postali_code", "post"
                 ), List.of("user_id"))
         );
@@ -244,7 +248,7 @@ class TransformationsAutoDetectorTest {
                         Map.of("Adiresi", "address",
                                 "Henkilötunnus", "pid",
                                 "Nodokļu_maksātāja_numurs", "pid",
-                                "Kart", "ccard",
+                                "Kart", "name",
                                 "Titl", "name",
                                 "Poster", "post",
                                 "Geboortedatum", "birthdate",
@@ -284,7 +288,7 @@ class TransformationsAutoDetectorTest {
                 new Transformation("test", "users",
                         Map.of("UserAdiresi", "address",
                                 "HenkilöTunnus", "pid",
-                                "KartKart", "ccard",
+                                "KartKart", "name",
                                 "Titl", "name",
                                 "Poster", "post",
                                 "GeboorteDatum", "birthdate",
@@ -352,8 +356,8 @@ class TransformationsAutoDetectorTest {
                 new DBTable("test", "users",
                         List.of(new Column("ID", "INT"),
                                 new Column("Name", "VARCHAR(256)"),
-                                new Column("Passport", "VARCHAR(256"),
-                                new Column("Post_code", "VARCHAR(256"),
+                                new Column("Passport", "VARCHAR(256)"),
+                                new Column("Post_code", "VARCHAR(256)"),
                                 new Column("Ip", "VARCHAR(256")))
 
         ));
@@ -384,9 +388,9 @@ class TransformationsAutoDetectorTest {
                 new DBTable("test", "users",
                         List.of(new Column("Code", "VARCHAR(20)"),
                                 new Column("Name", "VARCHAR(256)"),
-                                new Column("Passport", "VARCHAR(256"),
-                                new Column("Post_code", "VARCHAR(256"),
-                                new Column("Ip", "VARCHAR(256")))
+                                new Column("Passport", "VARCHAR(256)"),
+                                new Column("Post_code", "VARCHAR(256)"),
+                                new Column("Ip", "VARCHAR(256)")))
 
         ));
 
