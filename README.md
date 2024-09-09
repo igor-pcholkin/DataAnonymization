@@ -19,7 +19,7 @@
 
 ### What is the data anonymization application? 
 
-The data anonyization application is a command-line tool designed to safeguard sensitive data. 
+The data anonymization application is a command-line tool designed to safeguard sensitive data. 
 It achieves this by masking of the sensitive data within an enterprise's relational database.
 The anonymization reduces risk of unintended disclosure of the sensitive data while still keeping it useful for
 business processing. The European Union's General Data Protection Regulation (GDPR) requires that stored data 
