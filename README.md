@@ -3,7 +3,7 @@
  <!-- TOC -->
 * [Getting Started](#getting-started)
     * [What is the data anonymization application?](#what-is-the-data-anonymization-application)
-    * [What is a sensitive data?](#what-is-a-sensitive-data-)
+    * [What is a sensitive data?](#what-is-a-sensitive-data)
     * [Why sensitive data should be kept secure?](#why-sensitive-data-should-be-kept-secure)
     * [Anonymization approach](#anonymization-approach)
     * [How does the application work?](#how-does-the-application-work)
