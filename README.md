@@ -2,7 +2,7 @@
 
  <!-- TOC -->
 * [Getting Started](#getting-started)
-    * [What is the dataprotection application?](#what-is-the-dataprotection-application)
+    * [What is the data anonymization application?](#what-is-the-data-anonymization-application)
     * [What is a sensitive data?](#what-is-a-sensitive-data-)
     * [Why sensitive data should be kept secure?](#why-sensitive-data-should-be-kept-secure)
     * [Anonymization approach](#anonymization-approach)
@@ -17,10 +17,10 @@
     * [Reference Documentation](#reference-documentation)
 <!-- TOC -->
 
-### What is the dataprotection application? 
+### What is the data anonymization application? 
 
-The dataprotection application is a command-line tool designed to safeguard sensitive data. 
-It achieves this by anonymization of the sensitive data within an enterprise's relational database.
+The data anonyization application is a command-line tool designed to safeguard sensitive data. 
+It achieves this by masking of the sensitive data within an enterprise's relational database.
 The anonymization reduces risk of unintended disclosure of the sensitive data while still keeping it useful for
 business processing. The European Union's General Data Protection Regulation (GDPR) requires that stored data 
 on people in the EU undergo either anonymization or a pseudonymization process.
