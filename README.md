@@ -1,7 +1,7 @@
 # Data Anonymization
 
  <!-- TOC -->
-* [Getting Started](#getting-started)
+* [Data Anonymization](#data-anonymization)
     * [What is the data anonymization application?](#what-is-the-data-anonymization-application)
     * [What is a sensitive data?](#what-is-a-sensitive-data)
     * [Why sensitive data should be kept secure?](#why-sensitive-data-should-be-kept-secure)
