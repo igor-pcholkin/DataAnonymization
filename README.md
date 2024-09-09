@@ -11,7 +11,7 @@
     * [Setup](#setup)
     * [Configuration](#configuration)
     * [How to add a custom anonymizer](#how-to-add-a-custom-anonymizer)
-    * [Additional functions](#additional-functions)
+    * [Autodetection of senstitive data](#autodetection-of-senstitive-data)
     * [Running the application](#running-the-application)
     * [Use cases](#use-cases)
     * [Introduction video](#introduction-video)
@@ -94,7 +94,7 @@ After unpacking one of the packages you should be able to run the `dp.sh` script
 * Use anonymizer alias as a value mapped to db column in transformations.yaml file.
 * (Optionally) for using anonymizer in auto-detection process, map it to corresponding column name in columnToAnonymizer.properties
 
-### Additional functions
+### Autodetection of senstitive data
 
 The application autonomously identifies which database columns are suitable for anonymization by leveraging metadata information about the database. 
 This information can be provided in two ways: through a Data Definition Language (DDL) file containing statements used to create data tables in a database schema, or via a direct connection to the database schema.
