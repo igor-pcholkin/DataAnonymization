@@ -1,4 +1,4 @@
-# Getting Started
+# Data Anonymization
 
  <!-- TOC -->
 * [Getting Started](#getting-started)
