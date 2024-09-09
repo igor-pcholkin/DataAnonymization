@@ -14,6 +14,7 @@
     * [Additional functions](#additional-functions)
     * [Running the application](#running-the-application)
     * [Use cases](#use-cases)
+    * [Introduction video](#introduction-video)
     * [Reference Documentation](#reference-documentation)
 <!-- TOC -->
 
@@ -157,6 +158,10 @@ This approach is useful when a DDL file is unavailable.
 **2.** Use the generated file transformation.yaml for actual anonymization of the selected schema:
 
 `./dp.sh transform -tfn transformations.yaml`
+
+### Introduction video
+
+https://www.youtube.com/watch?v=88a57qXoT08&t=2s
 
 ### Reference Documentation
 For further reference, please consider the following links:
