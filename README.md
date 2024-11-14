@@ -15,6 +15,7 @@
     * [Running the application](#running-the-application)
     * [Use cases](#use-cases)
     * [Introduction video](#introduction-video)
+    * [Commercial support](#commercial-support)
     * [Reference Documentation](#reference-documentation)
 <!-- TOC -->
 
@@ -162,6 +163,10 @@ This approach is useful when a DDL file is unavailable.
 ### Introduction video
 
 https://www.youtube.com/watch?v=88a57qXoT08&t=2s
+
+### Commercial support
+
+https://gecko-dm.github.io/
 
 ### Reference Documentation
 For further reference, please consider the following links:
